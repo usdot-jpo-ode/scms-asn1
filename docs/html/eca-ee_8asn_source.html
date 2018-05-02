@@ -128,7 +128,7 @@ $(document).ready(function(){initNavTree('eca-ee_8asn_source.html','');});
 <div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="eca-ee_8asn.html#aa5dd7be27a5a6b2b8a232a3352040973">   18</a></span>&#160;<a class="code" href="eca-ee_8asn.html#aa5dd7be27a5a6b2b8a232a3352040973">Ieee1609Dot2EcaEndEntityInterface</a></div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;{iso(1) identified-organization(3) ieee(111)</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;standards-association-numbered-series-standards(2) wave-stds(1609)</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;dot2(2) scms(4) interfaces(1) eca-ee (5) major-version-2(2)}</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;dot2(2) scms(2) interfaces(1) eca-ee (5)}</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;DEFINITIONS AUTOMATIC TAGS ::= BEGIN</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
@@ -138,110 +138,113 @@ $(document).ready(function(){initNavTree('eca-ee_8asn_source.html','');});
 <div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="eca-ee_8asn.html#ae3194664453168623af6deb7d3b48fa6">   28</a></span>&#160;</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  <a class="code" href="eca-ee_8asn.html#a1f7f072c8a0f1c480b7ba7545b8ac4ad">HashedId8</a>,</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  <a class="code" href="eca-ee_8asn.html#ae3194664453168623af6deb7d3b48fa6">Time32</a>,</div>
-<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="eca-ee_8asn.html#a353843445fa9b2f87797c229486236ca">   31</a></span>&#160;  <a class="code" href="ee-ra_8asn.html#ab8036e856800014c4399e429e567f931">Uint8</a></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;FROM <a class="code" href="eca-ee_8asn.html#abd13b91ed43f083d6b63c963c5013a9c">IEEE1609dot2BaseTypes</a> {iso(1) identified-organization(3) ieee(111)</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;     standards-association-numbered-series-standards(2) wave-stds(1609)</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;     dot2(2) base(1) base-types(2) major-version-2(2)}</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <a class="code" href="cert-chain-files_8asn.html#a22cd7b3bd983c066922949a6f22c11a8">Certificate</a>,</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <a class="code" href="eca-ee_8asn.html#a353843445fa9b2f87797c229486236ca">ImplicitCertificate</a>,</div>
-<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="eca-ee_8asn.html#adcb97936cd8abf27bfacfb21be26a625">   38</a></span>&#160;  ToBeSignedCertificate</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;FROM <a class="code" href="eca-ee_8asn.html#adcb97936cd8abf27bfacfb21be26a625">IEEE1609dot2</a> {iso(1) identified-organization(3) ieee(111)</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;     standards-association-numbered-series-standards(2) wave-stds(1609)</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;     dot2(2) base (1) schema (1) major-version-2(2)}</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  EccP256PrivateKeyReconstruction</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;FROM <a class="code" href="cert-profile_8asn.html#a69aef8c8ff2ad51e84342c36911bb1cc">Ieee1609dot2ScmsBaseTypes</a> {iso(1) identified-organization(3) ieee(111)</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;     standards-association-numbered-series-standards(2) wave-stds(1609)  dot2(2)</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;     scms(4) interfaces(1) base-types (2) major-version-2(2)}</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;---</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;-- @brief The EcaEndEntityInterfacePDU is the parent message type <span class="keywordflow">for</span> messages </div>
-<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="namespace_ieee1609_dot2_eca_end_entity_interface.html">   52</a></span>&#160;--        sent between Enrollment <a class="code" href="cert-chain-files_8asn.html#a22cd7b3bd983c066922949a6f22c11a8">Certificate</a> Authority (ECA) and End Entities</div>
-<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="struct_ieee1609_dot2_eca_end_entity_interface_1_1_eca_end_entity_interface_p_d_u.html">   53</a></span>&#160;--        (EE).</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;-- @class <a class="code" href="struct_ieee1609_dot2_eca_end_entity_interface_1_1_eca_end_entity_interface_p_d_u.html">EcaEndEntityInterfacePDU</a></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;-- @param eeEcaCertRequest  contains the enrollment certificate request sent</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;--                          by the EE to the ECA.</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;-- @param ecaEeCertResponse contains the enrollment certificate response sent</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;--                          by the ECA to an EE.</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<a class="code" href="struct_ieee1609_dot2_eca_end_entity_interface_1_1_eca_end_entity_interface_p_d_u.html">EcaEndEntityInterfacePDU</a>::= CHOICE {</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    eeEcaCertRequest    <a class="code" href="struct_ieee1609_dot2_eca_end_entity_interface_1_1_ee_eca_cert_request.html">EeEcaCertRequest</a>,</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    ecaEeCertResponse   <a class="code" href="struct_ieee1609_dot2_eca_end_entity_interface_1_1_eca_ee_cert_response.html">EcaEeCertResponse</a>,</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    ...</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;}</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;---</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;-- @brief This data type is used by the EE to request an enrollment </div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;--        certificate from the ECA. It is <span class="keywordtype">signed</span> <span class="keyword">using</span> the <span class="keyword">private</span> key </div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;--        generated by the EE and the corresponding <span class="keyword">public</span> key is placed in </div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;--        verificationKey <span class="keywordflow">for</span> use by the ECA to generate the enrollment</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;--        certificate. All the fields of ToBeSignedCertificate are filled by</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;--        the EE/DCM, but the ECA may <span class="keyword">override</span> them.</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;-- <span class="keyword">@class</span> <a class="code" href="struct_ieee1609_dot2_eca_end_entity_interface_1_1_ee_eca_cert_request.html">EeEcaCertRequest</a></div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;-- @param version     contains the current version of the data type. The </div>
-<div class="line"><a name="l00074"></a><span class="lineno"><a class="line" href="struct_ieee1609_dot2_eca_end_entity_interface_1_1_ee_eca_cert_request.html">   74</a></span>&#160;--                    version specified in <span class="keyword">this</span> document is version 1,</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;--                    represented by the integer 1.</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;-- @param currentTime contains the time of creation of <a class="code" href="struct_ieee1609_dot2_eca_end_entity_interface_1_1_ee_eca_cert_request.html">EeEcaCertRequest</a>.</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;-- @param tbsData     contains the ToBeSignedCertificate data used by the ECA </div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;--                    to generate the EE’s enrollment certificate. The </div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;--                    ToBeSignedCertificate is specified in Section 6.4.8 of</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;--                    IEEE 1609.2-2016.</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;-- @see <a class="code" href="ee-ra_8asn.html#ab8036e856800014c4399e429e567f931">Uint8</a>, <a class="code" href="eca-ee_8asn.html#ae3194664453168623af6deb7d3b48fa6">Time32</a>, ToBeSignedCertificate</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<a class="code" href="struct_ieee1609_dot2_eca_end_entity_interface_1_1_ee_eca_cert_request.html">EeEcaCertRequest</a> ::= SEQUENCE {</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    version             <a class="code" href="ee-ra_8asn.html#ab8036e856800014c4399e429e567f931">Uint8</a>(1),</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    currentTime         <a class="code" href="eca-ee_8asn.html#ae3194664453168623af6deb7d3b48fa6">Time32</a>,</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    tbsData             ToBeSignedCertificate (WITH COMPONENTS { ...,</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;      id(WITH COMPONENTS { ...,</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        linkageData ABSENT }),</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;      region PRESENT,</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;      appPermissions ABSENT,</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;      certIssuePermissions ABSENT,</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;      certRequestPermissions PRESENT,</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;      verifyKeyIndicator (WITH COMPONENTS {</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        verificationKey }) }),</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    ...</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;}</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;---</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;-- @brief This data type is used by the ECA to respond to an EE’s enrollment </div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;--        certificate request. Additional bootstrapping information including </div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;--        the RA<span class="stringliteral">&#39;s certificate are provided by the DCM in a zipped file.</span></div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="stringliteral">-- @class EcaEeCertResponse</span></div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="stringliteral">-- @param version               contains the current version of the data type. </span></div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="stringliteral">--                              The version specified in this document is </span></div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="stringliteral">--                              version 1, represented by the integer 1.</span></div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="stringliteral">-- @param requestHash           contains the hash of the original</span></div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="stringliteral">--                              EeEcaCertRequest message.</span></div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<span class="stringliteral">-- @param ecaCert               contains the Enrollment Certificate Authority</span></div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="stringliteral">--                              certificate.</span></div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;<span class="stringliteral">-- @param enrollmentCert        contains the Implicit Certificate structure of </span></div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;<span class="stringliteral">--                              the enrollment certificate, as specified in</span></div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="stringliteral">--                              Section 6.4.5 of IEEE 1609.2-2016.</span></div>
-<div class="line"><a name="l00112"></a><span class="lineno"><a class="line" href="struct_ieee1609_dot2_eca_end_entity_interface_1_1_eca_ee_cert_response.html">  112</a></span>&#160;<span class="stringliteral">-- @param privKeyReconstruction contains the private key reconstruction value </span></div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;<span class="stringliteral">--                              required by the EE to transform its private</span></div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="stringliteral">--                              key into an operational private key.</span></div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<span class="stringliteral">-- @see Uint8, HashedId8, Certificate, ImplicitCertificate,</span></div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;<span class="stringliteral">--      EccP256PrivateKeyReconstruction</span></div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;<span class="stringliteral">EcaEeCertResponse ::= SEQUENCE {</span></div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;<span class="stringliteral">    version                     Uint8(1),</span></div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;<span class="stringliteral">    requestHash                 HashedId8,</span></div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;<span class="stringliteral">    ecaCert                     Certificate,</span></div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;<span class="stringliteral">    enrollmentCert              ImplicitCertificate,</span></div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;<span class="stringliteral">    privKeyReconstruction       EccP256PrivateKeyReconstruction,</span></div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;<span class="stringliteral">    ...</span></div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;<span class="stringliteral">}</span></div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;<span class="stringliteral"></span></div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;<span class="stringliteral">END</span></div>
-<div class="ttc" id="eca-ee_8asn_html_abd13b91ed43f083d6b63c963c5013a9c"><div class="ttname"><a href="eca-ee_8asn.html#abd13b91ed43f083d6b63c963c5013a9c">IEEE1609dot2BaseTypes</a></div><div class="ttdeci">IMPORTS Uint8 FROM IEEE1609dot2BaseTypes</div><div class="ttdef"><b>Definition:</b> <a href="eca-ee_8asn_source.html#l00031">eca-ee.asn:31</a></div></div>
-<div class="ttc" id="struct_ieee1609_dot2_eca_end_entity_interface_1_1_ee_eca_cert_request_html"><div class="ttname"><a href="struct_ieee1609_dot2_eca_end_entity_interface_1_1_ee_eca_cert_request.html">Ieee1609Dot2EcaEndEntityInterface::EeEcaCertRequest</a></div><div class="ttdoc">This data type is used by the EE to request an enrollment certificate from the ECA. It is signed using the private key generated by the EE and the corresponding public key is placed in verificationKey for use by the ECA to generate the enrollment certificate. All the fields of ToBeSignedCertificate are filled by the EE/DCM, but the ECA may override them. </div><div class="ttdef"><b>Definition:</b> <a href="eca-ee_8asn_source.html#l00074">eca-ee.asn:74</a></div></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  <a class="code" href="ee-ra_8asn.html#ab8036e856800014c4399e429e567f931">Uint8</a></div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="eca-ee_8asn.html#a353843445fa9b2f87797c229486236ca">   32</a></span>&#160;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;FROM <a class="code" href="eca-ee_8asn.html#abd13b91ed43f083d6b63c963c5013a9c">IEEE1609dot2BaseTypes</a> {iso(1) identified-organization(3) ieee(111)</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;     standards-association-numbered-series-standards(2) wave-stds(1609)</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;     dot2(2) base(1) base-types(2)}</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <a class="code" href="cert-chain-files_8asn.html#a22cd7b3bd983c066922949a6f22c11a8">Certificate</a>,</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <a class="code" href="eca-ee_8asn.html#a353843445fa9b2f87797c229486236ca">ImplicitCertificate</a>,</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  ToBeSignedCertificate</div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="eca-ee_8asn.html#adcb97936cd8abf27bfacfb21be26a625">   40</a></span>&#160;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;FROM <a class="code" href="eca-ee_8asn.html#adcb97936cd8abf27bfacfb21be26a625">IEEE1609dot2</a> {iso(1) identified-organization(3) ieee(111)</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;     standards-association-numbered-series-standards(2) wave-stds(1609)</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;     dot2(2) base (1) schema (1)}</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  EccP256PrivateKeyReconstruction</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;FROM <a class="code" href="cert-profile_8asn.html#a69aef8c8ff2ad51e84342c36911bb1cc">Ieee1609dot2ScmsBaseTypes</a> {iso(1) identified-organization(3) ieee(111)</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;     standards-association-numbered-series-standards(2) wave-stds(1609)  dot2(2)</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;     scms (2) interfaces(1) base-types (2)}</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;---</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;-- @brief The EcaEndEntityInterfacePDU is the parent message type for messages </div>
+<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="namespace_ieee1609_dot2_eca_end_entity_interface.html">   55</a></span>&#160;--        sent between Enrollment <a class="code" href="cert-chain-files_8asn.html#a22cd7b3bd983c066922949a6f22c11a8">Certificate</a> Authority (ECA) and End Entities</div>
+<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="struct_ieee1609_dot2_eca_end_entity_interface_1_1_eca_end_entity_interface_p_d_u.html">   56</a></span>&#160;--        (EE).</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;-- @class <a class="code" href="struct_ieee1609_dot2_eca_end_entity_interface_1_1_eca_end_entity_interface_p_d_u.html">EcaEndEntityInterfacePDU</a></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;-- @param eeEcaCertRequest  contains the enrollment certificate request sent</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;--                          by the EE to the ECA.</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;-- @param ecaEeCertResponse contains the enrollment certificate response sent</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;--                          by the ECA to an EE.</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<a class="code" href="struct_ieee1609_dot2_eca_end_entity_interface_1_1_eca_end_entity_interface_p_d_u.html">EcaEndEntityInterfacePDU</a>::= CHOICE {</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    eeEcaCertRequest    <a class="code" href="struct_ieee1609_dot2_eca_end_entity_interface_1_1_ee_eca_cert_request.html">EeEcaCertRequest</a>,</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    ecaEeCertResponse   <a class="code" href="struct_ieee1609_dot2_eca_end_entity_interface_1_1_eca_ee_cert_response.html">EcaEeCertResponse</a>,</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    ...</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;}</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;---</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;-- @brief This data type is used by the EE to request an enrollment </div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;--        certificate from the ECA. It is <span class="keywordtype">signed</span> <span class="keyword">using</span> the <span class="keyword">private</span> key </div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;--        generated by the EE and the corresponding <span class="keyword">public</span> key is placed in </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;--        verificationKey <span class="keywordflow">for</span> use by the ECA to generate the enrollment</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;--        certificate. All the fields of ToBeSignedCertificate are filled by</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;--        the EE/DCM, but the ECA may <span class="keyword">override</span> them.</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;-- <span class="keyword">@class</span> <a class="code" href="struct_ieee1609_dot2_eca_end_entity_interface_1_1_ee_eca_cert_request.html">EeEcaCertRequest</a></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;-- @param version     contains the current version of the data type. The </div>
+<div class="line"><a name="l00077"></a><span class="lineno"><a class="line" href="struct_ieee1609_dot2_eca_end_entity_interface_1_1_ee_eca_cert_request.html">   77</a></span>&#160;--                    version specified in <span class="keyword">this</span> document is version 1,</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;--                    represented by the integer 1.</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;-- @param currentTime contains the time of creation of <a class="code" href="struct_ieee1609_dot2_eca_end_entity_interface_1_1_ee_eca_cert_request.html">EeEcaCertRequest</a>.</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;-- @param tbsData     contains the ToBeSignedCertificate data used by the ECA </div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;--                    to generate the EE’s enrollment certificate. The </div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;--                    ToBeSignedCertificate is specified in Section 6.4.8 of</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;--                    IEEE 1609.2-2016.</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;-- @see <a class="code" href="ee-ra_8asn.html#ab8036e856800014c4399e429e567f931">Uint8</a>, <a class="code" href="eca-ee_8asn.html#ae3194664453168623af6deb7d3b48fa6">Time32</a>, ToBeSignedCertificate</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<a class="code" href="struct_ieee1609_dot2_eca_end_entity_interface_1_1_ee_eca_cert_request.html">EeEcaCertRequest</a> ::= SEQUENCE {</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    version             <a class="code" href="ee-ra_8asn.html#ab8036e856800014c4399e429e567f931">Uint8</a>(1),</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    currentTime         <a class="code" href="eca-ee_8asn.html#ae3194664453168623af6deb7d3b48fa6">Time32</a>,</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    tbsData             ToBeSignedCertificate (WITH COMPONENTS { ...,</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;      id(WITH COMPONENTS { ...,</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        linkageData ABSENT }),</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;      region PRESENT,</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;      appPermissions ABSENT,</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;      certIssuePermissions ABSENT,</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;      certRequestPermissions PRESENT,</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;      verifyKeyIndicator (WITH COMPONENTS {</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        verificationKey }) }),</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    ...</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;}</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;---</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;-- @brief This data type is used by the ECA to respond to an EE’s enrollment </div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;--        certificate request. Additional bootstrapping information including </div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;--        the RA<span class="stringliteral">&#39;s certificate are provided by the DCM in a zipped file.</span></div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="stringliteral">-- @class EcaEeCertResponse</span></div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="stringliteral">-- @param version               contains the current version of the data type. </span></div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="stringliteral">--                              The version specified in this document is </span></div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<span class="stringliteral">--                              version 1, represented by the integer 1.</span></div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="stringliteral">-- @param requestHash           contains the hash of the original</span></div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;<span class="stringliteral">--                              EeEcaCertRequest message.</span></div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;<span class="stringliteral">-- @param ecaCert               contains the Enrollment Certificate Authority</span></div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="stringliteral">--                              certificate.</span></div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="stringliteral">-- @param enrollmentCert        contains the Implicit Certificate structure of </span></div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;<span class="stringliteral">--                              the enrollment certificate, as specified in</span></div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="stringliteral">--                              Section 6.4.5 of IEEE 1609.2-2016.</span></div>
+<div class="line"><a name="l00115"></a><span class="lineno"><a class="line" href="struct_ieee1609_dot2_eca_end_entity_interface_1_1_eca_ee_cert_response.html">  115</a></span>&#160;<span class="stringliteral">-- @param privKeyReconstruction contains the private key reconstruction value </span></div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;<span class="stringliteral">--                              required by the EE to transform its private</span></div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;<span class="stringliteral">--                              key into an operational private key.</span></div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;<span class="stringliteral">-- @see Uint8, HashedId8, Certificate, ImplicitCertificate,</span></div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;<span class="stringliteral">--      EccP256PrivateKeyReconstruction</span></div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;<span class="stringliteral">EcaEeCertResponse ::= SEQUENCE {</span></div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;<span class="stringliteral">    version                     Uint8(1),</span></div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;<span class="stringliteral">    requestHash                 HashedId8,</span></div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;<span class="stringliteral">    ecaCert                     Certificate,</span></div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;<span class="stringliteral">    enrollmentCert              ImplicitCertificate,</span></div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;<span class="stringliteral">    privKeyReconstruction       EccP256PrivateKeyReconstruction,</span></div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;<span class="stringliteral">    ...</span></div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;<span class="stringliteral">}</span></div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;<span class="stringliteral"></span></div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;<span class="stringliteral">END</span></div>
+<div class="ttc" id="eca-ee_8asn_html_abd13b91ed43f083d6b63c963c5013a9c"><div class="ttname"><a href="eca-ee_8asn.html#abd13b91ed43f083d6b63c963c5013a9c">IEEE1609dot2BaseTypes</a></div><div class="ttdeci">IMPORTS Uint8 FROM IEEE1609dot2BaseTypes</div><div class="ttdef"><b>Definition:</b> <a href="eca-ee_8asn_source.html#l00032">eca-ee.asn:32</a></div></div>
+<div class="ttc" id="struct_ieee1609_dot2_eca_end_entity_interface_1_1_ee_eca_cert_request_html"><div class="ttname"><a href="struct_ieee1609_dot2_eca_end_entity_interface_1_1_ee_eca_cert_request.html">Ieee1609Dot2EcaEndEntityInterface::EeEcaCertRequest</a></div><div class="ttdoc">This data type is used by the EE to request an enrollment certificate from the ECA. It is signed using the private key generated by the EE and the corresponding public key is placed in verificationKey for use by the ECA to generate the enrollment certificate. All the fields of ToBeSignedCertificate are filled by the EE/DCM, but the ECA may override them. </div><div class="ttdef"><b>Definition:</b> <a href="eca-ee_8asn_source.html#l00077">eca-ee.asn:77</a></div></div>
 <div class="ttc" id="ee-ra_8asn_html_ab8036e856800014c4399e429e567f931"><div class="ttname"><a href="ee-ra_8asn.html#ab8036e856800014c4399e429e567f931">Uint8</a></div><div class="ttdeci">IMPORTS Uint8</div><div class="ttdef"><b>Definition:</b> <a href="ee-ra_8asn_source.html#l00027">ee-ra.asn:27</a></div></div>
 <div class="ttc" id="eca-ee_8asn_html_ac728a6f68158b175b83fc09aaa624ac4"><div class="ttname"><a href="eca-ee_8asn.html#ac728a6f68158b175b83fc09aaa624ac4">License</a></div><div class="ttdeci">Copyright Crash Avoidance Metrics VSC5 Consortium Licensed under the Apache License</div><div class="ttdef"><b>Definition:</b> <a href="eca-ee_8asn_source.html#l00002">eca-ee.asn:2</a></div></div>
 <div class="ttc" id="eca-ee_8asn_html_aa5dd7be27a5a6b2b8a232a3352040973"><div class="ttname"><a href="eca-ee_8asn.html#aa5dd7be27a5a6b2b8a232a3352040973">Ieee1609Dot2EcaEndEntityInterface</a></div><div class="ttdeci">you may not use this file except in compliance with the License You may obtain a copy of the License at software distributed under the License is distributed on an AS IS WITHOUT WARRANTIES OR CONDITIONS OF ANY either express or implied See the License for the specific language governing permissions and limitations under the License Ieee1609Dot2EcaEndEntityInterface</div><div class="ttdef"><b>Definition:</b> <a href="eca-ee_8asn_source.html#l00018">eca-ee.asn:18</a></div></div>
 <div class="ttc" id="eca-ee_8asn_html_ae3194664453168623af6deb7d3b48fa6"><div class="ttname"><a href="eca-ee_8asn.html#ae3194664453168623af6deb7d3b48fa6">Time32</a></div><div class="ttdeci">IMPORTS Time32</div><div class="ttdef"><b>Definition:</b> <a href="eca-ee_8asn_source.html#l00028">eca-ee.asn:28</a></div></div>
-<div class="ttc" id="struct_ieee1609_dot2_eca_end_entity_interface_1_1_eca_ee_cert_response_html"><div class="ttname"><a href="struct_ieee1609_dot2_eca_end_entity_interface_1_1_eca_ee_cert_response.html">Ieee1609Dot2EcaEndEntityInterface::EcaEeCertResponse</a></div><div class="ttdoc">This data type is used by the ECA to respond to an EE’s enrollment certificate request. Additional bootstrapping information including the RA&#39;s certificate are provided by the DCM in a zipped file. </div><div class="ttdef"><b>Definition:</b> <a href="eca-ee_8asn_source.html#l00112">eca-ee.asn:112</a></div></div>
-<div class="ttc" id="struct_ieee1609_dot2_eca_end_entity_interface_1_1_eca_end_entity_interface_p_d_u_html"><div class="ttname"><a href="struct_ieee1609_dot2_eca_end_entity_interface_1_1_eca_end_entity_interface_p_d_u.html">Ieee1609Dot2EcaEndEntityInterface::EcaEndEntityInterfacePDU</a></div><div class="ttdoc">The EcaEndEntityInterfacePDU is the parent message type for messages sent between Enrollment Certific...</div><div class="ttdef"><b>Definition:</b> <a href="eca-ee_8asn_source.html#l00053">eca-ee.asn:53</a></div></div>
+<div class="ttc" id="struct_ieee1609_dot2_eca_end_entity_interface_1_1_eca_ee_cert_response_html"><div class="ttname"><a href="struct_ieee1609_dot2_eca_end_entity_interface_1_1_eca_ee_cert_response.html">Ieee1609Dot2EcaEndEntityInterface::EcaEeCertResponse</a></div><div class="ttdoc">This data type is used by the ECA to respond to an EE’s enrollment certificate request. Additional bootstrapping information including the RA&#39;s certificate are provided by the DCM in a zipped file. </div><div class="ttdef"><b>Definition:</b> <a href="eca-ee_8asn_source.html#l00115">eca-ee.asn:115</a></div></div>
+<div class="ttc" id="struct_ieee1609_dot2_eca_end_entity_interface_1_1_eca_end_entity_interface_p_d_u_html"><div class="ttname"><a href="struct_ieee1609_dot2_eca_end_entity_interface_1_1_eca_end_entity_interface_p_d_u.html">Ieee1609Dot2EcaEndEntityInterface::EcaEndEntityInterfacePDU</a></div><div class="ttdoc">The EcaEndEntityInterfacePDU is the parent message type for messages sent between Enrollment Certific...</div><div class="ttdef"><b>Definition:</b> <a href="eca-ee_8asn_source.html#l00056">eca-ee.asn:56</a></div></div>
 <div class="ttc" id="eca-ee_8asn_html_a2717778fc98aee3f8ce73113c56022c2"><div class="ttname"><a href="eca-ee_8asn.html#a2717778fc98aee3f8ce73113c56022c2">http</a></div><div class="ttdeci">you may not use this file except in compliance with the License You may obtain a copy of the License at http</div><div class="ttdef"><b>Definition:</b> <a href="eca-ee_8asn_source.html#l00010">eca-ee.asn:10</a></div></div>
 <div class="ttc" id="eca-ee_8asn_html_aed5841c3d8ddeb48881271a4b4e1fb84"><div class="ttname"><a href="eca-ee_8asn.html#aed5841c3d8ddeb48881271a4b4e1fb84">Partner</a></div><div class="ttdeci">Copyright Crash Avoidance Metrics Partner</div><div class="ttdef"><b>Definition:</b> <a href="eca-ee_8asn_source.html#l00002">eca-ee.asn:2</a></div></div>
 <div class="ttc" id="eca-ee_8asn_html_a1f7f072c8a0f1c480b7ba7545b8ac4ad"><div class="ttname"><a href="eca-ee_8asn.html#a1f7f072c8a0f1c480b7ba7545b8ac4ad">HashedId8</a></div><div class="ttdeci">IMPORTS HashedId8</div><div class="ttdef"><b>Definition:</b> <a href="eca-ee_8asn_source.html#l00028">eca-ee.asn:28</a></div></div>
@@ -249,9 +252,9 @@ $(document).ready(function(){initNavTree('eca-ee_8asn_source.html','');});
 <div class="ttc" id="cert-chain-files_8asn_html_a22cd7b3bd983c066922949a6f22c11a8"><div class="ttname"><a href="cert-chain-files_8asn.html#a22cd7b3bd983c066922949a6f22c11a8">Certificate</a></div><div class="ttdeci">IMPORTS Uint16 FROM Certificate</div><div class="ttdef"><b>Definition:</b> <a href="cert-chain-files_8asn_source.html#l00030">cert-chain-files.asn:30</a></div></div>
 <div class="ttc" id="cert-profile_8asn_html_a69aef8c8ff2ad51e84342c36911bb1cc"><div class="ttname"><a href="cert-profile_8asn.html#a69aef8c8ff2ad51e84342c36911bb1cc">Ieee1609dot2ScmsBaseTypes</a></div><div class="ttdeci">IMPORTS SequenceOfPsidSspRange FROM SequenceOfIdentifiedRegion FROM PermissibleCrls FROM ScmsSpclComponentCrlSeries FROM Ieee1609dot2ScmsBaseTypes</div><div class="ttdef"><b>Definition:</b> <a href="cert-profile_8asn_source.html#l00116">cert-profile.asn:116</a></div></div>
 <div class="ttc" id="eca-ee_8asn_html_a9beee1dcd12cad1170681164a38590c4"><div class="ttname"><a href="eca-ee_8asn.html#a9beee1dcd12cad1170681164a38590c4">BASIS</a></div><div class="ttdeci">you may not use this file except in compliance with the License You may obtain a copy of the License at software distributed under the License is distributed on an AS IS BASIS</div><div class="ttdef"><b>Definition:</b> <a href="eca-ee_8asn_source.html#l00010">eca-ee.asn:10</a></div></div>
-<div class="ttc" id="eca-ee_8asn_html_adcb97936cd8abf27bfacfb21be26a625"><div class="ttname"><a href="eca-ee_8asn.html#adcb97936cd8abf27bfacfb21be26a625">IEEE1609dot2</a></div><div class="ttdeci">IMPORTS Uint8 FROM ToBeSignedCertificate FROM IEEE1609dot2</div><div class="ttdef"><b>Definition:</b> <a href="eca-ee_8asn_source.html#l00038">eca-ee.asn:38</a></div></div>
+<div class="ttc" id="eca-ee_8asn_html_adcb97936cd8abf27bfacfb21be26a625"><div class="ttname"><a href="eca-ee_8asn.html#adcb97936cd8abf27bfacfb21be26a625">IEEE1609dot2</a></div><div class="ttdeci">IMPORTS Uint8 FROM ToBeSignedCertificate FROM IEEE1609dot2</div><div class="ttdef"><b>Definition:</b> <a href="eca-ee_8asn_source.html#l00040">eca-ee.asn:40</a></div></div>
 <div class="ttc" id="eca-ee_8asn_html_a651d4ffd4aba18e0309cac246411352e"><div class="ttname"><a href="eca-ee_8asn.html#a651d4ffd4aba18e0309cac246411352e">Version</a></div><div class="ttdeci">Copyright Crash Avoidance Metrics VSC5 Consortium Licensed under the Apache Version(the&quot;License&quot;)</div></div>
-<div class="ttc" id="eca-ee_8asn_html_a353843445fa9b2f87797c229486236ca"><div class="ttname"><a href="eca-ee_8asn.html#a353843445fa9b2f87797c229486236ca">ImplicitCertificate</a></div><div class="ttdeci">IMPORTS Uint8 FROM ImplicitCertificate</div><div class="ttdef"><b>Definition:</b> <a href="eca-ee_8asn_source.html#l00031">eca-ee.asn:31</a></div></div>
+<div class="ttc" id="eca-ee_8asn_html_a353843445fa9b2f87797c229486236ca"><div class="ttname"><a href="eca-ee_8asn.html#a353843445fa9b2f87797c229486236ca">ImplicitCertificate</a></div><div class="ttdeci">IMPORTS Uint8 FROM ImplicitCertificate</div><div class="ttdef"><b>Definition:</b> <a href="eca-ee_8asn_source.html#l00032">eca-ee.asn:32</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

@@ -18,7 +18,7 @@
 Ieee1609Dot2PcaRaError
 {iso(1) identified-organization(3) ieee(111) 
 standards-association-numbered-series-standards(2) wave-stds(1609)  
-dot2(2) scms(4) errors(2) pca-ra(15) major-version-2(2)}
+dot2(2) scms(2) errors(2) pca-ra (15)}
 
 DEFINITIONS AUTOMATIC TAGS ::= BEGIN
 

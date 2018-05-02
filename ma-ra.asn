@@ -18,7 +18,7 @@
 Ieee1609Dot2MaRaInterface
 {iso(1) identified-organization(3) ieee(111) 
 standards-association-numbered-series-standards(2) wave-stds(1609) dot2(2)
-scms(4) interfaces(1) ma-ra(14) major-version-2(2)}
+scms(2) interfaces(1) ma-ra(14)}
 
 DEFINITIONS AUTOMATIC TAGS ::= BEGIN 
 
@@ -33,13 +33,13 @@ IMPORTS
   Uint32
 FROM IEEE1609dot2BaseTypes {iso(1) identified-organization(3) ieee(111) 
     standards-association-numbered-series-standards(2) wave-stds(1609) dot2(2)
-    base(1) base-types(2) major-version-2(2)}
+    base(1) base-types(2)}
 
   Countersignature,
   SignerIdentifier
 FROM IEEE1609dot2 {iso(1) identified-organization(3) ieee(111) 
     standards-association-numbered-series-standards(2) wave-stds(1609) dot2(2)
-    base(1) schema(1) major-version-2(2)}
+    base(1) schema(1)}
 
   HPCR,
   HPCRAndHostInfo,
@@ -49,13 +49,13 @@ FROM IEEE1609dot2 {iso(1) identified-organization(3) ieee(111)
   RIF
 FROM Ieee1609dot2ScmsBaseTypes {iso(1) identified-organization(3) ieee(111)
     standards-association-numbered-series-standards(2) wave-stds(1609) dot2(2)
-    scms(4) interfaces(1) base-types(2) major-version-2(2)}
+    scms(2) interfaces(1) base-types(2)}
 
   ScopedMaRaBlacklistError,
   ScopedMaRaLCIError
 FROM Ieee1609dot2ScmsError {iso(1) identified-organization(3) ieee(111)
     standards-association-numbered-series-standards(2) wave-stds(1609) dot2(2)
-    scms(4) errors(2) complete(1) major-version-2(2)}
+    scms(2) errors(2) complete(1)}
 ;
 
 ---

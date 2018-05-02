@@ -110,7 +110,7 @@ $(document).ready(function(){initNavTree('crl-base-types_8asn_source.html','');}
 <div class="contents">
 <a href="crl-base-types_8asn.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;IEEE1609dot2CrlBaseTypes {iso(1) identified-organization(3) ieee(111) </div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;standards-association-numbered-series-standards(2) wave-stds(1609)  </div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;dot2(2) crl(3) base-types(2) major-version-2(2)}</div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;dot2(2) crl(3) base-types(1)}</div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;</div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;DEFINITIONS AUTOMATIC TAGS ::= BEGIN </div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div>
@@ -127,85 +127,85 @@ $(document).ready(function(){initNavTree('crl-base-types_8asn_source.html','');}
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;  <a class="code" href="ee-ma_8asn.html#af18a5e17edb8c1b1ae36902b4c7fe3c9">Opaque</a>,</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;  <a class="code" href="cert-profile_8asn.html#a511ecbeaef5bd32ad903817b99d76780">Psid</a>,</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  <a class="code" href="ee-ma_8asn.html#aea9ad74e96aef461e752f512b1c8dbb9">Signature</a>,</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  <a class="code" href="eca-ee_8asn.html#ae3194664453168623af6deb7d3b48fa6">Time32</a>,</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  Uint3,</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  <a class="code" href="ee-ra_8asn.html#ab8036e856800014c4399e429e567f931">Uint8</a>,</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  <a class="code" href="ee-ra_8asn.html#a299e539d39574f9ce0b3fa8ceeeeb9b5">Uint16</a>, </div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  <a class="code" href="scms-policy_8asn.html#a7ab725091f094f94415778e6a94f686e">Uint32</a>,</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  ValidityPeriod</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;FROM <a class="code" href="cert-profile_8asn.html#afd17868952716b258e77eb362191d410">IEEE1609dot2BaseTypes</a> {iso(1) identified-organization(3) ieee(111) </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    standards-association-numbered-series-standards(2) wave-stds(1609)  </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    dot2(2) base(1) base-types(2) major-version-2 (2)}</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;--</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  <a class="code" href="ee-ma_8asn.html#a1a458543c4ea60f925100ed980794f9e">ThreeDLocation</a>,</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  <a class="code" href="eca-ee_8asn.html#ae3194664453168623af6deb7d3b48fa6">Time32</a>,</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  Uint3,</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  <a class="code" href="ee-ra_8asn.html#ab8036e856800014c4399e429e567f931">Uint8</a>,</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  <a class="code" href="ee-ra_8asn.html#a299e539d39574f9ce0b3fa8ceeeeb9b5">Uint16</a>, </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  <a class="code" href="scms-policy_8asn.html#a7ab725091f094f94415778e6a94f686e">Uint32</a>,</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  ValidityPeriod</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;FROM <a class="code" href="cert-profile_8asn.html#afd17868952716b258e77eb362191d410">IEEE1609dot2BaseTypes</a> {iso(1) identified-organization(3) ieee(111) </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    standards-association-numbered-series-standards(2) wave-stds(1609)  </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    dot2(2) base(1) base-types(2)}</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;--</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;--  CRL contents</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;--</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;--</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;--  CRL contents</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;--</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;CrlContents ::= SEQUENCE {</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    version            <a class="code" href="ee-ra_8asn.html#ab8036e856800014c4399e429e567f931">Uint8</a> (1),</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    crlSeries          <a class="code" href="scms-base-types_8asn.html#afa629dcec7066f755e618a0855b96797">CrlSeries</a>,</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    cracaId            <a class="code" href="eca-ee_8asn.html#a1f7f072c8a0f1c480b7ba7545b8ac4ad">HashedId8</a>,</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    issueDate          <a class="code" href="eca-ee_8asn.html#ae3194664453168623af6deb7d3b48fa6">Time32</a>,   </div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    nextCrl            <a class="code" href="eca-ee_8asn.html#ae3194664453168623af6deb7d3b48fa6">Time32</a>,  </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    priorityInfo       CrlPriorityInfo,</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    typeSpecific       CHOICE {</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        fullHashCrl          ToBeSignedHashIdCrl,            </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        deltaHashCrl         ToBeSignedHashIdCrl,            </div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        fullLinkedCrl        ToBeSignedLinkageValueCrl,</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        deltaLinkedCrl       ToBeSignedLinkageValueCrl,</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        ...</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    }</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;}    </div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;CrlPriorityInfo ::= SEQUENCE {  </div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    priority          Uint8 OPTIONAL,</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    ...</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;}</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;--</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;CrlContents ::= SEQUENCE {</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    version            <a class="code" href="ee-ra_8asn.html#ab8036e856800014c4399e429e567f931">Uint8</a> (1),</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    crlSeries          <a class="code" href="scms-base-types_8asn.html#afa629dcec7066f755e618a0855b96797">CrlSeries</a>,</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    cracaId            <a class="code" href="eca-ee_8asn.html#a1f7f072c8a0f1c480b7ba7545b8ac4ad">HashedId8</a>,</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    issueDate          <a class="code" href="eca-ee_8asn.html#ae3194664453168623af6deb7d3b48fa6">Time32</a>,   </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    nextCrl            <a class="code" href="eca-ee_8asn.html#ae3194664453168623af6deb7d3b48fa6">Time32</a>,  </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    priorityInfo       CrlPriorityInfo,</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    typeSpecific       CHOICE {</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        fullHashCrl          ToBeSignedHashIdCrl,            </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        deltaHashCrl         ToBeSignedHashIdCrl,            </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        fullLinkedCrl        ToBeSignedLinkageValueCrl,</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        deltaLinkedCrl       ToBeSignedLinkageValueCrl,</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        ...</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    }</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;}    </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;CrlPriorityInfo ::= SEQUENCE {  </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    priority          Uint8 OPTIONAL,</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    ...</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;}</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;ToBeSignedHashIdCrl ::= SEQUENCE {  </div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    crlSerial         <a class="code" href="scms-policy_8asn.html#a7ab725091f094f94415778e6a94f686e">Uint32</a>,</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    entries           SequenceOfHashBasedRevocationInfo,</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    ...</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;}</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;HashBasedRevocationInfo ::= SEQUENCE {</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keywordtype">id</span>         <a class="code" href="ma-ra_8asn.html#af6c3cb04ff0451b0f7c6b4b68af4d8b7">HashedId10</a>,</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    expiry     Time32</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;}</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;SequenceOfHashBasedRevocationInfo ::= </div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    SEQUENCE OF HashBasedRevocationInfo</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;ToBeSignedHashIdCrl ::= SEQUENCE {  </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    crlSerial         <a class="code" href="scms-policy_8asn.html#a7ab725091f094f94415778e6a94f686e">Uint32</a>,</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    entries           SequenceOfHashBasedRevocationInfo,</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    ...</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;}</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;HashBasedRevocationInfo ::= SEQUENCE {</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordtype">id</span>         <a class="code" href="ma-ra_8asn.html#af6c3cb04ff0451b0f7c6b4b68af4d8b7">HashedId10</a>,</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    expiry     Time32</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;}</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;SequenceOfHashBasedRevocationInfo ::= </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    SEQUENCE OF HashBasedRevocationInfo</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;ToBeSignedLinkageValueCrl ::= SEQUENCE {  </div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    iRev               <a class="code" href="pca-ra_8asn.html#a835668c919c2f593e2ab87cc42aa91f4">IValue</a>,</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    indexWithinI       <a class="code" href="ee-ra_8asn.html#ab8036e856800014c4399e429e567f931">Uint8</a>,</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    individual         SequenceOfJMaxGroup OPTIONAL,</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    groups             SequenceOfGroupCrlEntry OPTIONAL,</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    ...</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;} </div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;(WITH COMPONENTS {..., individual PRESENT} |</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; WITH COMPONENTS {..., groups PRESENT})</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;ToBeSignedLinkageValueCrl ::= SEQUENCE {  </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    iValue             <a class="code" href="pca-ra_8asn.html#a835668c919c2f593e2ab87cc42aa91f4">IValue</a>,</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    indexWithinI       <a class="code" href="ee-ra_8asn.html#ab8036e856800014c4399e429e567f931">Uint8</a>,</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    individual         SequenceOfJMaxGroup OPTIONAL,</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    groups             SequenceOfGroupCrlEntry OPTIONAL,</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    ...</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;} </div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;(WITH COMPONENTS {..., individual PRESENT} |</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; WITH COMPONENTS {..., groups PRESENT})</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;JMaxGroup ::= SEQUENCE {</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    jmax              <a class="code" href="ee-ra_8asn.html#ab8036e856800014c4399e429e567f931">Uint8</a>,</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    contents          SequenceOfLAGroup,</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    ...</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;}</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;JMaxGroup ::= SEQUENCE {</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    jmax              <a class="code" href="ee-ra_8asn.html#ab8036e856800014c4399e429e567f931">Uint8</a>,</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    contents          SEQUENCE OF LAGroup,</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    ...</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;}</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;SequenceOfJMaxGroup ::= SEQUENCE OF JMaxGroup</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;LAGroup ::= SEQUENCE {</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    la1Id            <a class="code" href="la-ra_8asn.html#a7ddbb3e79b418daba8c225fa203ceb2a">LaId</a>,</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    la2Id            <a class="code" href="la-ra_8asn.html#a7ddbb3e79b418daba8c225fa203ceb2a">LaId</a>,</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    contents         SequenceOfIMaxGroup,</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    ...</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;SequenceOfJMaxGroup ::= SEQUENCE OF JMaxGroup</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;LAGroup ::= SEQUENCE {</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    la1Id            <a class="code" href="la-ra_8asn.html#a7ddbb3e79b418daba8c225fa203ceb2a">LaId</a>,</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    la2Id            <a class="code" href="la-ra_8asn.html#a7ddbb3e79b418daba8c225fa203ceb2a">LaId</a>,</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    contents          SequenceOfIMaxGroup </div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;}</div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;SequenceOfLAGroup ::= SEQUENCE OF LAGroup</div>
@@ -252,6 +252,7 @@ $(document).ready(function(){initNavTree('crl-base-types_8asn_source.html','');}
 <div class="ttc" id="eca-ee_8asn_html_a1f7f072c8a0f1c480b7ba7545b8ac4ad"><div class="ttname"><a href="eca-ee_8asn.html#a1f7f072c8a0f1c480b7ba7545b8ac4ad">HashedId8</a></div><div class="ttdeci">IMPORTS HashedId8</div><div class="ttdef"><b>Definition:</b> <a href="eca-ee_8asn_source.html#l00028">eca-ee.asn:28</a></div></div>
 <div class="ttc" id="scms-base-types_8asn_html_afa629dcec7066f755e618a0855b96797"><div class="ttname"><a href="scms-base-types_8asn.html#afa629dcec7066f755e618a0855b96797">CrlSeries</a></div><div class="ttdeci">IMPORTS CrlSeries</div><div class="ttdef"><b>Definition:</b> <a href="scms-base-types_8asn_source.html#l00026">scms-base-types.asn:26</a></div></div>
 <div class="ttc" id="scms-policy_8asn_html_a7ab725091f094f94415778e6a94f686e"><div class="ttname"><a href="scms-policy_8asn.html#a7ab725091f094f94415778e6a94f686e">Uint32</a></div><div class="ttdeci">IMPORTS SequenceOfCertificate FROM Uint32</div><div class="ttdef"><b>Definition:</b> <a href="scms-policy_8asn_source.html#l00031">scms-policy.asn:31</a></div></div>
+<div class="ttc" id="ee-ma_8asn_html_a1a458543c4ea60f925100ed980794f9e"><div class="ttname"><a href="ee-ma_8asn.html#a1a458543c4ea60f925100ed980794f9e">ThreeDLocation</a></div><div class="ttdeci">IMPORTS ThreeDLocation</div><div class="ttdef"><b>Definition:</b> <a href="ee-ma_8asn_source.html#l00027">ee-ma.asn:27</a></div></div>
 <div class="ttc" id="ee-ma_8asn_html_aea9ad74e96aef461e752f512b1c8dbb9"><div class="ttname"><a href="ee-ma_8asn.html#aea9ad74e96aef461e752f512b1c8dbb9">Signature</a></div><div class="ttdeci">IMPORTS Signature</div><div class="ttdef"><b>Definition:</b> <a href="ee-ma_8asn_source.html#l00027">ee-ma.asn:27</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

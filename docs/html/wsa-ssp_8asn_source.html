@@ -110,18 +110,18 @@ $(document).ready(function(){initNavTree('wsa-ssp_8asn_source.html','');});
 <div class="contents">
 <a href="wsa-ssp_8asn.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;IEEE1609dot2WsaSsp {iso(1) identified-organization(3) ieee(111) </div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;standards-association-numbered-series-standards(2) wave-stds(1609)  </div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;dot2(2) wsa(4) ssp(2)  major-version-2 (2)}</div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;dot2(2) wsa(4) ssp(2)}</div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;</div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;DEFINITIONS AUTOMATIC TAGS ::= BEGIN </div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;EXPORTS ALL;</div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;IMPORTS </div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;  SequenceOfPsid,</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;  <a class="code" href="scms-protocol_8asn.html#ace6b48091754551e0d229fc7f220b925">SequenceOfPsid</a>,</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;  <a class="code" href="ee-ra_8asn.html#ab8036e856800014c4399e429e567f931">Uint8</a></div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;FROM <a class="code" href="cert-profile_8asn.html#afd17868952716b258e77eb362191d410">IEEE1609dot2BaseTypes</a> {iso(1) identified-organization(3) ieee(111) </div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    standards-association-numbered-series-standards(2) wave-stds(1609)  </div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    dot2(2) base(1) base-types(2)  major-version-2 (2)}</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    dot2(2) base(1) base-types(2)}</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;;</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;--</div>
@@ -171,6 +171,7 @@ $(document).ready(function(){initNavTree('wsa-ssp_8asn_source.html','');});
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  SequenceOfEdcaIdentifier ::= SEQUENCE OF EdcaIdentifier</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;END</div>
+<div class="ttc" id="scms-protocol_8asn_html_ace6b48091754551e0d229fc7f220b925"><div class="ttname"><a href="scms-protocol_8asn.html#ace6b48091754551e0d229fc7f220b925">SequenceOfPsid</a></div><div class="ttdeci">IMPORTS SequenceOfPsid</div><div class="ttdef"><b>Definition:</b> <a href="scms-protocol_8asn_source.html#l00026">scms-protocol.asn:26</a></div></div>
 <div class="ttc" id="ee-ra_8asn_html_ab8036e856800014c4399e429e567f931"><div class="ttname"><a href="ee-ra_8asn.html#ab8036e856800014c4399e429e567f931">Uint8</a></div><div class="ttdeci">IMPORTS Uint8</div><div class="ttdef"><b>Definition:</b> <a href="ee-ra_8asn_source.html#l00027">ee-ra.asn:27</a></div></div>
 <div class="ttc" id="cert-profile_8asn_html_afd17868952716b258e77eb362191d410"><div class="ttname"><a href="cert-profile_8asn.html#afd17868952716b258e77eb362191d410">IEEE1609dot2BaseTypes</a></div><div class="ttdeci">IMPORTS SequenceOfPsidSspRange FROM SequenceOfIdentifiedRegion FROM IEEE1609dot2BaseTypes</div><div class="ttdef"><b>Definition:</b> <a href="cert-profile_8asn_source.html#l00043">cert-profile.asn:43</a></div></div>
 </div><!-- fragment --></div><!-- contents -->

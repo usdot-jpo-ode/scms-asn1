@@ -18,7 +18,7 @@
 Ieee1609Dot2ScmsComponentCertificateManagement
 {iso(1) identified-organization(3) ieee(111) 
 standards-association-numbered-series-standards(2) wave-stds(1609)  
-dot2(2) scms(4) interfaces(1) component-certificate-management (3) major-version-2(2)}
+dot2(2) scms(2) interfaces(1) component-certificate-management (3)}
 
 DEFINITIONS AUTOMATIC TAGS ::= BEGIN
 
@@ -28,36 +28,34 @@ IMPORTS
   Uint8
 FROM IEEE1609dot2BaseTypes {iso(1) identified-organization(3) ieee(111) 
   standards-association-numbered-series-standards(2) wave-stds(1609)  
-  dot2(2) base(1) base-types(2) major-version-2(2)}
+  dot2(2) base(1) base-types(2)}
 
   ScopedComponentCertificateManagementError
 FROM Ieee1609dot2ScmsError {iso(1) identified-organization(3) ieee(111)
   standards-association-numbered-series-standards(2) wave-stds(1609)  dot2(2)
-  scms(4) errors(2) complete (1) major-version-2(2)}
+  scms (2) errors(2) complete (1)}
 
   ExplicitCertificate
 FROM IEEE1609dot2 {iso(1) identified-organization(3) ieee(111) 
   standards-association-numbered-series-standards(2) wave-stds(1609)  
-  dot2(2) base(1) schema(1) major-version-2(2)}
+  dot2(2) base(1) schema(1)}
 
-  Time32
+  Time64
 FROM IEEE1609dot2 {iso(1) identified-organization(3) ieee(111)
    standards-association-numbered-series-standards(2) wave-stds(1609)
-   dot2(2) base(1) base-types(2) major-version-2(2)}
+   dot2(2) base(1) base-types(2)}
 
   SecuredCrl
 FROM IEEE1609dot2Crl {iso(1) identified-organization(3) ieee(111) 
    standards-association-numbered-series-standards(2) wave-stds(1609) dot2(2)
-   crl(3) protocol(1) major-version-2(2)}
+   crl(3) protocol(2)}
 
   SignedElectorEndorsement
 FROM IEEE1609dot2ScmsProtocol {iso(1) identified-organization(3) ieee(111)
   standards-association-numbered-series-standards(2) wave-stds(1609)
-  dot2(2) scms(4) interfaces(1) protocol(1) major-version-2(2)}
+  dot2(2) scms(2) interfaces(1) protocol(1)}
 
 ;
-
-HashedId32  ::= OCTET STRING (SIZE(32))
 
 ---
 -- @brief This data type is the parent structure for all component certificate
@@ -67,7 +65,6 @@ HashedId32  ::= OCTET STRING (SIZE(32))
 --        signed by the respective Elector.
 ScmsComponentCertificateManagementPDU::= CHOICE {
     tbsElectorEndorsement TbsElectorEndorsement,
-    electorBallot ElectorBallot,
     ...
 }
 
@@ -77,24 +74,15 @@ ScmsComponentCertificateManagementPDU::= CHOICE {
 --        A signed endorsement is a copy of that whole structure with a
 --        signature.
 -- @class TbsElectorEndorsement 
--- @param type             Defines the action (add/remove) to be taken over a
---                         certificate.
--- @param certificateHash  The hash of the certificate with respect to which the 
---                         action is to be taken.
--- @param generationTime   Defines the time at which the message was generated.
---                         The message takes effect immediately on generation.
---                         For an add action type, the added certificate is considered
---                         to be valid from the start of its validity period, no matter
---                         what the generation time value in this message is. For a
---                         revoke action type, the revoked certificate is considered
---                         revoked from the time of the earliest generation time on 
---                         a valid revoke message.
--- @see HashedId32
+-- @param type          defines the action (add/remove) to be taken over a
+--                      certificate.
+-- @param certificate   denotes the certificate to be added or removed.
+-- @param effectiveTime defines the effective time for this message.
+-- @see ExplicitCertificate, Time64
 TbsElectorEndorsement ::= SEQUENCE {
-    type 				EndorsementType,
-    certificateHash  	HashedId32,
-    generationTime       Time32,
-    ...
+    type EndorsementType,
+    certificate ExplicitCertificate,
+    effectiveTime Time64 OPTIONAL
 }
 
 ---
@@ -124,8 +112,6 @@ EndorsementType ::= ENUMERATED {
 -- @see SignedElectorEndorsement
 ElectorBallot ::= SEQUENCE {
     -- ballot TbsBallot,
-    -- each signature shall contain a copy of the same TbsElectorEndorsement 
-    certificate  ExplicitCertificate, -- root CA or elector 
     endorsements SEQUENCE SIZE(1..MAX) OF SignedElectorEndorsement,
     ...
 }

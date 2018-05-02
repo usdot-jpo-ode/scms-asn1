@@ -19,6 +19,7 @@ var searchData=
   ['larainterfacepdu',['LaRaInterfacePDU',['../struct_ieee1609_dot2_la_ra_interface_1_1_la_ra_interface_p_d_u.html',1,'Ieee1609Dot2LaRaInterface']]],
   ['larandomcontribution',['LaRandomContribution',['../struct_ieee1609_dot2_la_pca_interface_1_1_la_random_contribution.html',1,'Ieee1609Dot2LaPcaInterface']]],
   ['laraprelinkagevalueresponsemsg',['LaRaPreLinkageValueResponseMsg',['../struct_ieee1609_dot2_la_ra_interface_1_1_la_ra_pre_linkage_value_response_msg.html',1,'Ieee1609Dot2LaRaInterface']]],
+  ['lassp',['LaSsp',['../struct_i_e_e_e1609dot2_scms_protocol_1_1_la_ssp.html',1,'IEEE1609dot2ScmsProtocol']]],
   ['lci2ls',['LCI2LS',['../struct_ieee1609_dot2_la_ma_interface_1_1_l_c_i2_l_s.html',1,'Ieee1609Dot2LaMaInterface']]],
   ['lciandhostinfo',['LCIAndHostInfo',['../struct_ieee1609dot2_scms_base_types_1_1_l_c_i_and_host_info.html',1,'Ieee1609dot2ScmsBaseTypes']]],
   ['linkagechainid',['LinkageChainId',['../struct_ieee1609dot2_scms_base_types_1_1_linkage_chain_id.html',1,'Ieee1609dot2ScmsBaseTypes']]],
@@ -27,6 +28,7 @@ var searchData=
   ['localcertificatechainfile',['LocalCertificateChainFile',['../struct_i_e_e_e1609dot2certchains_1_1_local_certificate_chain_file.html',1,'IEEE1609dot2certchains']]],
   ['localpolicydata',['LocalPolicyData',['../struct_ieee1609dot2_scms_policy_types_1_1_local_policy_data.html',1,'Ieee1609dot2ScmsPolicyTypes']]],
   ['localpolicyfile',['LocalPolicyFile',['../struct_ieee1609dot2_scms_policy_types_1_1_local_policy_file.html',1,'Ieee1609dot2ScmsPolicyTypes']]],
+  ['lopssp',['LopSsp',['../struct_i_e_e_e1609dot2_scms_protocol_1_1_lop_ssp.html',1,'IEEE1609dot2ScmsProtocol']]],
   ['lv2hpcr',['Lv2HPCR',['../struct_ieee1609_dot2_ma_pca_interface_1_1_lv2_h_p_c_r.html',1,'Ieee1609Dot2MaPcaInterface']]],
   ['lv2plv',['Lv2Plv',['../struct_ieee1609_dot2_ma_pca_interface_1_1_lv2_plv.html',1,'Ieee1609Dot2MaPcaInterface']]]
 ];

@@ -128,7 +128,7 @@ $(document).ready(function(){initNavTree('la-pca_8asn_source.html','');});
 <div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="la-pca_8asn.html#a37696ebe4b91dc62c47f28d9ba9e18d7">   18</a></span>&#160;<a class="code" href="la-pca_8asn.html#a37696ebe4b91dc62c47f28d9ba9e18d7">Ieee1609Dot2LaPcaInterface</a></div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;{iso(1) identified-organization(3) ieee(111) </div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;standards-association-numbered-series-standards(2) wave-stds(1609)  </div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;dot2(2) scms(4) interfaces(1) la-pca (10) major-version-2(2)}</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;dot2(2) scms(2) interfaces(1) la-pca (10)}</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;DEFINITIONS AUTOMATIC TAGS ::= BEGIN</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
@@ -142,40 +142,40 @@ $(document).ready(function(){initNavTree('la-pca_8asn_source.html','');});
 <div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="la-pca_8asn.html#a4c6bbdd82cc4e045da8ac50ca15cff57">   32</a></span>&#160;  <a class="code" href="scms-policy_8asn.html#a7ab725091f094f94415778e6a94f686e">Uint32</a></div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;FROM <a class="code" href="la-pca_8asn.html#a4c6bbdd82cc4e045da8ac50ca15cff57">IEEE1609dot2BaseTypes</a> {iso(1) identified-organization(3) ieee(111) </div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    standards-association-numbered-series-standards(2) wave-stds(1609) dot2(2)</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    base(1) base-types(2) major-version-2(2)}</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    base(1) base-types(2)}</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <a class="code" href="cert-chain-files_8asn.html#a22cd7b3bd983c066922949a6f22c11a8">Certificate</a>,</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <a class="code" href="la-pca_8asn.html#af48cea4797644a07b719c762a37cedfc">EncryptedData</a>,</div>
 <div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="la-pca_8asn.html#a3810bd68239d2e7b032927336ddbd8e1">   39</a></span>&#160;  <a class="code" href="pca-ra_8asn.html#af4db67fead528a54b42906dbcf7177ca">RecipientInfo</a></div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;FROM <a class="code" href="la-pca_8asn.html#a9c2dacf46d5209606f80c6a43c380a3f">IEEE1609dot2</a> {iso(1) identified-organization(3) ieee(111) </div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    standards-association-numbered-series-standards(2) wave-stds(1609) dot2(2)</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    base(1) schema(1) major-version-2(2)}</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    base(1) schema(1)}</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  ScopedLaPcaError</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;FROM <a class="code" href="la-ma_8asn.html#af1c6f6d1571667a184d0aee0e86132c1">Ieee1609dot2ScmsError</a> {iso(1) identified-organization(3) ieee(111)</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    standards-association-numbered-series-standards(2) wave-stds(1609) dot2(2)</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    scms(4) errors(2) complete(1) major-version-2(2)}</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    scms(2) errors(2) complete(1)}</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  FullSizeHash,</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <a class="code" href="la-pca_8asn.html#a3810bd68239d2e7b032927336ddbd8e1">LaHostnameId</a>,</div>
 <div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="la-pca_8asn.html#acf2486acd0e3e09b20b867c6e0519a7b">   51</a></span>&#160;  <a class="code" href="la-ra_8asn.html#a6553e4583f9605d14d5e29e31bee3922">PcaHostnameId</a></div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;FROM <a class="code" href="la-pca_8asn.html#acf2486acd0e3e09b20b867c6e0519a7b">Ieee1609dot2ScmsBaseTypes</a> {iso(1) identified-organization(3) ieee(111)</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    standards-association-numbered-series-standards(2) wave-stds(1609) dot2(2)</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    scms(4) interfaces(1) base-types(2) major-version-2(2)}</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    scms(2) interfaces(1) base-types(2)}</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;;</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;---</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;-- @brief The LaPcaInterfacePDU is the parent message type <span class="keywordflow">for</span> messages sent</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;--        between Linkage Authority (LA) and Pseudonym <a class="code" href="cert-chain-files_8asn.html#a22cd7b3bd983c066922949a6f22c11a8">Certificate</a> Authority </div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;--        (PCA).</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;-- <span class="keyword">@class</span> LaPcaInterfacePDU</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;-- @class LaPcaInterfacePDU</div>
 <div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="namespace_ieee1609_dot2_la_pca_interface.html">   62</a></span>&#160;-- @param pcaLaKeyAgreementRequest  contains the key agreement request sent</div>
 <div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="struct_ieee1609_dot2_la_pca_interface_1_1_la_pca_interface_p_d_u.html">   63</a></span>&#160;--                                  from PCA to LA.</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;-- @param laPcaKeyAgreementResponse contains the response to key agreement</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;--                                  request. Sent from LA to PCA.</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;-- @param pcaLaKeyAgreementAck      contains the acknowledgement of receipt of</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;--                                  response from LA <span class="keywordflow">for</span> key agreement.</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;LaPcaInterfacePDU::= CHOICE {</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;--                                  response from LA for key agreement.</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<a class="code" href="struct_ieee1609_dot2_la_pca_interface_1_1_la_pca_interface_p_d_u.html">LaPcaInterfacePDU</a>::= CHOICE {</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  pcaLaKeyAgreementRequest    <a class="code" href="struct_ieee1609_dot2_la_pca_interface_1_1_pca_la_key_agreement_request_msg.html">PcaLaKeyAgreementRequestMsg</a>,</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  laPcaKeyAgreementResponse   <a class="code" href="struct_ieee1609_dot2_la_pca_interface_1_1_la_pca_key_agreement_response_msg.html">LaPcaKeyAgreementResponseMsg</a>,</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  pcaLaKeyAgreementAck        <a class="code" href="struct_ieee1609_dot2_la_pca_interface_1_1_pca_la_key_agreement_ack_msg.html">PcaLaKeyAgreementAckMsg</a>,</div>
@@ -301,6 +301,7 @@ $(document).ready(function(){initNavTree('la-pca_8asn_source.html','');});
 <div class="ttc" id="la-pca_8asn_html_a651d4ffd4aba18e0309cac246411352e"><div class="ttname"><a href="la-pca_8asn.html#a651d4ffd4aba18e0309cac246411352e">Version</a></div><div class="ttdeci">Copyright Crash Avoidance Metrics VSC5 Consortium Licensed under the Apache Version(the&quot;License&quot;)</div></div>
 <div class="ttc" id="struct_ieee1609_dot2_la_pca_interface_1_1_pca_la_key_agreement_request_msg_html"><div class="ttname"><a href="struct_ieee1609_dot2_la_pca_interface_1_1_pca_la_key_agreement_request_msg.html">Ieee1609Dot2LaPcaInterface::PcaLaKeyAgreementRequestMsg</a></div><div class="ttdoc">PCA uses this data type to initiate key agreement with an LA. </div><div class="ttdef"><b>Definition:</b> <a href="la-pca_8asn_source.html#l00087">la-pca.asn:87</a></div></div>
 <div class="ttc" id="la-pca_8asn_html_ae3194664453168623af6deb7d3b48fa6"><div class="ttname"><a href="la-pca_8asn.html#ae3194664453168623af6deb7d3b48fa6">Time32</a></div><div class="ttdeci">IMPORTS Time32</div><div class="ttdef"><b>Definition:</b> <a href="la-pca_8asn_source.html#l00027">la-pca.asn:27</a></div></div>
+<div class="ttc" id="struct_ieee1609_dot2_la_pca_interface_1_1_la_pca_interface_p_d_u_html"><div class="ttname"><a href="struct_ieee1609_dot2_la_pca_interface_1_1_la_pca_interface_p_d_u.html">Ieee1609Dot2LaPcaInterface::LaPcaInterfacePDU</a></div><div class="ttdoc">The LaPcaInterfacePDU is the parent message type for messages sent between Linkage Authority (LA) and...</div><div class="ttdef"><b>Definition:</b> <a href="la-pca_8asn_source.html#l00063">la-pca.asn:63</a></div></div>
 <div class="ttc" id="la-pca_8asn_html_a2717778fc98aee3f8ce73113c56022c2"><div class="ttname"><a href="la-pca_8asn.html#a2717778fc98aee3f8ce73113c56022c2">http</a></div><div class="ttdeci">you may not use this file except in compliance with the License You may obtain a copy of the License at http</div><div class="ttdef"><b>Definition:</b> <a href="la-pca_8asn_source.html#l00010">la-pca.asn:10</a></div></div>
 <div class="ttc" id="la-pca_8asn_html_a9c2dacf46d5209606f80c6a43c380a3f"><div class="ttname"><a href="la-pca_8asn.html#a9c2dacf46d5209606f80c6a43c380a3f">IEEE1609dot2</a></div><div class="ttdeci">IMPORTS Uint32 FROM RecipientInfo FROM IEEE1609dot2</div><div class="ttdef"><b>Definition:</b> <a href="la-pca_8asn_source.html#l00039">la-pca.asn:39</a></div></div>
 <div class="ttc" id="la-pca_8asn_html_aed5841c3d8ddeb48881271a4b4e1fb84"><div class="ttname"><a href="la-pca_8asn.html#aed5841c3d8ddeb48881271a4b4e1fb84">Partner</a></div><div class="ttdeci">Copyright Crash Avoidance Metrics Partner</div><div class="ttdef"><b>Definition:</b> <a href="la-pca_8asn_source.html#l00002">la-pca.asn:2</a></div></div>

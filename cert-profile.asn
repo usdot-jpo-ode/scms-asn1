@@ -16,7 +16,7 @@
 -- @namespace IEEE1609dot2-profiles
 IEEE1609dot2-profiles {iso(1) identified-organization(3) ieee(111) 
 standards-association-numbered-series-standards(2) wave-stds(1609)  
-dot2(2) base(1) profiles(3) major-version-2(2)}
+dot2(2) base (1) profiles (3)}
 
 DEFINITIONS AUTOMATIC TAGS ::= BEGIN
 
@@ -34,7 +34,7 @@ IMPORTS
   SequenceOfPsidSspRange
 FROM IEEE1609dot2 {iso(1) identified-organization(3) ieee(111) 
     standards-association-numbered-series-standards(2) wave-stds(1609)  
-    dot2(2) base(1) schema(1) major-version-2(2)}
+    dot2(2) base(1) schema(1)}
 
   CrlSeries,
   IdentifiedRegion,
@@ -43,18 +43,18 @@ FROM IEEE1609dot2 {iso(1) identified-organization(3) ieee(111)
   SequenceOfIdentifiedRegion
 FROM IEEE1609dot2BaseTypes {iso(1) identified-organization(3) ieee(111) 
 standards-association-numbered-series-standards(2) wave-stds(1609)  
-dot2(2) base(1) base-types(2) major-version-2(2)}
+dot2(2) base(1) base-types(2)}
 
   CrlPsid -- PSID = 0x100
 FROM IEEE1609dot2Crl {iso(1) identified-organization(3) ieee(111) 
   standards-association-numbered-series-standards(2) wave-stds(1609)  
-  dot2(2) crl(3) protocol(1) major-version-2(2)}
+  dot2(2) crl(3) protocol(2)}
 
   CrlSsp,
   PermissibleCrls
 FROM IEEE1609dot2CrlSsp {iso(1) identified-organization(3) ieee(111) 
     standards-association-numbered-series-standards(2) wave-stds(1609)  
-    dot2(2) crl(3) service-specific-permissions(3) major-version-2(2)}
+    dot2(2) crl(3) service-specific-permissions (3)}
 
   Canada,
   Mexico,
@@ -116,7 +116,7 @@ FROM IEEE1609dot2CrlSsp {iso(1) identified-organization(3) ieee(111)
   ScmsSpclComponentCrlSeries
 FROM Ieee1609dot2ScmsBaseTypes {iso(1) identified-organization(3) ieee(111)
 standards-association-numbered-series-standards(2) wave-stds(1609)  dot2(2)
-scms(4) interfaces(1) base-types(2) major-version-2(2)}
+scms (2) interfaces(1) base-types (2)}
 ;
 
 
@@ -227,7 +227,7 @@ DcmCertificate ::= ExplicitCertificate (WITH COMPONENTS { ...,
 		    })
           }))
         }),
-        minChainLength(0), chainLengthRange(0),
+        minChainDepth(0), chainDepthRange(0),
         eeType({enrol})
       })
     })),
@@ -258,7 +258,7 @@ ElectorCertificate ::= ExplicitCertificate (WITH COMPONENTS { ...,
   issuer (WITH COMPONENTS {self}),
   toBeSigned (WITH COMPONENTS { ...,
     id (WITH COMPONENTS {
-      binaryId (SIZE(1)) -- !!TBD!!
+      name ("") -- !!TBD!!
     }),
     cracaId('000000'H),
     crlSeries(0),                          
@@ -436,7 +436,7 @@ EcaCertificate ::= ExplicitCertificate (WITH COMPONENTS { ...,
 		  })
 		}))
 	  }),
-	  minChainLength(1), chainLengthRange(0),
+	  minChainDepth(1), chainDepthRange(0),
       eeType({enrol})
     }))),
     certRequestPermissions ABSENT,
@@ -490,7 +490,7 @@ IcaCertificate ::= ExplicitCertificate (WITH COMPONENTS { ...,
 	    subjectPermissions (WITH COMPONENTS { 
           all
         }),
-        minChainLength(2), chainLengthRange(0),
+        minChainDepth(2), chainDepthRange(0),
 	    eeType ({app, enrol})
       }),
       PsidGroupPermissions ( WITH COMPONENTS {..., 
@@ -608,7 +608,7 @@ IcaCertificate ::= ExplicitCertificate (WITH COMPONENTS { ...,
           })
         }))
         }),
-        minChainLength(1), chainLengthRange(-1),
+        minChainDepth(1), chainDepthRange(-1),
         eeType ({app, enrol})
       })
     })),
@@ -760,7 +760,7 @@ ObeEnrollmentCertificate ::= ImplicitCertificate (WITH COMPONENTS { ...,
 		    })
           }))
         }),
-        minChainLength(0), chainLengthRange(0),
+        minChainDepth(0), chainDepthRange(0),
         eeType({app})
       })
     })),
@@ -1008,7 +1008,7 @@ PcaCertificate ::= ExplicitCertificate (WITH COMPONENTS { ...,
           })
         }))
 	  }),
-	  minChainLength(1), chainLengthRange(0),
+	  minChainDepth(1), chainDepthRange(0),
       eeType({app})
     }))),
     certRequestPermissions ABSENT,
@@ -1212,7 +1212,7 @@ RaCertificate ::= ExplicitCertificate (WITH COMPONENTS { ...,
           })
         }))
 	  }),
-	  minChainLength(0), chainLengthRange(0),
+	  minChainDepth(0), chainDepthRange(0),
       eeType({app})
     }))),
     canRequestRollover(NULL),
@@ -1267,8 +1267,8 @@ RootCaCertificate ::= ExplicitCertificate (WITH COMPONENTS { ...,
 	    subjectPermissions (WITH COMPONENTS { 
           all
         }),
-        minChainLength(3), 
-        chainLengthRange(-1),
+        minChainDepth(3), 
+        chainDepthRange(-1),
         eeType ({app, enrol})
       }),
       PsidGroupPermissions ( WITH COMPONENTS {..., 
@@ -1278,8 +1278,8 @@ RootCaCertificate ::= ExplicitCertificate (WITH COMPONENTS { ...,
             sspRange ABSENT 
           })))
         }),
-        minChainLength(1), 
-        chainLengthRange(-1), 
+        minChainDepth(1), 
+        chainDepthRange(-1), 
 	    eeType ({app, enrol}) 
       }),
       PsidGroupPermissions ( WITH COMPONENTS {..., 
@@ -1289,8 +1289,8 @@ RootCaCertificate ::= ExplicitCertificate (WITH COMPONENTS { ...,
             sspRange ABSENT 
           })))
         }),
-        minChainLength(1), 
-        chainLengthRange(-1), 
+        minChainDepth(1), 
+        chainDepthRange(-1), 
 	    eeType ({app, enrol}) 
       }),
       PsidGroupPermissions ( WITH COMPONENTS {..., 
@@ -1300,8 +1300,8 @@ RootCaCertificate ::= ExplicitCertificate (WITH COMPONENTS { ...,
             sspRange ABSENT 
           })))
         }),
-        minChainLength(1), 
-        chainLengthRange(-1), 
+        minChainDepth(1), 
+        chainDepthRange(-1), 
 	    eeType ({app, enrol}) 
       })                      
     })),

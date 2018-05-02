@@ -17,7 +17,7 @@
 -- @namespace Ieee1609dot2ScmsCommonError 
 Ieee1609dot2ScmsCommonError {iso(1) identified-organization(3) ieee(111)
 standards-association-numbered-series-standards(2) wave-stds(1609) dot2(2)
-scms(4) errors(2) common(2) major-version-2(2)}
+scms (2) errors(2) common(2)}
 
 
 DEFINITIONS AUTOMATIC TAGS ::= BEGIN 

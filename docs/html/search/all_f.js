@@ -24,6 +24,7 @@ var searchData=
   ['rapginterfacepdu',['RaPgInterfacePDU',['../struct_ieee1609_dot2_ra_pg_interface_1_1_ra_pg_interface_p_d_u.html',1,'Ieee1609Dot2RaPgInterface']]],
   ['rapgpolicysignaturerequestmsg',['RaPgPolicySignatureRequestMsg',['../struct_ieee1609_dot2_ra_pg_interface_1_1_ra_pg_policy_signature_request_msg.html',1,'Ieee1609Dot2RaPgInterface']]],
   ['rapgpolicysignaturerequestreplymsg',['RaPgPolicySignatureRequestReplyMsg',['../struct_ieee1609_dot2_ra_pg_interface_1_1_ra_pg_policy_signature_request_reply_msg.html',1,'Ieee1609Dot2RaPgInterface']]],
+  ['rassp',['RaSsp',['../struct_i_e_e_e1609dot2_scms_protocol_1_1_ra_ssp.html',1,'IEEE1609dot2ScmsProtocol']]],
   ['rcacertificate',['RcaCertificate',['../struct_i_e_e_e1609dot2profiles_1_1_rca_certificate.html',1,'IEEE1609dot2profiles']]],
   ['readme_2emd',['README.md',['../1609dot2-asn_2_r_e_a_d_m_e_8md.html',1,'']]],
   ['readme_2emd',['README.md',['../_r_e_a_d_m_e_8md.html',1,'']]],
@@ -31,6 +32,7 @@ var searchData=
   ['rif',['RIF',['../struct_ieee1609dot2_scms_base_types_1_1_r_i_f.html',1,'Ieee1609dot2ScmsBaseTypes']]],
   ['rootcacertexpiration',['RootCaCertExpiration',['../cert-profile_8asn.html#afeef58baab7eadaa6c577f47c16fbbbc',1,'cert-profile.asn']]],
   ['rootcacertexpiration',['RootCaCertExpiration',['../struct_ieee1609dot2_scms_base_types_1_1_root_ca_cert_expiration.html',1,'Ieee1609dot2ScmsBaseTypes']]],
+  ['rootcassp',['RootCaSsp',['../struct_i_e_e_e1609dot2_scms_protocol_1_1_root_ca_ssp.html',1,'IEEE1609dot2ScmsProtocol']]],
   ['rseapplicationcertexpiration',['RseApplicationCertExpiration',['../struct_ieee1609dot2_scms_base_types_1_1_rse_application_cert_expiration.html',1,'Ieee1609dot2ScmsBaseTypes']]],
   ['rseapplicationcertexpiration',['RseApplicationCertExpiration',['../cert-profile_8asn.html#a3391a9d1afe6a8bdee0bd7df321555e8',1,'cert-profile.asn']]],
   ['rseapplicationcertificate',['RseApplicationCertificate',['../struct_i_e_e_e1609dot2profiles_1_1_rse_application_certificate.html',1,'IEEE1609dot2profiles']]],
@@ -38,8 +40,8 @@ var searchData=
   ['rseapplicationcertvalidity',['RseApplicationCertValidity',['../struct_ieee1609dot2_scms_policy_types_1_1_rse_application_cert_validity.html',1,'Ieee1609dot2ScmsPolicyTypes']]],
   ['rseenrollmentcertexpirationcvp',['RseEnrollmentCertExpirationCvp',['../struct_ieee1609dot2_scms_base_types_1_1_rse_enrollment_cert_expiration_cvp.html',1,'Ieee1609dot2ScmsBaseTypes']]],
   ['rseenrollmentcertexpirationcvp',['RseEnrollmentCertExpirationCvp',['../cert-profile_8asn.html#ae831ceca81b58b8ae3a91fbe533e2d34',1,'cert-profile.asn']]],
-  ['rseenrollmentcertexpirationpoc',['RseEnrollmentCertExpirationPoc',['../cert-profile_8asn.html#a6d898fc8468d7405ef3c89adfc5f0695',1,'cert-profile.asn']]],
   ['rseenrollmentcertexpirationpoc',['RseEnrollmentCertExpirationPoc',['../struct_ieee1609dot2_scms_base_types_1_1_rse_enrollment_cert_expiration_poc.html',1,'Ieee1609dot2ScmsBaseTypes']]],
+  ['rseenrollmentcertexpirationpoc',['RseEnrollmentCertExpirationPoc',['../cert-profile_8asn.html#a6d898fc8468d7405ef3c89adfc5f0695',1,'cert-profile.asn']]],
   ['rseenrollmentcertificate',['RseEnrollmentCertificate',['../struct_i_e_e_e1609dot2profiles_1_1_rse_enrollment_certificate.html',1,'IEEE1609dot2profiles']]],
   ['rseobeidblacklistingstatus',['RseObeIdBlacklistingStatus',['../struct_ieee1609_dot2_ma_ra_interface_1_1_rse_obe_id_blacklisting_status.html',1,'Ieee1609Dot2MaRaInterface']]]
 ];

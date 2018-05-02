@@ -17,7 +17,7 @@
 -- @namespace IEEE1609dot2-cert-chains 
 IEEE1609dot2-cert-chains {iso(1) identified-organization(3) ieee(111)
 standards-association-numbered-series-standards(2) wave-stds(1609)
-dot2(2) base(1) cert-chains(4) major-version-2(2)}
+dot2(2) base (1) cert-chains (4)}
 
 DEFINITIONS AUTOMATIC TAGS ::= BEGIN
 
@@ -30,7 +30,7 @@ IMPORTS
   Uint16
 FROM IEEE1609dot2 {iso(1) identified-organization(3) ieee(111)
     standards-association-numbered-series-standards(2) wave-stds(1609)
-    dot2(2) base(1) base-types(2) major-version-2(2)}
+    dot2(2) base(1) base-types(2)}
 
   SignedData,
   Certificate,
@@ -38,13 +38,13 @@ FROM IEEE1609dot2 {iso(1) identified-organization(3) ieee(111)
   ExplicitCertificate
 FROM IEEE1609dot2 {iso(1) identified-organization(3) ieee(111)
     standards-association-numbered-series-standards(2) wave-stds(1609)
-    dot2(2) base(1) schema(1) major-version-2(2)}
+    dot2(2) base(1) schema(1)}
 
   ElectorBallot
 FROM Ieee1609Dot2ScmsComponentCertificateManagement
 {iso(1) identified-organization(3) ieee(111) 
 standards-association-numbered-series-standards(2) wave-stds(1609)  
-dot2(2) scms(4) interfaces(1) component-certificate-management(3) major-version-2(2)}
+dot2(2) scms(2) interfaces(1) component-certificate-management (3)}
 
 ;
 

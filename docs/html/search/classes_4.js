@@ -6,6 +6,7 @@ var searchData=
   ['ecaeecertresponse',['EcaEeCertResponse',['../struct_ieee1609_dot2_eca_end_entity_interface_1_1_eca_ee_cert_response.html',1,'Ieee1609Dot2EcaEndEntityInterface']]],
   ['ecaendentityerror',['EcaEndEntityError',['../struct_ieee1609_dot2_eca_end_entity_error_1_1_eca_end_entity_error.html',1,'Ieee1609Dot2EcaEndEntityError']]],
   ['ecaendentityinterfacepdu',['EcaEndEntityInterfacePDU',['../struct_ieee1609_dot2_eca_end_entity_interface_1_1_eca_end_entity_interface_p_d_u.html',1,'Ieee1609Dot2EcaEndEntityInterface']]],
+  ['ecassp',['EcaSsp',['../struct_i_e_e_e1609dot2_scms_protocol_1_1_eca_ssp.html',1,'IEEE1609dot2ScmsProtocol']]],
   ['eccp256privatekeyreconstruction',['EccP256PrivateKeyReconstruction',['../struct_ieee1609dot2_scms_base_types_1_1_ecc_p256_private_key_reconstruction.html',1,'Ieee1609dot2ScmsBaseTypes']]],
   ['eeecacertrequest',['EeEcaCertRequest',['../struct_ieee1609_dot2_eca_end_entity_interface_1_1_ee_eca_cert_request.html',1,'Ieee1609Dot2EcaEndEntityInterface']]],
   ['eeenrollmentcrlseries',['EeEnrollmentCrlSeries',['../struct_ieee1609dot2_scms_base_types_1_1_ee_enrollment_crl_series.html',1,'Ieee1609dot2ScmsBaseTypes']]],
@@ -14,8 +15,10 @@ var searchData=
   ['eeracertrequestmsg',['EeRaCertRequestMsg',['../struct_ieee1609_dot2_end_entity_ra_interface_1_1_ee_ra_cert_request_msg.html',1,'Ieee1609Dot2EndEntityRaInterface']]],
   ['eeraidcertprovisioningrequest',['EeRaIdCertProvisioningRequest',['../struct_ieee1609_dot2_end_entity_ra_interface_1_1_ee_ra_id_cert_provisioning_request.html',1,'Ieee1609Dot2EndEntityRaInterface']]],
   ['eerapseudonymcertprovisioningrequest',['EeRaPseudonymCertProvisioningRequest',['../struct_ieee1609_dot2_end_entity_ra_interface_1_1_ee_ra_pseudonym_cert_provisioning_request.html',1,'Ieee1609Dot2EndEntityRaInterface']]],
+  ['electorballot',['ElectorBallot',['../struct_ieee1609_dot2_scms_component_certificate_management_1_1_elector_ballot.html',1,'Ieee1609Dot2ScmsComponentCertificateManagement']]],
   ['electorcertexpiration',['ElectorCertExpiration',['../struct_ieee1609dot2_scms_base_types_1_1_elector_cert_expiration.html',1,'Ieee1609dot2ScmsBaseTypes']]],
   ['electorcertificate',['ElectorCertificate',['../struct_i_e_e_e1609dot2profiles_1_1_elector_certificate.html',1,'IEEE1609dot2profiles']]],
+  ['electorssp',['ElectorSsp',['../struct_i_e_e_e1609dot2_scms_protocol_1_1_elector_ssp.html',1,'IEEE1609dot2ScmsProtocol']]],
   ['encryptedcertificatedata',['EncryptedCertificateData',['../struct_ieee1609_dot2_pca_ra_interface_1_1_encrypted_certificate_data.html',1,'Ieee1609Dot2PcaRaInterface']]],
   ['encryptedgroupplv',['EncryptedGroupPLV',['../struct_ieee1609dot2_scms_base_types_1_1_encrypted_group_p_l_v.html',1,'Ieee1609dot2ScmsBaseTypes']]],
   ['encryptedgroupplvandhostinfo',['EncryptedGroupPlvAndHostInfo',['../struct_ieee1609dot2_scms_base_types_1_1_encrypted_group_plv_and_host_info.html',1,'Ieee1609dot2ScmsBaseTypes']]],
@@ -26,5 +29,6 @@ var searchData=
   ['endentityenrollmentpseudonymcertificate',['EndEntityEnrollmentPseudonymCertificate',['../struct_ieee1609_dot2_end_entity_ra_interface_1_1_end_entity_enrollment_pseudonym_certificate.html',1,'Ieee1609Dot2EndEntityRaInterface']]],
   ['endentitymainterfacepdu',['EndEntityMaInterfacePDU',['../struct_ieee1609_dot2_end_entity_ma_interface_1_1_end_entity_ma_interface_p_d_u.html',1,'Ieee1609Dot2EndEntityMaInterface']]],
   ['endentityrainterfacepdu',['EndEntityRaInterfacePDU',['../struct_ieee1609_dot2_end_entity_ra_interface_1_1_end_entity_ra_interface_p_d_u.html',1,'Ieee1609Dot2EndEntityRaInterface']]],
+  ['endorsementtype',['EndorsementType',['../struct_ieee1609_dot2_scms_component_certificate_management_1_1_endorsement_type.html',1,'Ieee1609Dot2ScmsComponentCertificateManagement']]],
   ['expectedreply',['ExpectedReply',['../struct_ieee1609_dot2_la_ma_interface_1_1_expected_reply.html',1,'Ieee1609Dot2LaMaInterface']]]
 ];

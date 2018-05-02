@@ -26,6 +26,7 @@ var searchData=
   ['maralcierrorcode',['MaRaLCIErrorCode',['../struct_ieee1609_dot2_ma_ra_error_1_1_ma_ra_l_c_i_error_code.html',1,'Ieee1609Dot2MaRaError']]],
   ['maralcirequestmsg',['MaRaLCIRequestMsg',['../struct_ieee1609_dot2_ma_ra_interface_1_1_ma_ra_l_c_i_request_msg.html',1,'Ieee1609Dot2MaRaInterface']]],
   ['mararseobeidblacklistrequestmsg',['MaRaRseObeIdBlacklistRequestMsg',['../struct_ieee1609_dot2_ma_ra_interface_1_1_ma_ra_rse_obe_id_blacklist_request_msg.html',1,'Ieee1609Dot2MaRaInterface']]],
+  ['massp',['MaSsp',['../struct_i_e_e_e1609dot2_scms_protocol_1_1_ma_ssp.html',1,'IEEE1609dot2ScmsProtocol']]],
   ['maxavailablecertsupply',['MaxAvailableCertSupply',['../struct_ieee1609dot2_scms_policy_types_1_1_max_available_cert_supply.html',1,'Ieee1609dot2ScmsPolicyTypes']]],
   ['maxcertrequestage',['MaxCertRequestAge',['../struct_ieee1609dot2_scms_policy_types_1_1_max_cert_request_age.html',1,'Ieee1609dot2ScmsPolicyTypes']]],
   ['maxgpfgccfretrievalinterval',['MaxGpfGccfRetrievalInterval',['../struct_ieee1609dot2_scms_policy_types_1_1_max_gpf_gccf_retrieval_interval.html',1,'Ieee1609dot2ScmsPolicyTypes']]],

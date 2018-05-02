@@ -22,7 +22,9 @@ var searchData=
   ['ieee1609dot2rapginterface',['Ieee1609Dot2RaPgInterface',['../namespace_ieee1609_dot2_ra_pg_interface.html',1,'']]],
   ['ieee1609dot2scmsbasetypes',['Ieee1609dot2ScmsBaseTypes',['../namespace_ieee1609dot2_scms_base_types.html',1,'']]],
   ['ieee1609dot2scmscommonerror',['Ieee1609dot2ScmsCommonError',['../namespace_ieee1609dot2_scms_common_error.html',1,'']]],
+  ['ieee1609dot2scmscomponentcertificatemanagement',['Ieee1609Dot2ScmsComponentCertificateManagement',['../namespace_ieee1609_dot2_scms_component_certificate_management.html',1,'']]],
   ['ieee1609dot2scmscomponentcertificatemanagementerror',['Ieee1609Dot2ScmsComponentCertificateManagementError',['../namespace_ieee1609_dot2_scms_component_certificate_management_error.html',1,'']]],
   ['ieee1609dot2scmserror',['Ieee1609dot2ScmsError',['../namespace_ieee1609dot2_scms_error.html',1,'']]],
-  ['ieee1609dot2scmspolicytypes',['Ieee1609dot2ScmsPolicyTypes',['../namespace_ieee1609dot2_scms_policy_types.html',1,'']]]
+  ['ieee1609dot2scmspolicytypes',['Ieee1609dot2ScmsPolicyTypes',['../namespace_ieee1609dot2_scms_policy_types.html',1,'']]],
+  ['ieee1609dot2scmsprotocol',['IEEE1609dot2ScmsProtocol',['../namespace_i_e_e_e1609dot2_scms_protocol.html',1,'']]]
 ];

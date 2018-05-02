@@ -4,7 +4,7 @@ var files =
     [ "cert-chain-files.asn", "cert-chain-files_8asn.html", "cert-chain-files_8asn" ],
     [ "cert-profile.asn", "cert-profile_8asn.html", "cert-profile_8asn" ],
     [ "component-cert-management-errors.asn", "component-cert-management-errors_8asn.html", "component-cert-management-errors_8asn" ],
-    [ "component-cert-management.asn", "component-cert-management_8asn.html", null ],
+    [ "component-cert-management.asn", "component-cert-management_8asn.html", "component-cert-management_8asn" ],
     [ "eca-ee-errors.asn", "eca-ee-errors_8asn.html", "eca-ee-errors_8asn" ],
     [ "eca-ee.asn", "eca-ee_8asn.html", "eca-ee_8asn" ],
     [ "ee-ma.asn", "ee-ma_8asn.html", "ee-ma_8asn" ],
@@ -27,5 +27,5 @@ var files =
     [ "scms-common-errors.asn", "scms-common-errors_8asn.html", "scms-common-errors_8asn" ],
     [ "scms-error.asn", "scms-error_8asn.html", "scms-error_8asn" ],
     [ "scms-policy.asn", "scms-policy_8asn.html", "scms-policy_8asn" ],
-    [ "scms-protocol.asn", "scms-protocol_8asn.html", null ]
+    [ "scms-protocol.asn", "scms-protocol_8asn.html", "scms-protocol_8asn" ]
 ];

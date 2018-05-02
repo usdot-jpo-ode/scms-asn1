@@ -110,7 +110,7 @@ $(document).ready(function(){initNavTree('crl-protocol_8asn_source.html','');});
 <div class="contents">
 <a href="crl-protocol_8asn.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;IEEE1609dot2Crl {iso(1) identified-organization(3) ieee(111) </div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;standards-association-numbered-series-standards(2) wave-stds(1609)  </div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;dot2(2) crl(3) protocol(1) major-version-2(2)}</div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;dot2(2) crl(3) protocol(2)}</div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;</div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;DEFINITIONS AUTOMATIC TAGS ::= BEGIN </div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div>
@@ -121,22 +121,22 @@ $(document).ready(function(){initNavTree('crl-protocol_8asn_source.html','');});
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;  <a class="code" href="ee-ra_8asn.html#a4013c49bad33441e05f3a4b60ec64bb5">Ieee1609Dot2Data</a></div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;FROM <a class="code" href="cert-chain-files_8asn.html#a07f782977b669dfa2315d1583b1f0c52">IEEE1609dot2</a> {iso(1) identified-organization(3) ieee(111) </div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    standards-association-numbered-series-standards(2) wave-stds(1609)  </div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    dot2(2) base (1) schema (1) major-version-2 (2)}</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    dot2(2) base (1) schema (1)}</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;  <a class="code" href="ee-ma_8asn.html#af18a5e17edb8c1b1ae36902b4c7fe3c9">Opaque</a>,</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;  <a class="code" href="cert-profile_8asn.html#a511ecbeaef5bd32ad903817b99d76780">Psid</a></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;FROM <a class="code" href="cert-profile_8asn.html#afd17868952716b258e77eb362191d410">IEEE1609dot2BaseTypes</a> {iso(1) identified-organization(3) ieee(111) </div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    standards-association-numbered-series-standards(2) wave-stds(1609)  </div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    dot2(2) base(1) base-types(2) major-version-2 (2)}</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    dot2(2) base(1) base-types(2)}</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  CrlContents</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;FROM IEEE1609dot2CrlBaseTypes {iso(1) identified-organization(3) ieee(111) </div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    standards-association-numbered-series-standards(2) wave-stds(1609)  </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    dot2(2) crl(3) base-types(2) major-version-2 (2)}</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    dot2(2) crl(3) base-types(1)}</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;;</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;CrlPsid ::= <a class="code" href="cert-profile_8asn.html#a511ecbeaef5bd32ad903817b99d76780">Psid</a>(256) -- <a class="code" href="cert-profile_8asn.html#a3973f3e47938c9a510ce5982d7f66db9">PSID</a> = 0x100, 0p8080</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;CrlPsid ::= <a class="code" href="cert-profile_8asn.html#a511ecbeaef5bd32ad903817b99d76780">Psid</a>(256) -- <a class="code" href="cert-profile_8asn.html#a3973f3e47938c9a510ce5982d7f66db9">PSID</a> = 0x24, WW: this may need to change, just a placeholder</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;SecuredCrl ::= <a class="code" href="ee-ra_8asn.html#a4013c49bad33441e05f3a4b60ec64bb5">Ieee1609Dot2Data</a> (WITH COMPONENTS {..., </div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  content (WITH COMPONENTS {</div>
@@ -163,8 +163,12 @@ $(document).ready(function(){initNavTree('crl-protocol_8asn_source.html','');});
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  })</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;})</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;END</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;CrlRequest ::= SEQUENCE {</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    content  <a class="code" href="ee-ma_8asn.html#af18a5e17edb8c1b1ae36902b4c7fe3c9">Opaque</a>,    -- place-holder <span class="keywordflow">for</span> now</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    ...</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;}</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;END</div>
 <div class="ttc" id="ee-ra_8asn_html_a4013c49bad33441e05f3a4b60ec64bb5"><div class="ttname"><a href="ee-ra_8asn.html#a4013c49bad33441e05f3a4b60ec64bb5">Ieee1609Dot2Data</a></div><div class="ttdeci">IMPORTS Uint32 FROM Ieee1609Dot2Data</div><div class="ttdef"><b>Definition:</b> <a href="ee-ra_8asn_source.html#l00040">ee-ra.asn:40</a></div></div>
 <div class="ttc" id="cert-profile_8asn_html_a511ecbeaef5bd32ad903817b99d76780"><div class="ttname"><a href="cert-profile_8asn.html#a511ecbeaef5bd32ad903817b99d76780">Psid</a></div><div class="ttdeci">IMPORTS SequenceOfPsidSspRange FROM Psid</div><div class="ttdef"><b>Definition:</b> <a href="cert-profile_8asn_source.html#l00034">cert-profile.asn:34</a></div></div>
 <div class="ttc" id="cert-profile_8asn_html_afd17868952716b258e77eb362191d410"><div class="ttname"><a href="cert-profile_8asn.html#afd17868952716b258e77eb362191d410">IEEE1609dot2BaseTypes</a></div><div class="ttdeci">IMPORTS SequenceOfPsidSspRange FROM SequenceOfIdentifiedRegion FROM IEEE1609dot2BaseTypes</div><div class="ttdef"><b>Definition:</b> <a href="cert-profile_8asn_source.html#l00043">cert-profile.asn:43</a></div></div>

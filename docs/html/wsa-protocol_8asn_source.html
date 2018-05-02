@@ -111,7 +111,7 @@ $(document).ready(function(){initNavTree('wsa-protocol_8asn_source.html','');});
 <a href="wsa-protocol_8asn.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;IEEE1609dot2WsaProtocol {iso(1) identified-organization(3) ieee(111) </div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;standards-association-numbered-series-standards(2) wave-stds(1609)  </div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;dot2(2) wsa(4) protocol(1) major-version-2(2)}</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;dot2(2) wsa(4) protocol(1)}</div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;DEFINITIONS AUTOMATIC TAGS ::= BEGIN </div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
@@ -129,7 +129,7 @@ $(document).ready(function(){initNavTree('wsa-protocol_8asn_source.html','');});
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  PKAlgorithm,</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  <a class="code" href="cert-profile_8asn.html#a511ecbeaef5bd32ad903817b99d76780">Psid</a>,</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  <a class="code" href="cert-profile_8asn.html#a45c9b57bc2740521a98523719e83ede0">PsidSsp</a>,</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  SequenceOfPsid,</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  <a class="code" href="scms-protocol_8asn.html#ace6b48091754551e0d229fc7f220b925">SequenceOfPsid</a>,</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  SequenceOfPsidSspRange,</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  <a class="code" href="ee-ma_8asn.html#aea9ad74e96aef461e752f512b1c8dbb9">Signature</a>,</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  <a class="code" href="ee-ma_8asn.html#a1a458543c4ea60f925100ed980794f9e">ThreeDLocation</a>,</div>
@@ -195,6 +195,7 @@ $(document).ready(function(){initNavTree('wsa-protocol_8asn_source.html','');});
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;END</div>
 <div class="ttc" id="ma-ra_8asn_html_af6c3cb04ff0451b0f7c6b4b68af4d8b7"><div class="ttname"><a href="ma-ra_8asn.html#af6c3cb04ff0451b0f7c6b4b68af4d8b7">HashedId10</a></div><div class="ttdeci">IMPORTS HashedId10</div><div class="ttdef"><b>Definition:</b> <a href="ma-ra_8asn_source.html#l00027">ma-ra.asn:27</a></div></div>
 <div class="ttc" id="cert-profile_8asn_html_a45c9b57bc2740521a98523719e83ede0"><div class="ttname"><a href="cert-profile_8asn.html#a45c9b57bc2740521a98523719e83ede0">PsidSsp</a></div><div class="ttdeci">IMPORTS PsidSsp</div><div class="ttdef"><b>Definition:</b> <a href="cert-profile_8asn_source.html#l00025">cert-profile.asn:25</a></div></div>
+<div class="ttc" id="scms-protocol_8asn_html_ace6b48091754551e0d229fc7f220b925"><div class="ttname"><a href="scms-protocol_8asn.html#ace6b48091754551e0d229fc7f220b925">SequenceOfPsid</a></div><div class="ttdeci">IMPORTS SequenceOfPsid</div><div class="ttdef"><b>Definition:</b> <a href="scms-protocol_8asn_source.html#l00026">scms-protocol.asn:26</a></div></div>
 <div class="ttc" id="cert-profile_8asn_html_a511ecbeaef5bd32ad903817b99d76780"><div class="ttname"><a href="cert-profile_8asn.html#a511ecbeaef5bd32ad903817b99d76780">Psid</a></div><div class="ttdeci">IMPORTS SequenceOfPsidSspRange FROM Psid</div><div class="ttdef"><b>Definition:</b> <a href="cert-profile_8asn_source.html#l00034">cert-profile.asn:34</a></div></div>
 <div class="ttc" id="ee-ra_8asn_html_ab8036e856800014c4399e429e567f931"><div class="ttname"><a href="ee-ra_8asn.html#ab8036e856800014c4399e429e567f931">Uint8</a></div><div class="ttdeci">IMPORTS Uint8</div><div class="ttdef"><b>Definition:</b> <a href="ee-ra_8asn_source.html#l00027">ee-ra.asn:27</a></div></div>
 <div class="ttc" id="pca-ra_8asn_html_a835668c919c2f593e2ab87cc42aa91f4"><div class="ttname"><a href="pca-ra_8asn.html#a835668c919c2f593e2ab87cc42aa91f4">IValue</a></div><div class="ttdeci">IMPORTS Uint32 FROM ToBeSignedCertificate FROM IValue</div><div class="ttdef"><b>Definition:</b> <a href="pca-ra_8asn_source.html#l00054">pca-ra.asn:54</a></div></div>

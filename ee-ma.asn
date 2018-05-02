@@ -18,7 +18,7 @@
 Ieee1609Dot2EndEntityMaInterface
 {iso(1) identified-organization(3) ieee(111)
 standards-association-numbered-series-standards(2) wave-stds(1609)
-dot2(2) scms(4) interfaces(1) ee-ma (7) major-version-2(2)}
+dot2(2) scms(2) interfaces(1) ee-ma (7)}
 
 DEFINITIONS AUTOMATIC TAGS ::= BEGIN
 
@@ -32,7 +32,7 @@ IMPORTS
   Uint8
 FROM IEEE1609dot2BaseTypes {iso(1) identified-organization(3) ieee(111)
 		standards-association-numbered-series-standards(2) wave-stds(1609)
-		dot2(2) base(1) base-types(2) major-version-2(2)}
+		dot2(2) base(1) base-types(2)}
 
 ;
 

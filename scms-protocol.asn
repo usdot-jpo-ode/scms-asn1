@@ -17,7 +17,7 @@
 -- @namespace IEEE1609dot2ScmsProtocol 
 IEEE1609dot2ScmsProtocol {iso(1) identified-organization(3) ieee(111)
 standards-association-numbered-series-standards(2) wave-stds(1609)
-dot2(2) scms(4) interfaces(1) protocol(1) major-version-2(2)}
+dot2(2) scms(2) interfaces(1) protocol(1)}
 
 DEFINITIONS AUTOMATIC TAGS ::= BEGIN
 
@@ -25,13 +25,14 @@ EXPORTS ALL;
 
 IMPORTS
   HashAlgorithm,
+  HashedId32,
   SequenceOfPsid,
   SequenceOfPsidSsp,
   Uint8,
   Uint16
 FROM IEEE1609dot2BaseTypes {iso(1) identified-organization(3) ieee(111)
 standards-association-numbered-series-standards(2) wave-stds(1609)
-dot2(2) base(1) base-types(2) major-version-2(2)}
+dot2(2) base(1) base-types(2)}
 
   Certificate,
   Ieee1609Dot2Data,
@@ -40,89 +41,89 @@ dot2(2) base(1) base-types(2) major-version-2(2)}
   SignerIdentifier
 FROM IEEE1609dot2 {iso(1) identified-organization(3) ieee(111)
 standards-association-numbered-series-standards(2) wave-stds(1609)
-dot2(2) base(1) schema(1) major-version-2(2)}
+dot2(2) base (1) schema (1)}
 
   MisbehaviorReportingPsid,
   SecurityMgmtPsid
 FROM Ieee1609dot2ScmsBaseTypes {iso(1) identified-organization(3) ieee(111)
-standards-association-numbered-series-standards(2) wave-stds(1609) dot2(2)
-scms(4) interfaces(1) base-types(2) major-version-2(2)}
+standards-association-numbered-series-standards(2) wave-stds(1609)  dot2(2)
+scms (2) interfaces(1) base-types (2)}
 
   ScmsComponentCertificateManagementPDU
 FROM Ieee1609Dot2ScmsComponentCertificateManagement
 {iso(1) identified-organization(3) ieee(111)
 standards-association-numbered-series-standards(2) wave-stds(1609)
-dot2(2) scms(4) interfaces(1) component-certificate-management(3) major-version-2(2)}
+dot2(2) scms(2) interfaces(1) component-certificate-management(3)}
 
   EcaEndEntityInterfacePDU
 FROM Ieee1609Dot2EcaEndEntityInterface
 {iso(1) identified-organization(3) ieee(111)
 standards-association-numbered-series-standards(2) wave-stds(1609)
-dot2(2) scms(4) interfaces(1) eca-ee(5) major-version-2(2)}
+dot2(2) scms(2) interfaces(1) eca-ee(5)}
 
   EndEntityMaInterfacePDU
 FROM Ieee1609Dot2EndEntityMaInterface
 {iso(1) identified-organization(3) ieee(111)
 standards-association-numbered-series-standards(2) wave-stds(1609)
-dot2(2) scms(4) interfaces(1) ee-ma(7) major-version-2(2)}
+dot2(2) scms(2) interfaces(1) ee-ma(7)}
 
   EndEntityRaInterfacePDU
 FROM Ieee1609Dot2EndEntityRaInterface
 {iso(1) identified-organization(3) ieee(111)
 standards-association-numbered-series-standards(2) wave-stds(1609)
-dot2(2) scms(4) interfaces(1) ee-ra(8) major-version-2(2)}
+dot2(2) scms(2) interfaces(1) ee-ra(8)}
 
   LaMaInterfacePDU
 FROM Ieee1609Dot2LaMaInterface
 {iso(1) identified-organization(3) ieee(111)
 standards-association-numbered-series-standards(2) wave-stds(1609)
-dot2(2) scms(4) interfaces(1) la-ma(9) major-version-2(2)}
+dot2(2) scms(2) interfaces(1) la-ma(9)}
 
   LaPcaInterfacePDU
 FROM Ieee1609Dot2LaPcaInterface
 {iso(1) identified-organization(3) ieee(111)
 standards-association-numbered-series-standards(2) wave-stds(1609)
-dot2(2) scms(4) interfaces(1) la-pca(10) major-version-2(2)}
+dot2(2) scms(2) interfaces(1) la-pca(10)}
 
   LaRaInterfacePDU
 FROM Ieee1609Dot2LaRaInterface
 {iso(1) identified-organization(3) ieee(111)
 standards-association-numbered-series-standards(2) wave-stds(1609)
-dot2(2) scms(4) interfaces(1) la-ra(11) major-version-2(2)}
+dot2(2) scms(2) interfaces(1) la-ra(11)}
 
   MaPcaInterfacePDU
 FROM Ieee1609Dot2MaPcaInterface
 {iso(1) identified-organization(3) ieee(111)
 standards-association-numbered-series-standards(2) wave-stds(1609)
-dot2(2) scms(4) interfaces(1) ma-pca(13) major-version-2(2)}
+dot2(2) scms(2) interfaces(1) ma-pca(13)}
 
   MaRaInterfacePDU
 FROM Ieee1609Dot2MaRaInterface
 {iso(1) identified-organization(3) ieee(111)
 standards-association-numbered-series-standards(2) wave-stds(1609)
-dot2(2) scms(4) interfaces(1) ma-ra(14) major-version-2(2)}
+dot2(2) scms(2) interfaces(1) ma-ra(14)}
 
   PcaRaInterfacePDU
 FROM Ieee1609Dot2PcaRaInterface
 {iso(1) identified-organization(3) ieee(111)
 standards-association-numbered-series-standards(2) wave-stds(1609)
-dot2(2) scms(4) interfaces(1) pca-ra(15) major-version-2(2)}
+dot2(2) scms(2) interfaces(1) pca-ra(15)}
 
   RaPgInterfacePDU
 FROM Ieee1609Dot2RaPgInterface
 {iso(1) identified-organization(3) ieee(111) 
 standards-association-numbered-series-standards(2) wave-stds(1609) dot2(2)
-scms(4) interfaces(1) ra-pg(16) major-version-2(2)}
+scms(2) interfaces(1) ra-pg(16)}
 
   CertificateChainFiles
 FROM IEEE1609dot2-cert-chains {iso(1) identified-organization(3) ieee(111)
 standards-association-numbered-series-standards(2) wave-stds(1609)
-dot2(2) base (1) cert-chains (4) major-version-2(2)}
+dot2(2) base (1) cert-chains (4)}
 
   PolicyFiles
 FROM Ieee1609dot2ScmsPolicyTypes {iso(1) identified-organization(3) ieee(111)
 standards-association-numbered-series-standards(2) wave-stds(1609)  dot2(2)
-scms(4) interfaces(1) policy-types(500) major-version-2(2)}
+scms (2) interfaces(1) policy-types (500)}
 ;
 
 ---
@@ -765,15 +766,14 @@ ScopedRaPgPolicySignatureRequestReply ::=
 -- @brief This structure defines the all certificate requests messages as 
 --        scoped version of the ScmsPDU.
 -- @class ScopedCertificateRequest
-ScopedCertificateRequest ::= ScmsPDU (
+  ScopedCertificateRequest ::= ScmsPDU (
      ScopedEeRaCertRequest |
      ScopedEeEnrollmentCertRequest |
      ScopedPseudonymCertProvisioningRequest |
      ScopedIdCertProvisioningRequest  |
      ScopedAppCertProvisioningRequest  |
      ScopedRaPcaCertificateRequest |
-     ScopedAuthenticatedDownloadRequest
-)
+     ScopedAuthenticatedDownloadRequest )
 
 
 
@@ -2339,29 +2339,6 @@ SignedElectorEndorsement ::= SecuredScmsPDU (WITH COMPONENTS {...,
   })
 })
 
-ScopedElectorBallot ::= ScmsPDU (WITH COMPONENTS {...,
-  content (WITH COMPONENTS {
-    ccm (WITH COMPONENTS {
-      electorBallot
-    })
-  })
-})
-
-SecuredElectorBallot ::= SecuredScmsPDU (WITH COMPONENTS {...,
-  content (WITH COMPONENTS {...,
-    unsecuredData (CONTAINING ScopedElectorBallot)
-  })
-})
-
--- Note: even though this is an "unsecured" message, this merely states that
--- "UnsecuredElectorBallot" (ie. Ieee1609Dot2Data wrapper) is not a signed or
--- encrypted message. However, the ScopedElectorBallot contains contents
--- that has been signed.
-UnsecuredElectorBallot ::= SecuredScmsPDU (WITH COMPONENTS {...,
-  content (WITH COMPONENTS {...,
-    unsecuredData (CONTAINING ScopedElectorBallot) -- signed payload
-  })
-})
 
 -- *************************************************************************
 --

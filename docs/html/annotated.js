@@ -22,7 +22,9 @@ var annotated =
     [ "Ieee1609Dot2RaPgInterface", "namespace_ieee1609_dot2_ra_pg_interface.html", "namespace_ieee1609_dot2_ra_pg_interface" ],
     [ "Ieee1609dot2ScmsBaseTypes", "namespace_ieee1609dot2_scms_base_types.html", "namespace_ieee1609dot2_scms_base_types" ],
     [ "Ieee1609dot2ScmsCommonError", "namespace_ieee1609dot2_scms_common_error.html", "namespace_ieee1609dot2_scms_common_error" ],
+    [ "Ieee1609Dot2ScmsComponentCertificateManagement", "namespace_ieee1609_dot2_scms_component_certificate_management.html", "namespace_ieee1609_dot2_scms_component_certificate_management" ],
     [ "Ieee1609Dot2ScmsComponentCertificateManagementError", "namespace_ieee1609_dot2_scms_component_certificate_management_error.html", "namespace_ieee1609_dot2_scms_component_certificate_management_error" ],
     [ "Ieee1609dot2ScmsError", "namespace_ieee1609dot2_scms_error.html", "namespace_ieee1609dot2_scms_error" ],
-    [ "Ieee1609dot2ScmsPolicyTypes", "namespace_ieee1609dot2_scms_policy_types.html", "namespace_ieee1609dot2_scms_policy_types" ]
+    [ "Ieee1609dot2ScmsPolicyTypes", "namespace_ieee1609dot2_scms_policy_types.html", "namespace_ieee1609dot2_scms_policy_types" ],
+    [ "IEEE1609dot2ScmsProtocol", "namespace_i_e_e_e1609dot2_scms_protocol.html", "namespace_i_e_e_e1609dot2_scms_protocol" ]
 ];

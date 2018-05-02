@@ -18,7 +18,7 @@
 Ieee1609Dot2EndEntityRaInterface
 {iso(1) identified-organization(3) ieee(111)
 standards-association-numbered-series-standards(2) wave-stds(1609)
-dot2(2) scms(4) interfaces(1) ee-ra(8) major-version-2(2)}
+dot2(2) scms(2) interfaces(1) ee-ra(8)}
 
 DEFINITIONS AUTOMATIC TAGS ::= BEGIN
 
@@ -40,7 +40,7 @@ IMPORTS
   Uint32
 FROM IEEE1609dot2BaseTypes {iso(1) identified-organization(3) ieee(111)
     standards-association-numbered-series-standards(2) wave-stds(1609) dot2(2)
-    base(1) base-types(2) major-version-2(2)}
+    base(1) base-types(2)}
 
   Certificate,
   ExplicitCertificate,
@@ -49,17 +49,17 @@ FROM IEEE1609dot2BaseTypes {iso(1) identified-organization(3) ieee(111)
   SignerIdentifier
 FROM IEEE1609dot2 {iso(1) identified-organization(3) ieee(111)
     standards-association-numbered-series-standards(2) wave-stds(1609) dot2(2)
-    base(1) schema(1) major-version-2(2)}
+    base(1) schema(1)}
 
   SecurityMgmtPsid
 FROM Ieee1609dot2ScmsBaseTypes {iso(1) identified-organization(3) ieee(111)
     standards-association-numbered-series-standards(2) wave-stds(1609)  dot2(2)
-    scms(4) interfaces(1) base-types(2) major-version-2(2)}
+    scms (2) interfaces(1) base-types (2)}
 
   CompositeCrl
 FROM Ieee1609Dot2ScmsComponentCertificateManagement {iso(1)
     identified-organization(3) ieee(111) standards-association-numbered-series-standards(2)
-    wave-stds(1609) dot2(2) scms(4) interfaces(1) component-certificate-management (3) major-version-2(2)}
+    wave-stds(1609) dot2(2) scms(2) interfaces(1) component-certificate-management (3)}
 
 ;
 

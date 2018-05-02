@@ -16,7 +16,7 @@
 -- @namespace Ieee1609dot2ScmsPolicyTypes 
 Ieee1609dot2ScmsPolicyTypes {iso(1) identified-organization(3) ieee(111)
 standards-association-numbered-series-standards(2) wave-stds(1609)  dot2(2)
-scms(4) interfaces(1) policy-types(500) major-version-2(2)}
+scms (2) interfaces(1) policy-types (500)}
 
 DEFINITIONS AUTOMATIC TAGS ::= BEGIN
 
@@ -31,7 +31,7 @@ IMPORTS
 
 FROM IEEE1609dot2 {iso(1) identified-organization(3) ieee(111)
 standards-association-numbered-series-standards(2) wave-stds(1609)
-dot2(2) base(1) schema(1) major-version-2(2)}
+dot2(2) base (1) schema (1)}
 
     Duration,
     Hostname,
@@ -44,15 +44,15 @@ dot2(2) base(1) schema(1) major-version-2(2)}
 
 FROM IEEE1609dot2BaseTypes {iso(1) identified-organization(3) ieee(111)
 standards-association-numbered-series-standards(2) wave-stds(1609)
-dot2(2) base(1) base-types(2) major-version-2(2)}
+dot2(2) base(1) base-types(2)}
 
     LaHostnameId,
     PcaHostnameId,
     RaHostnameId
 
 FROM Ieee1609dot2ScmsBaseTypes {iso(1) identified-organization(3) ieee(111)
-standards-association-numbered-series-standards(2) wave-stds(1609) dot2(2)
-scms(4) interfaces(1) base-types(2) major-version-2(2)}
+standards-association-numbered-series-standards(2) wave-stds(1609)  dot2(2)
+scms (2) interfaces(1) base-types (2)}
 
 ;
 
