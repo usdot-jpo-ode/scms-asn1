@@ -1,0 +1,599 @@
+-- 
+--  Copyright 2017 Crash Avoidance Metrics Partner, VSC5 Consortium
+-- 
+--  Licensed under the Apache License, Version 2.0 (the "License");
+--  you may not use this file except in compliance with the License.
+--  You may obtain a copy of the License at
+-- 
+--     http://www.apache.org/licenses/LICENSE-2.0
+-- 
+--  Unless required by applicable law or agreed to in writing, software
+--  distributed under the License is distributed on an "AS IS" BASIS,
+--  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+--  See the License for the specific language governing permissions and
+--  limitations under the License.
+-- 
+
+-- @namespace Ieee1609dot2ScmsBaseTypes 
+Ieee1609dot2ScmsBaseTypes {iso(1) identified-organization(3) ieee(111)
+standards-association-numbered-series-standards(2) wave-stds(1609)  dot2(2)
+scms(4) interfaces(1) base-types(2) major-version-2(2)}
+
+DEFINITIONS AUTOMATIC TAGS ::= BEGIN 
+
+EXPORTS ALL;
+ 
+IMPORTS 
+  CrlSeries,
+  CountryOnly,
+  Duration,
+  Hostname,
+  IValue,
+  LaId,
+  LinkageSeed,
+  Opaque, 
+  Psid,
+  Signature,
+  HashedId8,
+  Uint8,
+  Uint16,
+  Uint32
+FROM IEEE1609dot2BaseTypes {iso(1) identified-organization(3) ieee(111) 
+    standards-association-numbered-series-standards(2) wave-stds(1609)  
+    dot2(2) base(1) base-types(2) major-version-2(2)}
+
+  RecipientInfo,
+  EncryptedData,
+  SignerIdentifier
+FROM IEEE1609dot2 {iso(1) identified-organization(3) ieee(111) 
+    standards-association-numbered-series-standards(2) wave-stds(1609)  
+    dot2(2) base(1) schema(1) major-version-2(2)}
+
+;
+
+---
+-- @brief This data type is used for any operations in Canada.
+-- @class Canada 
+Canada ::= CountryOnly (124)
+
+---
+-- @brief This data type is used for any operations in Mexico.
+-- @class Mexico 
+Mexico ::= CountryOnly (484)
+
+---
+-- @brief This data type is used for any operations in the USA.
+-- @class USA 
+USA ::= CountryOnly (840)
+
+---
+-- @brief This data type denotes the expiration period of a CRL certificate.
+-- @class CrlgCertExpiration 
+CrlgCertExpiration ::= Duration (WITH COMPONENTS {hours(26448)}) -- 3 years + 1 week = 26448 hourss
+
+---
+-- @brief This data type denotes the expiration period of a DCM certificate.
+-- @class DcmCertExpiration 
+DcmCertExpiration ::= Duration (WITH COMPONENTS {hours(26448)}) 
+
+---
+-- @brief This data type denotes the expiration period of a ECA certificate
+--        for CV pilots.
+-- @class EcaCertExpirationCvp 
+EcaCertExpirationCvp ::= Duration (WITH COMPONENTS {years(7)})
+
+---
+-- @brief This data type denotes the expiration period of a ECA certificate
+--        for Proof-of-Concept.
+-- @class EcaCertExpirationPoc 
+EcaCertExpirationPoc ::= Duration (WITH COMPONENTS {years(40)})
+
+---
+-- @brief This data type denotes the expiration period of an Elector
+--        certificate.
+-- @class ElectorCertExpiration 
+ElectorCertExpiration ::= Duration (WITH COMPONENTS {years(60)})
+
+---
+-- @brief This data type denotes the expiration period of a ICA certificate
+--        for CV pilots.
+-- @class IcaCertExpirationCvp 
+IcaCertExpirationCvp ::= Duration (WITH COMPONENTS {years(11)})
+
+---
+-- @brief This data type denotes the expiration period of a ICA certificate
+--        for Proof-of-Concept.
+-- @class IcaCertExpirationPoc 
+IcaCertExpirationPoc ::= Duration (WITH COMPONENTS {years(50)})
+
+---
+-- @brief This data type denotes the expiration period of a LA certificate.
+-- @class LaCertExpiration 
+LaCertExpiration ::= Duration (WITH COMPONENTS {hours(26448)})
+
+---
+-- @brief This data type denotes the expiration period of a MA certificate.
+-- @class MaCertExpiration 
+MaCertExpiration ::= Duration (WITH COMPONENTS {hours(26448)})
+
+---
+-- @brief This data type denotes the expiration period of a PCA certificate.
+-- @class PcaCertExpiration 
+PcaCertExpiration ::= Duration (WITH COMPONENTS {years(4)})
+
+---
+-- @brief This data type denotes the expiration period of a PG certificate.
+-- @class PgCertExpiration 
+PgCertExpiration ::= Duration (WITH COMPONENTS {hours(26448)})
+
+---
+-- @brief This data type denotes the expiration period of a OBE enrollment
+--        certificate for CV pilots.
+-- @class ObeEnrollmentCertExpirationCvp 
+ObeEnrollmentCertExpirationCvp ::= Duration (WITH COMPONENTS {years(1..7)})
+
+---
+-- @brief This data type denotes the expiration period of a OBE enrollment
+--        certificate for Proof-of-Concept.
+-- @class ObeEnrollmentCertExpirationPoc 
+ObeEnrollmentCertExpirationPoc ::= Duration (WITH COMPONENTS {years(30)})
+
+---
+-- @brief This data type denotes the expiration period of a OBE identification
+--        certificate.
+-- @class ObeIdentificationCertExpiration 
+ObeIdentificationCertExpiration ::= Duration (WITH COMPONENTS {hours(721)}) -- 1 month + 1 hour = 721 hours
+
+---
+-- @brief This data type denotes the expiration period of a OBE pseudonym
+--        certificate.
+-- @class ObePseudonymCertExpiration 
+ObePseudonymCertExpiration ::= Duration (WITH COMPONENTS {hours(169)}) -- 1 week + 1 hour = 169 hours
+
+---
+-- @brief This data type denotes the expiration period of a RA certificate.
+-- @class RaCertExpiration 
+RaCertExpiration ::= Duration (WITH COMPONENTS {hours(26448)})
+
+---
+-- @brief This data type denotes the expiration period of a RSE application
+--        certificate.
+-- @class RseApplicationCertExpiration 
+RseApplicationCertExpiration ::= Duration (WITH COMPONENTS {hours(169)})
+
+---
+-- @brief This data type denotes the expiration period of a RSE enrollment
+--        certificate for CV pilots.
+-- @class RseEnrollmentCertExpirationCvp 
+RseEnrollmentCertExpirationCvp ::= Duration (WITH COMPONENTS {years(1..7)})
+
+---
+-- @brief This data type denotes the expiration period of a RSE enrollment
+--        certificate for Proof-of-Concept.
+-- @class RseEnrollmentCertExpirationPoc 
+RseEnrollmentCertExpirationPoc ::= Duration (WITH COMPONENTS {years(30)})
+
+---
+-- @brief This data type denotes the expiration period of a Root CA certificate.
+-- @class RootCaCertExpiration 
+RootCaCertExpiration ::= Duration (WITH COMPONENTS {years(70)})
+
+---
+-- @brief This data type denotes the PSID for BSM usage i.e. 0x20.
+-- @class BsmPsid 
+BsmPsid ::= Psid (32)
+
+---
+-- @brief This data type denotes the PSID for security management i.e. 0x23.
+-- @class SecurityMgmtPsid 
+SecurityMgmtPsid ::= Psid (35)
+
+---
+-- @brief This data type denotes the PSID for misbehavior reporting i.e. 0x26.
+-- @class MisbehaviorReportingPsid 
+MisbehaviorReportingPsid ::= Psid (38)
+
+---
+-- @brief This data type denotes the PSID for misbehavior reporting i.e. 0x27.
+-- @class VulnerableRoadUsersSafetyPsid 
+VulnerableRoadUsersSafetyPsid ::= Psid (39)
+
+---
+-- @brief This data type denotes the PSID for uncompressed differential GPS
+--        corrections i.e. 0x80
+-- @class DifferentialGpsCorrectionsUncompressedPsid 
+DifferentialGpsCorrectionsUncompressedPsid ::= Psid (128)
+
+---
+-- @brief This data type denotes the PSID for compressed differential GPS
+--        corrections i.e. 0x81
+-- @class DifferentialGpsCorrectionsCompressedPsid 
+DifferentialGpsCorrectionsCompressedPsid ::= Psid (129)
+
+---
+-- @brief This data type denotes the PSID for intersection and safety
+--        awareness application i.e. 0x82
+-- @class IntersectionSafetyAndAwarenessPsid 
+IntersectionSafetyAndAwarenessPsid ::= Psid (130)
+
+---
+-- @brief This data type denotes the PSID for traveller information and road
+--        side signage application i.e. 0x83
+-- @class TravellerInformationAndRoadsideSignagePsid 
+TravellerInformationAndRoadsideSignagePsid ::= Psid (131)
+
+---
+-- @brief This data type denotes the PSID for WAVE service advertisement
+--        application i.e. 0x87
+-- @class WaveServiceAdvertisementPsid 
+WaveServiceAdvertisementPsid ::= Psid (135)
+
+---
+-- @brief This data type denotes the PSID for Vehicle initiated distress
+--        notification applicaiton i.e. 0x4082
+-- @class VehicleInitiatedDistressNotificationPsid 
+VehicleInitiatedDistressNotificationPsid ::= Psid (16514)
+
+---
+-- @brief This data type denotes the PSID for Transcore software update
+--        application i.e. 0x204083
+-- @class TranscoreSoftwareUpdatePsid 
+TranscoreSoftwareUpdatePsid ::= Psid (2113667)
+
+---
+-- @brief This data type denotes the PSID for reserved CV pilot application #1
+--        i.e. 0x204088
+-- @class CVPApplication1Psid 
+CVPApplication1Psid ::= Psid (2113672)
+
+---
+-- @brief This data type denotes the PSID for reserved CV pilot application #2
+--        i.e. 0x204089
+-- @class CVPApplication2Psid 
+CVPApplication2Psid ::= Psid (2113673)
+
+---
+-- @brief This data type denotes the PSID for reserved CV pilot application #3
+--        i.e. 0x20408A
+-- @class CVPApplication3Psid 
+CVPApplication3Psid ::= Psid (2113674)
+
+---
+-- @brief This data type denotes the PSID for reserved CV pilot application #4
+--        i.e. 0x20408B
+-- @class CVPApplication4Psid 
+CVPApplication4Psid ::= Psid (2113675)
+
+---
+-- @brief This data type denotes the PSID for reserved CV pilot application #5
+--        i.e. 0x20408C
+-- @class CVPApplication5Psid 
+CVPApplication5Psid ::= Psid (2113676)
+
+---
+-- @brief This data type denotes the PSID for reserved CV pilot application #6
+--        i.e. 0x20408D
+-- @class CVPApplication6Psid 
+CVPApplication6Psid ::= Psid (2113677)
+
+---
+-- @brief This data type denotes the PSID for reserved CV pilot application #7
+--        i.e. 0x20408E
+-- @class CVPApplication7Psid 
+CVPApplication7Psid ::= Psid (2113678)
+
+---
+-- @brief This data type denotes the PSID for reserved CV pilot application #8
+--        i.e. 0x20408F
+-- @class CVPApplication8Psid 
+CVPApplication8Psid ::= Psid (2113679)
+
+---
+-- @brief This data type denotes the PSID for reserved CV pilot application #9
+--        i.e. 0x204090
+-- @class CVPApplication9Psid 
+CVPApplication9Psid ::= Psid (2113680)
+
+---
+-- @brief This data type denotes the PSID for reserved CV pilot application 
+--        10 i.e. 0x204091
+-- @class CVPApplication10Psid 
+CVPApplication10Psid ::= Psid (2113681)
+
+---
+-- @brief This data type denotes the PSID for reserved CV pilot application 
+--        11 i.e. 0x204092
+-- @class CVPApplication11Psid 
+CVPApplication11Psid ::= Psid (2113682)
+
+---
+-- @brief This data type denotes the PSID for reserved CV pilot application 
+--        12 i.e. 0x204093
+-- @class CVPApplication12Psid 
+CVPApplication12Psid ::= Psid (2113683)
+
+---
+-- @brief This data type denotes the PSID for reserved CV pilot application 
+--        13 i.e. 0x204094
+-- @class CVPApplication13Psid 
+CVPApplication13Psid ::= Psid (2113684)
+
+---
+-- @brief This data type denotes the PSID for reserved CV pilot application 
+--        14 i.e. 0x204095
+-- @class CVPApplication14Psid 
+CVPApplication14Psid ::= Psid (2113685)
+
+---
+-- @brief This data type denotes the PSID for reserved CV pilot application 
+--        15 i.e. 0x204096
+-- @class CVPApplication15Psid 
+CVPApplication15Psid ::= Psid (2113686)
+
+---
+-- @brief This data type denotes the PSID for reserved CV pilot application 
+--        16 i.e. 0x204097
+-- @class CVPApplication16Psid 
+CVPApplication16Psid ::= Psid (2113687)
+
+---
+-- @brief This data type denotes CRL series for EE enrollment.
+-- @class EeEnrollmentCrlSeries 
+EeEnrollmentCrlSeries ::= CrlSeries (4)
+
+---
+-- @brief  This data type denotes CRL series for EE non pseudonym certificates.
+-- @class EeNonPseudonymCrlSeries 
+EeNonPseudonymCrlSeries ::= CrlSeries (3)
+
+---
+-- @brief  This data type denotes CRL series for OBE pseudonym certificates.
+-- @class ObePseudonymCrlSeries 
+ObePseudonymCrlSeries ::= CrlSeries (1)
+
+---
+-- @brief  This data type denotes CRL series for SCMS components.
+-- @class ScmsComponentCrlSeries 
+ScmsComponentCrlSeries ::= CrlSeries (2)
+
+---
+-- @brief  This data type denotes CRL series for special SCMS components.
+-- @class ScmsSpclComponentCrlSeries 
+ScmsSpclComponentCrlSeries ::= CrlSeries (256)
+
+---
+-- @brief This data type denotes a 256 bit private reconstruction key.
+-- @class EccP256PrivateKeyReconstruction 
+EccP256PrivateKeyReconstruction ::= OCTET STRING(SIZE(32))
+
+---
+-- @brief This data type is used by LA to respond to linkage value requests
+--        from MA.
+-- @class EncryptedIndividualPLV 
+-- @param version contains the current version of the data type. The version 
+--                specified in this document is version 1, represented by the
+--                integer 1.
+-- @param LaId    identifies which LA created PLV.
+-- @param enc-plv the ciphertext field in enc-plv decrypts to a
+--                ToBeEncryptedIndividualPLV. It contains a Pointer to the
+--                used encryption key. The encryption key is identified by the
+--                hash of key agreement (PCA’s initial request).
+-- @see Uint8, LaId, EncryptedData
+EncryptedIndividualPLV ::= SEQUENCE {
+    version         Uint8(1),
+    laId            LaId,
+    enc-plv         EncryptedData (WITH COMPONENTS {
+      recipients (SIZE (1) INTERSECTION (WITH COMPONENT (
+        RecipientInfo (WITH COMPONENTS {
+            symmRecipInfo
+      }))))
+    })
+}
+
+---
+-- @brief This data type encloses all information to define an encrypted group
+--        PLV.
+-- @class EncryptedGroupPLV 
+-- @param version       contains the current version of the data type. The 
+--                      version specified in this document is version 1, 
+--                      represented by the integer 1.
+-- @param LaId          identifies which LA created PLV.
+-- @param encGroupIndex decrypts to a ToBeEncryptedGroupIndex.
+-- @param enc-group-plv the ciphertext field in enc-plv decrypts to a
+--                      ToBeEncryptedGroupPLV. It contains a Pointer to the
+--                      used encryption key. The encryption key is identified
+--                      by the hash of key agreement (PCA’s initial request).
+-- @see Uint8, LaId, EncryptedData
+EncryptedGroupPLV ::= SEQUENCE {
+    version         Uint8(1),
+    laId            LaId,
+    encGroupIndex   OCTET STRING (SIZE(16)),
+    enc-group-plv   EncryptedData (WITH COMPONENTS {
+      recipients (SIZE (1) INTERSECTION (WITH COMPONENT (
+        RecipientInfo (WITH COMPONENTS {
+            symmRecipInfo
+      }))))
+    })
+}
+
+---
+-- @brief This data type denotes 64 0-bits. It is used for padding purposes.
+-- @class zero8
+zero8 OCTET STRING ::= '0000000000000000'H
+
+---
+-- @brief This data type encloses j number of group identifiers.
+-- @class ToBeEncryptedGroupIndex 
+-- @param padding         is a padding of 64 0-bits.
+-- @param groupIdentifier is a 32-bit group identifier.
+-- @param j               denotes the number of indexes per week.
+-- @see Uint32
+ToBeEncryptedGroupIndex ::= SEQUENCE {
+    padding         OCTET STRING (SIZE(8)) (zero8),
+    groupIdentifier OCTET STRING (SIZE(4)),
+    j               Uint32
+}
+   
+---
+-- @brief This data type contains the PLV information that is signed by PCA at
+--        scms-protocol level.
+-- @class ToBeEncryptedIndividualPLV 
+--- @param iValue denotes the week number from i=0 (i.e. 4:00 am Eastern Time 
+--                on Tuesday, January 6, 2015)
+-- @param plv     denotes a pre-linkage value.
+-- @see IValue
+ToBeEncryptedIndividualPLV ::= SEQUENCE {
+    iValue     IValue,
+    plv        PreLinkageValue
+} 
+
+---
+-- @brief This data type contains the group PLV information that is signed by
+--        PCA at scms-protocol level.
+-- @class ToBeEncryptedGroupPLV 
+-- @param iValue denotes the week number from i=0 (i.e. 4:00 am Eastern Time on
+--               Tuesday, January 6, 2015)
+-- @param j      denotes the number of PLVs per iValue.
+-- @param plv    denotes a pre-linkage value.
+-- @see IValue, Uint32
+ToBeEncryptedGroupPLV ::= SEQUENCE {
+   iValue      IValue,
+   j           Uint32,
+   plv         PreLinkageValue
+}
+
+---
+-- @brief This data type encloses all information for a Linkage Chain
+--        Identifier (LCI).
+-- @class LinkageChainId 
+-- @param recipients contains the information of who is going to receive the
+--                   LCI.
+-- @param ciphertext contains the encrypted LinkageSeed information.
+LinkageChainId ::= EncryptedData (WITH COMPONENTS {
+    recipients (SIZE (1) INTERSECTION (WITH COMPONENT (
+        RecipientInfo (WITH COMPONENTS {
+            symmRecipInfo
+    })))),
+    ciphertext
+  }  
+)
+
+---
+-- @brief This data type denotes a 72 bit (9 byte) pre-linkage value.
+-- @class PreLinkageValue 
+PreLinkageValue ::= OCTET STRING (SIZE(9))
+
+---
+-- @brief This data type denotes a 32 byte hash value.
+-- @class FullSizeHash 
+FullSizeHash ::= OCTET STRING (SIZE(32))
+
+---
+-- @brief This data type denotes the 255 bit unique hostname of RA.
+-- @class RaHostnameId  
+RaHostnameId  ::= Hostname
+
+---
+-- @brief This data type denotes the 255 bit unique hostname of PCA.
+-- @class PcaHostnameId 
+PcaHostnameId ::= Hostname
+
+---
+-- @brief This data type denotes the 255 bit unique hostname of MA.
+-- @class MaHostnameId  
+MaHostnameId  ::= Hostname
+
+---
+-- @brief This data type denotes the 255 bit unique hostname of LA.
+-- @class LaHostnameId  
+LaHostnameId  ::= Hostname
+
+---
+-- @brief This data type denotes the Hash of Pseudonym Certificate Request.
+-- @class HPCR            
+HPCR            ::= FullSizeHash
+
+---
+-- @brief This data type encloses a linkage seed and the ID of an LA providing
+--        it.
+-- @class LinkageSeedAndLaId 
+-- @param linkageSeed denotes a linkage seed corresponding to an entity in the
+--                    SCMS.
+-- @param laId        is the 16 bit unique ID of an LA.
+-- @see LinkageSeed, LaId
+LinkageSeedAndLaId ::= SEQUENCE {
+	linkageSeed	LinkageSeed,
+	laId		    LaId
+}
+
+---
+-- @brief This data type encloses a signature and the corresponding signer.
+-- @class SignatureAndSignerIdentifier 
+-- @param signer    is the entity putting its signature.
+-- @param signature is the digital signature corresponding to the signer.
+-- @see SignerIdentifier, Signature
+SignatureAndSignerIdentifier ::= SEQUENCE {
+	signer 		SignerIdentifier,
+	signature	Signature
+}
+
+---
+-- @brief This data type encloses an encrypted PLV and its corresponding host.
+-- @class EncryptedPlvAndHostInfo 
+-- @param encryptedPLV is the encrypted PLV corresponding to hostname.
+-- @param hostname     is the name of the host corresponding to encrypted PLV
+--                     in this data type.
+-- @see Hostname
+EncryptedPlvAndHostInfo ::= SEQUENCE {
+	encryptedPLV      EncryptedIndividualPLV,
+	hostname	      Hostname
+}
+
+---
+-- @brief This data type encloses an encrypted group PLV and its corresponding
+--        host.
+-- @class EncryptedGroupPlvAndHostInfo 
+-- @param encryptedGPLV is the encrypted group PLV corresponding to hostname.
+-- @param hostname      is the name of the host corresponding to encrypted
+--                      group PLV in this data type.
+-- @see Hostname
+EncryptedGroupPlvAndHostInfo ::= SEQUENCE {
+	encryptedGPLV     EncryptedGroupPLV,
+	hostname	      Hostname
+}
+
+---
+-- @brief This data type encloses an HPCR and its corresponding host.
+-- @class HPCRAndHostInfo 
+-- @param hpcr     is the hash of pseudonym certificate of the host.
+-- @param hostname is the name of the host corresponding to hpcr in this data
+--                 type.
+-- @see Hostname
+HPCRAndHostInfo ::= SEQUENCE {
+	hpcr		     HPCR,
+	hostname		 Hostname
+}
+
+---
+-- @brief This data type encloses the LCI and its host information.
+-- @class LCIAndHostInfo 
+-- @param iMax    denotes the upper bound of i for which the PLVs are requested.
+-- @param la1-lci is the linkage chain ID of LA1.
+-- @param la2-lci is the linkage chain ID of LA2.
+-- @param la1-id  is a 256 bit unique hostname ID of LA1.
+-- @param la2-id  is a 256 bit unique hostname ID of LA2.
+LCIAndHostInfo ::= SEQUENCE {
+	iMax            OCTET STRING (SIZE (4)),
+	la1-lci         LinkageChainId,
+	la2-lci         LinkageChainId,
+	la1-id          LaHostnameId,
+	la2-id          LaHostnameId
+}
+
+---
+-- @brief This data type is called a Revocation Identifier (RIF) and is an
+--        8-byte hash of an enrollment certificate.
+-- @class RIF 
+RIF ::= HashedId8
+
+END

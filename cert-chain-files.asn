@@ -1,0 +1,141 @@
+-- 
+--  Copyright 2017 Crash Avoidance Metrics Partner, VSC5 Consortium
+-- 
+--  Licensed under the Apache License, Version 2.0 (the "License");
+--  you may not use this file except in compliance with the License.
+--  You may obtain a copy of the License at
+-- 
+--     http://www.apache.org/licenses/LICENSE-2.0
+-- 
+--  Unless required by applicable law or agreed to in writing, software
+--  distributed under the License is distributed on an "AS IS" BASIS,
+--  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+--  See the License for the specific language governing permissions and
+--  limitations under the License.
+-- 
+
+-- @namespace IEEE1609dot2-cert-chains 
+IEEE1609dot2-cert-chains {iso(1) identified-organization(3) ieee(111)
+standards-association-numbered-series-standards(2) wave-stds(1609)
+dot2(2) base(1) cert-chains(4) major-version-2(2)}
+
+DEFINITIONS AUTOMATIC TAGS ::= BEGIN
+
+EXPORTS ALL;
+
+IMPORTS
+
+  Hostname,
+  Time64,
+  Uint16
+FROM IEEE1609dot2 {iso(1) identified-organization(3) ieee(111)
+    standards-association-numbered-series-standards(2) wave-stds(1609)
+    dot2(2) base(1) base-types(2) major-version-2(2)}
+
+  SignedData,
+  Certificate,
+  ImplicitCertificate,
+  ExplicitCertificate
+FROM IEEE1609dot2 {iso(1) identified-organization(3) ieee(111)
+    standards-association-numbered-series-standards(2) wave-stds(1609)
+    dot2(2) base(1) schema(1) major-version-2(2)}
+
+  ElectorBallot
+FROM Ieee1609Dot2ScmsComponentCertificateManagement
+{iso(1) identified-organization(3) ieee(111) 
+standards-association-numbered-series-standards(2) wave-stds(1609)  
+dot2(2) scms(4) interfaces(1) component-certificate-management(3) major-version-2(2)}
+
+;
+
+---
+-- @brief The CertificateChainFiles is the parent message type for enclosing 
+--        all types of certificate chain files transferred between SCMS
+--        components.
+-- @class CertificateChainFiles 
+-- @param globalCertificateChainFile contains the global certificate chain.
+-- @param localCertificateChainFile  contains the local certificate chain.
+CertificateChainFiles ::= CHOICE {
+    globalCertificateChainFile GlobalCertificateChainFile,
+    localCertificateChainFile LocalCertificateChainFile,
+    ...
+}
+
+---
+-- @brief This data type contains the full certificate of all SCMS components. 
+--        This file is signed by the Policy Generator.
+-- @class GlobalCertificateChainFile 
+-- @param version   is the unique version number for this GCCF.
+-- @param certStore is the list of certificats and all issuers.
+-- @see Uint16
+GlobalCertificateChainFile ::= SEQUENCE {
+    version Uint16,
+    certStore CertificateStore,
+    ...
+}
+
+---
+-- @brief This data type contains a minimum set of full certificates as 
+--        required by policy and the selection of the local RA that generated 
+--        this file. This file is signed by the Policy Generator.
+-- @class LocalCertificateChainFile 
+-- @param version           is the composite version for this file.
+-- @param requiredCertStore is the required list of certificates.
+-- @param optionalCertList  is the list of optional certificates.
+-- @see Certificate
+LocalCertificateChainFile ::= SEQUENCE {
+    version CompositeVersion,
+    requiredCertStore CertificateStore,
+    optionalCertList SEQUENCE SIZE(0..MAX) OF Certificate,
+    ...
+}
+
+---
+-- @brief This data type contains the version numbers of each type of
+--        certificate chain file.
+-- @class CompositeVersion 
+-- @param gccfVersion is the GCCF version that was used to generate this file.
+-- @param lccfVersion is the unique local version for this LCCF.
+-- @param raHostname  is the name of the RA that generated this LCCF.
+-- @see Uint16, Hostname
+CompositeVersion ::= SEQUENCE {
+	gccfVersion Uint16,
+	lccfVersion Uint16,
+	raHostname Hostname
+}
+
+---
+-- @brief A certificate store is a list of root and elector endorsements plus
+--        lists of ICA and PCA certificates needed by EEs to validate message.
+--        This base type is used to construct the GCCF and the LCCF. The PG
+--        creates the GCCF by assembling all certificates needed to validate 
+--        all EE certificates in the SCMS. An RA creates the LCCF by pruning
+--        the GCCF down to the lists needed by the EEs that are assigned to
+--        that RA. Note that these are lists of certificates, not certificate
+--        chains as defined in 1609.2. The primary reason for not using a list
+--        of certificate chains is to eliminate redundancy. If we used a list
+--        of certificate chains, each chain would have a copy of the same root
+--        CA and some chains would have copies of the same ICA.
+-- @class CertificateStore 
+-- @param rootCAEndorsements  are optional for as long as the SCMS OPs project
+--                            does not have Electors. As soon as they are
+--                            introduced, a minimum of 1 rootCAEndorsement is
+--                            required.
+-- @param electorEndorsements are required by the SCMS components (including
+--                            EEs) to validate non-expired certificates before
+--                            adding a new Elector and storing new elector
+--                            certificate in the certificate store.
+-- @param maCertificate       is the MA certificate.
+-- @param certs               is a list of cerificates of all other SCMS
+--                            components.
+-- @see Certificate
+CertificateStore ::= SEQUENCE {
+    rootCAEndorsements SEQUENCE SIZE(0..MAX) OF ElectorBallot,
+    electorEndorsements SEQUENCE SIZE(0..MAX) OF ElectorBallot,
+    maCertificate Certificate,
+    certs SEQUENCE SIZE(0..MAX) OF Certificate,
+    ...
+}
+
+
+END

@@ -1,0 +1,359 @@
+--
+--  Copyright 2017 Crash Avoidance Metrics Partner, VSC5 Consortium
+--
+--  Licensed under the Apache License, Version 2.0 (the "License");
+--  you may not use this file except in compliance with the License.
+--  You may obtain a copy of the License at
+--
+--     http://www.apache.org/licenses/LICENSE-2.0
+--
+--  Unless required by applicable law or agreed to in writing, software
+--  distributed under the License is distributed on an "AS IS" BASIS,
+--  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+--  See the License for the specific language governing permissions and
+--  limitations under the License.
+--
+
+-- @namespace Ieee1609Dot2EndEntityRaInterface
+Ieee1609Dot2EndEntityRaInterface
+{iso(1) identified-organization(3) ieee(111)
+standards-association-numbered-series-standards(2) wave-stds(1609)
+dot2(2) scms(4) interfaces(1) ee-ra(8) major-version-2(2)}
+
+DEFINITIONS AUTOMATIC TAGS ::= BEGIN
+
+EXPORTS ALL;
+
+IMPORTS
+  EccP256CurvePoint,
+  EncryptionKey,
+  HashAlgorithm,
+  Hostname,
+  Signature,
+  HashedId8,
+  PublicEncryptionKey,
+  PublicVerificationKey,
+  Time32,
+  Time64,
+  Uint8,
+  Uint16,
+  Uint32
+FROM IEEE1609dot2BaseTypes {iso(1) identified-organization(3) ieee(111)
+    standards-association-numbered-series-standards(2) wave-stds(1609) dot2(2)
+    base(1) base-types(2) major-version-2(2)}
+
+  Certificate,
+  ExplicitCertificate,
+  Ieee1609Dot2Data,
+  ImplicitCertificate,
+  SignerIdentifier
+FROM IEEE1609dot2 {iso(1) identified-organization(3) ieee(111)
+    standards-association-numbered-series-standards(2) wave-stds(1609) dot2(2)
+    base(1) schema(1) major-version-2(2)}
+
+  SecurityMgmtPsid
+FROM Ieee1609dot2ScmsBaseTypes {iso(1) identified-organization(3) ieee(111)
+    standards-association-numbered-series-standards(2) wave-stds(1609)  dot2(2)
+    scms(4) interfaces(1) base-types(2) major-version-2(2)}
+
+  CompositeCrl
+FROM Ieee1609Dot2ScmsComponentCertificateManagement {iso(1)
+    identified-organization(3) ieee(111) standards-association-numbered-series-standards(2)
+    wave-stds(1609) dot2(2) scms(4) interfaces(1) component-certificate-management (3) major-version-2(2)}
+
+;
+
+---
+-- @brief The EndEntityRaInterfacePDU is the parent message type for messages 
+--        sent between end entities and the Registration Authority.
+-- @class EndEntityRaInterfacePDU
+-- @param eeRaCertRequest                      contains a message from an EE 
+--                                             to the RA to request a copy of
+--                                             the RA’s currently valid
+--                                             certificate.
+-- @param raEeCertResponse                     is a message from the RA to the 
+--                                             EE as a response to
+--                                             EeRaCertRequest.
+-- @param eeRaPseudonymCertProvisioningRequest is a message from an EE to the 
+--                                             RA to request pseudonym
+--                                             certificates.
+-- @param raEePseudonymCertProvisioningAck     is a message from the RA to the 
+--                                             EE to acknowledge the receipt
+--                                             of EeRaPseudonymCertProvisioningRequest.
+-- @param eeRaIdCertProvisioningRequest        is a message from an EE to the 
+--                                             RA to request an identification
+--                                             certificate.
+-- @param raEeIdCertProvisioningAck            is a message from the RA to the 
+--                                             EE to acknowledge the receipt
+--                                             of EeRaIdCertProvisioningRequest.
+-- @param eeRaAppCertProvisioningRequest       is a message from an EE to the 
+--                                             RA to request an application
+--                                             certificate.
+-- @param raEeAppCertProvisioningAck           is a message from the RA to the 
+--                                             EE to acknowledge the receipt
+--                                             of EeRaAppCertProvisioningRequest.
+-- @param eeRaAuthenticatedDownloadRequest     is a message from an EE to the 
+--                                             RA to request the download of
+--                                             certificates (once they are ready).
+EndEntityRaInterfacePDU::= CHOICE {
+    eeRaCertRequest                      EeRaCertRequestMsg,
+    raEeCertResponse                     RaEeCertResponseMsg,
+    eeRaPseudonymCertProvisioningRequest EeRaPseudonymCertProvisioningRequest,
+    raEePseudonymCertProvisioningAck     RaEePseudonymCertProvisioningAck,
+    eeRaIdCertProvisioningRequest        EeRaIdCertProvisioningRequest,
+    raEeIdCertProvisioningAck            RaEeIdCertProvisioningAck,
+    eeRaAppCertProvisioningRequest       EeRaAppCertProvisioningRequest,
+    raEeAppCertProvisioningAck           RaEeAppCertProvisioningAck,
+    eeRaAuthenticatedDownloadRequest     AuthenticatedDownloadRequest,
+    ...
+}
+
+---
+-- @brief This message is sent from an EE to the RA to request the RAs
+--        currently valid certificate.
+-- @class EeRaCertRequestMsg
+-- @param version contains the current version of the data type. The version 
+--                specified in this document is version 1, represented by the
+--                integer 1.
+-- @see Uint8
+EeRaCertRequestMsg ::= SEQUENCE {
+    version         Uint8(1),
+    ...
+}
+
+---
+-- @brief This message contains an acknowledgement from the RA to an EE's
+--        EeRaCertRequestMsg.
+-- @class RaEeCertResponseMsg
+-- @param version contains the current version of the data type. The version 
+--                specified in this document is version 1, represented by the
+--                integer 1.
+-- @param reply   indicates the contents of the reply message. In this version 
+--                of the document, only one choice option is supported, namely 
+--                an acknowledgement (ack) of type RaEeCertResponseAck.
+-- @see Uint8
+RaEeCertResponseMsg ::= SEQUENCE {
+    version         Uint8(1),
+  	reply           CHOICE {
+        ack           RaEeCertResponseAck,
+        ...
+    },
+    ...
+}
+
+---
+-- @brief This structure contains the RA's currently valid certificate and its 
+--        Certificate Revocation List (CRL)
+-- @class RaEeCertResponseAck
+-- @param raCertificate contains the RA’s currently valid public key 
+--                      certificate as defined in Section 6.4.2 of IEEE
+--                      1609.2-2016
+-- @param crl           contains the Certificate Revocation List pertinent to 
+--                      the RA certificate. The Certificate Revocation List 
+--                      type is defined in Section 7.3 and 7.4.1 of IEEE
+--                      1609.2-2016
+-- @see Certificate, CompositeCrl
+RaEeCertResponseAck ::= SEQUENCE {
+    raCertificate   Certificate,
+    crl             CompositeCrl,
+    ...
+}
+
+
+---
+-- @brief This structure defines the time when (and for which start date of 
+--        validity) a request is made to obtain pseudonym certificates.
+-- @class CommonProvisioningRequestFields
+-- @param current-time         indicates the time of request generation
+-- @param requested-start-time indicates the requested start time for the 
+--                             requested certificates to take effect (in terms
+--                             of validity).
+-- @see Time32
+CommonProvisioningRequestFields ::= SEQUENCE {
+    current-time                 Time32,
+    requested-start-time         Time32,
+    ...
+}
+
+---
+-- @brief This structure defines the parameters (seed and expansion keys) 
+--        required for butterfly key expansion
+-- @class UnsignedButterflyParams
+-- @param seed-key  contains the butterfly seed key
+-- @param expansion contains the expansion parameter needed to perform a 
+--                  Butterfly key expansion Butterfly expansion is described
+--                  in https://wiki.campllc.org/display/SCP/SCP1%3A+Butterfly+Keys
+-- @see EccP256CurvePoint
+UnsignedButterflyParams ::= SEQUENCE {
+    seed-key              EccP256CurvePoint,
+    expansion             OCTET STRING (SIZE (16))
+}
+
+---
+-- @brief These are signed and encrypted before sending, see scms-protocol.asn
+--        . Note that Identification certificates use Butterfly keys.
+-- @class EeRaIdCertProvisioningRequest
+-- @param version           contains the current version of the data type. The 
+--                          version specified in this document is version 1.
+-- @param verify-key-info   provides the information for the SCMS to generate 
+--                          and embed multiple ID certificate signature public
+--                          keys, one for each ID certificate.
+-- @param cert-enc-key-info if included, provides the information for the SCMS 
+--                          to generate and embed multiple ID certificate 
+--                          optional encryption public keys, one for each ID
+--                          certificate.
+-- @param resp-enc-key-info provides the information for SCMS to uniquely 
+--                          encrypt each ID certificate prior to responding to
+--                          the EE.
+-- @param common            provides the structure for indicating the time of 
+--                          the request and the requested start time of the
+--                          certificates.
+-- @see Uint8
+EeRaIdCertProvisioningRequest ::= SEQUENCE {
+    version                      Uint8(1),
+    verify-key-info              UnsignedButterflyParams,
+    cert-enc-key-info            UnsignedButterflyParams OPTIONAL,
+    resp-enc-key-info            UnsignedButterflyParams,
+    common                       CommonProvisioningRequestFields,
+    ...
+}
+
+---
+-- @brief Application certificate provisioning requests are similar to 
+--        Identification cert except there is no use of butterfly keys.
+-- @class EeRaAppCertProvisioningRequest
+-- @param version                  contains the current version of the data 
+--                                 type. The version specified in this
+--                                 document is version 1.
+-- @param verify-key               provides the public key to be embedded in 
+--                                 the application certificate.
+-- @param cert-encryption-key-info provides the discrete PublicEncryptionKey 
+--                                 to be embedded in the application
+--                                 certificate for application encryption
+--                                 functions.
+-- @param resp-encryption-key      provides the discrete PublicEncryptionKey 
+--                                 to be used by the SCMS to encrypt the
+--                                 certificate response back to the EE.
+-- @param common                   provides the structure for indicating the 
+--                                 time of the request and the requested start
+--                                 time of the certificates.
+-- @see Uint8, PublicVerificationKey, PublicEncryptionKey, PublicEncryptionKey
+EeRaAppCertProvisioningRequest ::= SEQUENCE {
+    version                 Uint8(1),
+    verify-key              PublicVerificationKey,
+    cert-encryption-key     PublicEncryptionKey OPTIONAL,
+    response-encryption-key PublicEncryptionKey,
+    common                  CommonProvisioningRequestFields,
+    ...
+}
+
+---
+-- @brief Pseudonym certificate provisioning: Pseudonym certificates use 
+--        butterfly keys. Unlike identification certificates, they are 
+--        shuffled and include linkage values. This differentiation is visible
+--        in other interfaces only, in particular RA-PCA.
+-- @class EeRaPseudonymCertProvisioningRequest
+-- @param version           contains the current version of the data type. The 
+--                          version specified in this document is version 1.
+-- @param verify-key-info   provides the information for the SCMS to generate 
+--                          and embed multiple pseudonym certificate signature
+--                          public keys, one for each ID certificate.
+-- @param resp-enc-key-info provides the information for the SCMS to uniquely 
+--                          encrypt each pseudonym certificate prior to
+--                          responding to the EE.
+-- @param common            provides the structure for indicating the time of 
+--                          the request and the requested start time of the
+--                          certificates.
+-- @see Uint8
+EeRaPseudonymCertProvisioningRequest ::= SEQUENCE {
+    version                      Uint8(1),
+    verify-key-info              UnsignedButterflyParams,
+    resp-enc-key-info            UnsignedButterflyParams,
+    common                       CommonProvisioningRequestFields,
+    ...
+}
+
+---
+-- @brief Enrollment certificate of the end entity, for pseudonym certificate
+--        requests
+-- @class EndEntityEnrollmentPseudonymCertificate
+-- @param toBeSigned contains certificate permissions that are signed by the
+--                   EE at scms-protocol level.
+-- @see ImplicitCertificate
+EndEntityEnrollmentPseudonymCertificate ::= ImplicitCertificate (WITH COMPONENTS {...,
+      toBeSigned(WITH COMPONENTS {...,
+          certRequestPermissions PRESENT
+      })
+  })
+
+---
+-- @brief This structure represents the acknowledgement of the RA that it has 
+--        received an EE’s pseudonym certificate provisioning request. This 
+--        message is signed and encrypted before sending to EE, see scms
+--        protocol.asn.
+-- @class RaEePseudonymCertProvisioningAck
+-- @param version     contains the current version of the data type. The 
+--                    version specified this document is version 1.
+-- @param requestHash contains the hash of the original request, using the 
+--                    HashedId8 type as defined in 1609dot2-base-types.asn. In 
+--                    the case when the RA cannot calculate the hash of the
+--                    original request due to a hardError, this field shall be
+--                    all zeroes.
+-- @param reply       indicates the contents of the reply message. In this 
+--                    version of the document, only one choice option is 
+--                    supported, namely an acknowledgement (ack) of type
+--                    PseudonymCertProvisioningAck.
+-- @see Uint8, HashedId8
+RaEePseudonymCertProvisioningAck ::= SEQUENCE {
+    version     Uint8(1),
+    requestHash HashedId8,
+    reply       CHOICE {
+        ack        PseudonymCertProvisioningAck,
+        ...
+    },
+    ...
+}
+
+---
+-- @brief This structure represents the acknowledgement of the RA that it has 
+--        received an EE’s pseudonym certificate provisioning request.
+-- @class PseudonymCertProvisioningAck
+-- @param certDLTime contains the time at which the download of the generated 
+--                   certificates is available.
+-- @param certDLURL  contains the URL at which the EE may download the 
+--                   pseudonym certificates at the indicated time.
+-- @see Time32, Hostname
+PseudonymCertProvisioningAck ::= SEQUENCE {
+    certDLTime       Time32,
+    certDLURL        Hostname,
+    ...
+}
+
+---
+-- @brief This structure represents the acknowledgement of the RA that it has 
+--        received an EE's identity certificate provisioning request.
+-- @class RaEeIdCertProvisioningAck
+RaEeIdCertProvisioningAck ::= RaEePseudonymCertProvisioningAck
+
+---
+-- @brief This structure represents the acknowledgement of the RA that it has 
+--        received an EE's application certificate provisioning request.
+-- @class RaEeAppCertProvisioningAck
+RaEeAppCertProvisioningAck ::= RaEePseudonymCertProvisioningAck
+
+---
+-- @brief This structure represents the EE’s request for download from the RA. 
+--        The request indicates the time of the download request in addition
+--        to the requested filename.
+-- @class AuthenticatedDownloadRequest
+-- @param timestamp contains the time at which the download request for the 
+--                  file (filename) was generated.
+-- @param filename  contains the name of the file to download.
+-- @see Time32
+AuthenticatedDownloadRequest ::= SEQUENCE {
+    timestamp      Time32,
+    filename       UTF8String (SIZE(0..255)),
+    ...
+}
+
+END

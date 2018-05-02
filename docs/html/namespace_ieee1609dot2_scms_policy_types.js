@@ -1,0 +1,28 @@
+var namespace_ieee1609dot2_scms_policy_types =
+[
+    [ "PolicyFiles", "struct_ieee1609dot2_scms_policy_types_1_1_policy_files.html", null ],
+    [ "BasePolicyFile", "struct_ieee1609dot2_scms_policy_types_1_1_base_policy_file.html", null ],
+    [ "ToBeSignedPolicyData", "struct_ieee1609dot2_scms_policy_types_1_1_to_be_signed_policy_data.html", null ],
+    [ "GlobalPolicyFile", "struct_ieee1609dot2_scms_policy_types_1_1_global_policy_file.html", null ],
+    [ "LocalPolicyFile", "struct_ieee1609dot2_scms_policy_types_1_1_local_policy_file.html", null ],
+    [ "Policy", "struct_ieee1609dot2_scms_policy_types_1_1_policy.html", null ],
+    [ "GlobalPolicyData", "struct_ieee1609dot2_scms_policy_types_1_1_global_policy_data.html", null ],
+    [ "ScmsVersion", "struct_ieee1609dot2_scms_policy_types_1_1_scms_version.html", null ],
+    [ "GlobalCertChainFileID", "struct_ieee1609dot2_scms_policy_types_1_1_global_cert_chain_file_i_d.html", null ],
+    [ "OverdueCrlTolerance", "struct_ieee1609dot2_scms_policy_types_1_1_overdue_crl_tolerance.html", null ],
+    [ "IPeriod", "struct_ieee1609dot2_scms_policy_types_1_1_i_period.html", null ],
+    [ "MinCertsPerIPeriod", "struct_ieee1609dot2_scms_policy_types_1_1_min_certs_per_i_period.html", null ],
+    [ "CertValidityModel", "struct_ieee1609dot2_scms_policy_types_1_1_cert_validity_model.html", null ],
+    [ "MaxAvailableCertSupply", "struct_ieee1609dot2_scms_policy_types_1_1_max_available_cert_supply.html", null ],
+    [ "MaxCertRequestAge", "struct_ieee1609dot2_scms_policy_types_1_1_max_cert_request_age.html", null ],
+    [ "ShuffleThreshold", "struct_ieee1609dot2_scms_policy_types_1_1_shuffle_threshold.html", null ],
+    [ "HashOfRequestSize", "struct_ieee1609dot2_scms_policy_types_1_1_hash_of_request_size.html", null ],
+    [ "MaxGpfGccfRetrievalInterval", "struct_ieee1609dot2_scms_policy_types_1_1_max_gpf_gccf_retrieval_interval.html", null ],
+    [ "RseApplicationCertValidity", "struct_ieee1609dot2_scms_policy_types_1_1_rse_application_cert_validity.html", null ],
+    [ "RseApplicationCertOverlap", "struct_ieee1609dot2_scms_policy_types_1_1_rse_application_cert_overlap.html", null ],
+    [ "CustomPolicyData", "struct_ieee1609dot2_scms_policy_types_1_1_custom_policy_data.html", null ],
+    [ "LocalPolicyData", "struct_ieee1609dot2_scms_policy_types_1_1_local_policy_data.html", null ],
+    [ "CertsPerIPeriod", "struct_ieee1609dot2_scms_policy_types_1_1_certs_per_i_period.html", null ],
+    [ "X509TlsCert", "struct_ieee1609dot2_scms_policy_types_1_1_x509_tls_cert.html", null ],
+    [ "SharedKeyUpdateInterval", "struct_ieee1609dot2_scms_policy_types_1_1_shared_key_update_interval.html", null ]
+];

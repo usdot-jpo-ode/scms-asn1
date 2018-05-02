@@ -1,0 +1,268 @@
+-- 
+--  Copyright 2017 Crash Avoidance Metrics Partner, VSC5 Consortium
+-- 
+--  Licensed under the Apache License, Version 2.0 (the "License");
+--  you may not use this file except in compliance with the License.
+--  You may obtain a copy of the License at
+-- 
+--     http://www.apache.org/licenses/LICENSE-2.0
+-- 
+--  Unless required by applicable law or agreed to in writing, software
+--  distributed under the License is distributed on an "AS IS" BASIS,
+--  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+--  See the License for the specific language governing permissions and
+--  limitations under the License.
+-- 
+
+-- @namespace Ieee1609Dot2LaMaInterface
+Ieee1609Dot2LaMaInterface
+{iso(1) identified-organization(3) ieee(111) 
+standards-association-numbered-series-standards(2) wave-stds(1609)  
+dot2(2) scms(4) interfaces(1) la-ma(9) major-version-2(2)}
+
+DEFINITIONS AUTOMATIC TAGS ::= BEGIN 
+
+EXPORTS ALL;
+ 
+IMPORTS 
+
+  Uint8,
+  HashedId8
+FROM IEEE1609dot2BaseTypes {iso(1) identified-organization(3) ieee(111) 
+    standards-association-numbered-series-standards(2) wave-stds(1609)  
+    dot2(2) base(1) base-types(2) major-version-2(2)}
+
+  Countersignature
+FROM IEEE1609dot2 {iso(1) identified-organization(3) ieee(111) 
+    standards-association-numbered-series-standards(2) wave-stds(1609)  
+    dot2(2) base (1) schema (1) major-version-2(2)}
+
+  LinkageSeedAndLaId,
+  PreLinkageValue,
+  LinkageChainId,
+  MaHostnameId,
+  LaHostnameId,
+  EncryptedGroupPLV,
+  EncryptedIndividualPLV
+FROM Ieee1609dot2ScmsBaseTypes {iso(1) identified-organization(3) ieee(111)
+     standards-association-numbered-series-standards(2) wave-stds(1609)  dot2(2)
+     scms(4) interfaces(1) base-types (2) major-version-2(2)}
+
+  ScopedLaMaLIError,
+  ScopedLaMaLSError
+FROM Ieee1609dot2ScmsError {iso(1) identified-organization(3) ieee(111)
+    standards-association-numbered-series-standards(2) wave-stds(1609) dot2(2)
+    scms(4) errors(2) complete(1) major-version-2(2)}
+;
+
+---
+-- @brief The LaMaInterfacePDU is the parent message type for messages 
+--        sent between Linkage Authority (LA) and Misbehavior Authority (MA).
+-- @class LaMaInterfacePDU
+-- @param maLaLinkageInfoRequest  contains message to request linkage values
+--                                from LA.
+-- @param laMaLinkageInfoResponse contains response to MaLaLinkageInfoRequestMsg
+--                                with requested linkage values.
+-- @param maLaLinkageSeedRequest  contains message to request linkage seed
+--                                information LA.
+-- @param laMaLinkageSeedResponse contains response to MaLaLinkageSeedRequest
+--                                with requested linkage seed.
+LaMaInterfacePDU::= CHOICE {
+    maLaLinkageInfoRequest  MaLaLinkageInfoRequestMsg,
+    laMaLinkageInfoResponse LaMaLinkageInfoResponseMsg,
+    maLaLinkageSeedRequest  MaLaLinkageSeedRequestMsg,
+    laMaLinkageSeedResponse LaMaLinkageSeedResponseMsg,
+    ...
+}
+
+---
+-- @brief This data type is used by the MA to request linkage information from
+--        LA.
+-- @class MaLaLinkageInfoRequestMsg 
+-- @param version    contains the current version of the data type. The version
+--                   specified in this document is version 1,
+-- @param tbs        contains the request with linkage information that is
+--                   signed by MA at scms-protocol level.
+-- @param signatures contains signatures that the MA has to obtain from
+--                   auditors before sending this data type. Size 0 is used
+--                   when MA creates an initial request to be signed by
+--                   auditors.
+-- @see Uint8, Countersignature
+MaLaLinkageInfoRequestMsg ::= SEQUENCE {
+    version     Uint8(1),
+    tbs         ToBeSignedLIRequestMsg,
+    signatures  SEQUENCE (SIZE (0..MAX)) OF Countersignature
+}
+
+
+---
+-- @brief The MA encloses all the required data to request linkage information
+--        in this data type.
+-- @class ToBeSignedLIRequestMsg 
+-- @param maId                   is the system-wide unique hostname ID.
+-- @param encryptedPLVsAndFlags  contains the encrypted pre-linkage values 
+--                               (ePLVs) of each EE.
+-- @param encryptedGPLVsAndFlags contains the encrypted pre-linkage values of
+--                               a group of EEs.
+-- @param expectedReply          contains the possible formats for a reply
+--                               from LA.
+-- @see MaHostnameId
+ToBeSignedLIRequestMsg ::= SEQUENCE {
+    maId                        MaHostnameId,
+    encryptedPLVsAndFlags       SEQUENCE (SIZE(0..MAX)) OF EncryptedPrelinkageValueAndDontCareFlag,
+    encryptedGPLVsAndFlags      SEQUENCE (SIZE(0..MAX)) OF EncryptedGroupPrelinkageValueAndDontCareFlag,
+    expectedReply               ExpectedReply,
+    ...
+}
+
+---
+-- @brief As the name suggests, this data type contains the ePLV and its
+--        corresponding don't care flag.
+-- @class EncryptedPrelinkageValueAndDontCareFlag 
+-- @param encryptedPLV is the encrypted pre-linkage value corresponding to an
+--                     EE pseudonym certificate.
+-- @param dontCareFlag defines if an LA should process this ePLV.
+EncryptedPrelinkageValueAndDontCareFlag ::= SEQUENCE {
+    encryptedPLV  EncryptedIndividualPLV,
+    dontCareFlag  BOOLEAN    
+}
+
+---
+-- @brief As the name suggests, this data type contains a group's ePLV and its
+--        corresponding don't care flag.
+-- @class EncryptedGroupPrelinkageValueAndDontCareFlag 
+-- @param encryptedGroupPLV is the encrypted pre-linkage value corresponding
+--                          to a group of EE pseudonym certificates.
+-- @param dontCareFlag defines if an LA should process this group ePLV.
+-- @see EncryptedGroupPLV
+EncryptedGroupPrelinkageValueAndDontCareFlag ::= SEQUENCE {
+    encryptedGroupPLV  EncryptedGroupPLV,
+    dontCareFlag  BOOLEAN    
+}
+
+
+---
+-- @brief This data type defines the types of responses an MA expects from LA
+--        when MA requests linkage information.
+-- @class ExpectedReply 
+-- @param scalarAnswer denotes the information LA has for a requested ePLV.
+-- @param indicesLists denotes a list of unknown, rejected, and associated PLVs.
+ExpectedReply ::= ENUMERATED {
+    scalarAnswer,
+    indicesLists
+}
+
+---
+-- @brief This data type is used by the LA to respond to
+--        MaLaLinkageInfoRequestMsg from MA for Misbehavior Detection.
+-- @class LaMaLinkageInfoResponseMsg 
+-- @param version     contains the current version of the data type. The 
+--                    version specified in this document is version 1,
+-- @param requestHash contains the hash of the original request.
+-- @param laId        is the unique hostname ID of an LA.
+-- @param linkageInfo if there are no errors in request from MA, the LA
+--                    responds with the requested linkage information.
+--                    Otherwise, LA responds with a suitable error code.
+-- @see Uint8, HashedId8, LaHostnameId, ScopedLaMaLIError
+LaMaLinkageInfoResponseMsg ::= SEQUENCE {
+    version       Uint8(1),
+    requestHash   HashedId8,
+    laId          LaHostnameId,
+    linkageInfo   CHOICE {
+       success       LinkageInformation,
+       failure       ScopedLaMaLIError
+    }
+}
+
+---
+-- @brief This data type is used by the LA to enclose all linkage information
+--        that is sent to MA on request.
+-- @class LinkageInformation 
+-- @param scalar      denotes if LA has the linkage information for a
+--                    requested ePLV.
+-- @param indicesList is the list of unknown, rejected, and associated PLVs.
+-- @see PreLinkageValue
+LinkageInformation ::= CHOICE {
+    scalar SEQUENCE {
+        matches      INTEGER,
+        lowerBound   BOOLEAN  -- lower bound is used or not
+    },
+    --- indices_list should be optional, not yet implemented!
+    indicesList SEQUENCE {
+        unkownPlv    SEQUENCE OF PreLinkageValue,
+        rejectPlv    SEQUENCE OF PreLinkageValue,
+        assocPlv     SEQUENCE OF SEQUENCE OF PreLinkageValue
+    }
+}
+
+---
+-- @brief This data type is used by the MA to request a linkage seed from LA
+--        for Revocation purposes.
+-- @class MaLaLinkageSeedRequestMsg
+-- @param version    contains the current version of the data type. The version
+--                   specified in this document is version 1,
+-- @param tbs        contains the linkage seed information which is signed by
+--                   LA at scms-protocol level.
+-- @param signatures contains the counter signatures that an MA has to obtain
+--                   form auditors before sending this request. Size 0 is used
+--                   when MA creates an initial request to be signed by
+--                   auditors.
+-- @see 
+MaLaLinkageSeedRequestMsg ::= SEQUENCE {
+    version       Uint8(1),
+    tbs           ToBeSignedLSRequestMsg,
+    signatures    SEQUENCE (SIZE (0..MAX)) OF Countersignature
+}
+
+---
+-- @brief The MA encloses all the required data to request a linkage seed in
+--        this data type.
+-- @class ToBeSignedLSRequestMsg 
+-- @param maId is the system-wide unique hostname ID.
+-- @param lci  is a list of linkage chain IDs for which the MA requests
+--             linkage seeds.
+-- @see MaHostnameId, LinkageChainId
+ToBeSignedLSRequestMsg ::= SEQUENCE {
+    maId          MaHostnameId,
+    lci           SEQUENCE OF LinkageChainId,
+    ...
+}
+
+---
+-- @brief This data type is used by LA to respond to MaLaLinkageSeedRequestMsg
+--        from MA for Revocation purposes.
+-- @class LaMaLinkageSeedResponseMsg 
+-- @param version     contains the current version of the data type. The 
+--                    version specified in this document is version 1,
+-- @param requestHash contains the hash of the original request.
+-- @param laId        is the unique hostname ID of an LA.
+-- @param lsInfo      contains linkage seed and LCI requested by MA.
+-- @see Uint8, HashedId8, LaHostnameId
+LaMaLinkageSeedResponseMsg ::= SEQUENCE {
+    version     Uint8(1),
+    requestHash HashedId8,
+    laId        LaHostnameId,
+    lsInfo      SEQUENCE OF LCI2LS
+}
+
+---
+-- @brief This data type is used by LA to send requested linkage chain ID and
+--        linkage seed by MA.
+-- @class LCI2LS 
+-- @param lci   contains the requested linkage chain ID by MA.
+-- @param reply contains the requested linkage seed and ID of the responding
+--              LA if request from MA has no errors. Otherwise an appropriate
+--              error code is sent in response.
+-- @see LinkageChainId, LinkageSeedAndLaId, ScopedLaMaLSError
+LCI2LS ::= SEQUENCE {
+    lci    LinkageChainId,
+    reply  CHOICE {
+        success LinkageSeedAndLaId,
+        failure ScopedLaMaLSError
+    }
+}
+
+
+
+END
+

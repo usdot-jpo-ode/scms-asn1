@@ -1,0 +1,6 @@
+[submodule "1609dot2-asn"]
+	path = 1609dot2-asn
+    url = https://github.com/wwhyte-si/1609dot2-asn
+[submodule "asn1-doxygen-filter"]
+	path = asn1-doxygen-filter
+	url = https://bitbucket.org/raashid_ansari/asn1-doxygen-filter

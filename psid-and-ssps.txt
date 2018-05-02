@@ -1,0 +1,150 @@
+
+
+SCMS Secure Data Permission model
+==============================================================================
+
+The described model is based on the new permission model introduced in the latest IEEE 1609.2 draft.
+This permission model uses the following parameters
+	- PSID (Provider Service ID), which is an application permission
+	- SSP (Service Specific Permission), more granular permissions defined by PSID
+	  (within the PSID application) 
+
+
+1. PSID values relevant to the SCMS
+------------------------------------------------------------------------------
+
+The following list fully covers the PSID values
+	- PSID = 35 (0x23), specifies Security Management application
+		- Note: All SCMS messages between components will have this PSID
+	- PSID = 36 (0x24), specifies CRL application
+		- Note: The value requested from IEEE will be in the form of 1-byte value
+				(just a placeholder until approved!)
+	- PSID = 37 (0x25), specifies Misbehavior Reporting application
+		- Note: The value requested from IEEE will be in the form of 1-byte value
+				(just a placeholder until approved!)
+	- PSID = 310 (0x136), specifies P2P distribution of Security Management information,
+		such as CA certificates or CRLs
+		- Note: The value requested from IEEE will be in the form of 2-byte value
+				(just a placeholder until approved!)
+
+
+2. PSID/SSP information relevant to the SCMS
+------------------------------------------------------------------------------
+
+Rules for using PSIDs and SSPs within the SCMS scope:
+	
+	- Certificate should have both PSIDs and SSPs to identify
+		- what application area the certificate can be used in
+		- what the certificate "can do" (e.g. issue a certificate, sign a BSM, etc)
+
+	- All the secure messages should only have PSIDs (without SSPs, 
+	  since the message itself belongs to a specific SSP without explicitely
+	  stating SSP in the message)
+
+
+3. Older PSID/SSP information relevant to the SCMS (as a reminder)
+------------------------------------------------------------------------------
+
+-- Certs with an EnrollmentScope are implicitly allowed to sign messages with 
+-- PSID = 0x23 and and NOT allowed to sign messages with other PSIDs.
+
+-- Certs with a CaScope are implicitly allowed to sign messages with 
+-- PSID = 0x23.
+
+
+4. Valid PSID/SSP combinations that must be covered in the PoC use cases
+------------------------------------------------------------------------------
+
+4.1 Certificates in the SCMS
+
+4.1.1 OBE V2V Enrolment Certificate
+		PSID = ?
+		SSP  = ?
+
+4.1.2 OBE V2I Enrolment Certificate
+		PSID = ?
+		SSP  = ?
+
+4.1.3 OBE V2V Pseudonym Certificate
+		PSID = ?
+		SSP  = ?
+
+4.1.4 OBE V2I Identification Certificate
+		PSID = ?
+		SSP  = ?
+
+4.1.5 RSE Enrolment Certificate
+		PSID = ?
+		SSP  = ?
+
+4.1.6 RSE Identification Certificate
+		PSID = ?
+		SSP  = ?
+
+4.1.7 SCMS Component Certificate (internal SCMS Certificate Management)
+		PSID = ?
+		SSP  = ?
+
+
+4.2 Certificate requests to the SCMS
+
+4.2.1 OBE V2V Enrolment Certificate requset
+		PSID = ?
+		SSP  = ?
+
+4.2.2 OBE V2I Enrolment Certificate request
+		PSID = ?
+		SSP  = ?
+
+4.2.3 OBE V2V Pseudonym Certificate request
+		PSID = ?
+		SSP  = ?
+
+4.2.4 OBE V2I Identification Certificate request
+		PSID = ?
+		SSP  = ?
+
+4.2.5 RSE Enrolment Certificate request
+		PSID = ?
+		SSP  = ?
+
+4.2.6 RSE Identification Certificate request
+		PSID = ?
+		SSP  = ?
+
+4.2.7 SCMS Component Certificate request (internal SCMS Certificate Management)
+		PSID = ?
+		SSP  = ?
+
+
+4.3 Internal secure messages in the SCMS
+
+4.3.1 Messages between RA and PCA
+4.3.2 Messages between RA and LA
+4.3.3 Messages between LA and PCA
+......(all others)
+	Note: Probably all of them will have the same PSID/SSP combinations
+		PSID = ?
+		SSP  = ? (unique per interface? we do have a unique message identifier pre message already)
+
+
+4.4 OBE peer-to-peer messages
+
+4.4.1 BSM Messages
+		PSID = ?
+		SSP  = ?
+
+4.4.2 Security Management Messages (CA and CRL via P2P)
+		PSID = 310 (0x136)
+		SSP  = ?
+
+
+4.5 CRL
+
+4.5.1 V2V CRL
+		PSID = ?
+		SSP  = ?
+
+4.5.2 V2I CRL
+		PSID = ?
+		SSP  = ?

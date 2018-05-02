@@ -1,0 +1,62 @@
+value1 TestIeee1609Dot2Data ::= {
+  protocolVersion 3,
+  content signedData : {
+    hashId sha256,
+    tbsData {
+      payload {
+        data {
+          protocolVersion 3,
+          content unsecuredData : '5468697320697320612042534D0D0A'H
+        }
+      },
+      headerInfo {
+        psid 32,
+        generationTime {
+          time 11223344556677,
+          logStdDev 0
+        }
+      }
+    },
+    signer certificate : {
+      {
+        version 1,
+        type implicit,
+        issuer ecdsaNistP256AndDigest : '0011223344556677'H,
+        toBeSigned {
+          id linkageData : {
+            iCert 200,
+            linkage-value '001122334455667788'H,
+            group-linkage-value {
+              jValue '5670AB'H,
+              value '00112233445566778899'H
+            }
+          },
+          cracaId '001122'H,
+          crlSeries 1,
+          validityPeriod {
+            start 1122867,
+            duration hours : 169
+          },
+          region identifiedRegion : {
+            countryOnly : 124,
+            countryOnly : 484,
+            countryOnly : 840
+          },
+          appPermissions {
+            {
+              psid 32
+            },
+            {
+              psid 38
+            }
+          },
+          verifyKeyIndicator reconstructionValue : compressed-y-0 : '00112233445566778899AABBCCDDEEFF101112131415161718191A1B1C1D1E1F'H
+        }
+      }
+    },
+    signature ecdsa256Signature : {
+      r compressed-y-0 : '00112233445566778899AABBCCDDEEFF101112131415161718191A1B1C1D1E1F'H,
+      s 'FF112233445566778899AABBCCDDEEFF101112131415161718191A1B1C1D1E1F'H
+    }
+  }
+}

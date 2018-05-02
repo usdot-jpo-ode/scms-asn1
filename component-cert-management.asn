@@ -1,0 +1,152 @@
+-- 
+--  Copyright 2017 Crash Avoidance Metrics Partner, VSC5 Consortium
+-- 
+--  Licensed under the Apache License, Version 2.0 (the "License");
+--  you may not use this file except in compliance with the License.
+--  You may obtain a copy of the License at
+-- 
+--     http://www.apache.org/licenses/LICENSE-2.0
+-- 
+--  Unless required by applicable law or agreed to in writing, software
+--  distributed under the License is distributed on an "AS IS" BASIS,
+--  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+--  See the License for the specific language governing permissions and
+--  limitations under the License.
+-- 
+
+-- @namespace Ieee1609Dot2ScmsComponentCertificateManagement
+Ieee1609Dot2ScmsComponentCertificateManagement
+{iso(1) identified-organization(3) ieee(111) 
+standards-association-numbered-series-standards(2) wave-stds(1609)  
+dot2(2) scms(4) interfaces(1) component-certificate-management (3) major-version-2(2)}
+
+DEFINITIONS AUTOMATIC TAGS ::= BEGIN
+
+EXPORTS ALL;
+
+IMPORTS 
+  Uint8
+FROM IEEE1609dot2BaseTypes {iso(1) identified-organization(3) ieee(111) 
+  standards-association-numbered-series-standards(2) wave-stds(1609)  
+  dot2(2) base(1) base-types(2) major-version-2(2)}
+
+  ScopedComponentCertificateManagementError
+FROM Ieee1609dot2ScmsError {iso(1) identified-organization(3) ieee(111)
+  standards-association-numbered-series-standards(2) wave-stds(1609)  dot2(2)
+  scms(4) errors(2) complete (1) major-version-2(2)}
+
+  ExplicitCertificate
+FROM IEEE1609dot2 {iso(1) identified-organization(3) ieee(111) 
+  standards-association-numbered-series-standards(2) wave-stds(1609)  
+  dot2(2) base(1) schema(1) major-version-2(2)}
+
+  Time32
+FROM IEEE1609dot2 {iso(1) identified-organization(3) ieee(111)
+   standards-association-numbered-series-standards(2) wave-stds(1609)
+   dot2(2) base(1) base-types(2) major-version-2(2)}
+
+  SecuredCrl
+FROM IEEE1609dot2Crl {iso(1) identified-organization(3) ieee(111) 
+   standards-association-numbered-series-standards(2) wave-stds(1609) dot2(2)
+   crl(3) protocol(1) major-version-2(2)}
+
+  SignedElectorEndorsement
+FROM IEEE1609dot2ScmsProtocol {iso(1) identified-organization(3) ieee(111)
+  standards-association-numbered-series-standards(2) wave-stds(1609)
+  dot2(2) scms(4) interfaces(1) protocol(1) major-version-2(2)}
+
+;
+
+HashedId32  ::= OCTET STRING (SIZE(32))
+
+---
+-- @brief This data type is the parent structure for all component certificate
+--        management data types.
+-- @class ScmsComponentCertificateManagementPDU
+-- @param tbsElectorEndorsement contains the elector endorsement/ballots to be
+--        signed by the respective Elector.
+ScmsComponentCertificateManagementPDU::= CHOICE {
+    tbsElectorEndorsement TbsElectorEndorsement,
+    electorBallot ElectorBallot,
+    ...
+}
+
+---
+-- @brief An "endorsement" is a structure with a command type (add/remove for
+--        root or elector) along with the certificate to be added or removed.
+--        A signed endorsement is a copy of that whole structure with a
+--        signature.
+-- @class TbsElectorEndorsement 
+-- @param type             Defines the action (add/remove) to be taken over a
+--                         certificate.
+-- @param certificateHash  The hash of the certificate with respect to which the 
+--                         action is to be taken.
+-- @param generationTime   Defines the time at which the message was generated.
+--                         The message takes effect immediately on generation.
+--                         For an add action type, the added certificate is considered
+--                         to be valid from the start of its validity period, no matter
+--                         what the generation time value in this message is. For a
+--                         revoke action type, the revoked certificate is considered
+--                         revoked from the time of the earliest generation time on 
+--                         a valid revoke message.
+-- @see HashedId32
+TbsElectorEndorsement ::= SEQUENCE {
+    type 				EndorsementType,
+    certificateHash  	HashedId32,
+    generationTime       Time32,
+    ...
+}
+
+---
+-- @brief This data type defines the action (add/remove) to be taken on a Root
+--        CA or Elector certificate.
+-- @class EndorsementType 
+-- @param addRoot       defines the action to add a Root CA.
+-- @param addElector    defines the action to add an elector.
+-- @param removeRoot    defines the action to remove a Root CA.
+-- @param removeElector defines the action to remove an elector.
+EndorsementType ::= ENUMERATED {
+    addRoot (0),
+    addElector (1),
+    removeRoot (2),
+    removeElector (3),
+    ...
+}
+
+---
+-- @brief This data type defines the structure of an elector ballot. A "ballot"
+--        is a list of signed endorsements. To be valid, a ballot must contain
+--        signatures from a quorum of electors.
+-- @class ElectorBallot 
+-- @param endorsements are the signatures are generated by the Electors (i.e.
+--                     endorsement ballots). Each signature shall contain a
+--                     copy of the same TbsElectorEndorsement 
+-- @see SignedElectorEndorsement
+ElectorBallot ::= SEQUENCE {
+    -- ballot TbsBallot,
+    -- each signature shall contain a copy of the same TbsElectorEndorsement 
+    certificate  ExplicitCertificate, -- root CA or elector 
+    endorsements SEQUENCE SIZE(1..MAX) OF SignedElectorEndorsement,
+    ...
+}
+
+---
+-- @brief This data type defines a composite CRL structure which contains a
+--        list of 1609.2 CRLs, one per CRL series. It may also contain ballots
+--        to remove Root CAs and Electors 
+-- @class CompositeCrl 
+-- @param securedCrlSeries is the list of CRLs for all SCMS components except
+--                         a Root CA and Electors.
+-- @param revokedRootCAs   is the list of Elector endorsements that were used
+--                         to revoke a Root CA.
+-- @param revokedElectors  is the list of Elector endorsements that were used
+--                         to revoke an Elector. 
+-- @see SecuredCrl
+CompositeCrl ::= SEQUENCE {
+    securedCrlSeries SEQUENCE SIZE(0..MAX) OF SecuredCrl,
+    revokedRootCAs SEQUENCE SIZE(0..MAX) OF ElectorBallot,
+    revokedElectors SEQUENCE SIZE(0..MAX) OF ElectorBallot,
+    ...
+}
+
+END

@@ -1,0 +1,57 @@
+<OssGuiProject version="2.0" productVersion="7.1" product="ASN.1 Studio">
+ <Asn1Files>
+  <File>1609dot2-asn/1609dot2-base-types.asn</File>
+  <File>1609dot2-asn/1609dot2-P2P.asn</File>
+  <File>1609dot2-asn/1609dot2-schema.asn</File>
+  <File>1609dot2-asn/crl-base-types.asn</File>
+  <File>1609dot2-asn/crl-protocol.asn</File>
+  <File>1609dot2-asn/wsa-ssp.asn</File>
+  <File>component-cert-management.asn</File>
+  <File>component-cert-management-errors.asn</File>
+  <File>eca-ee.asn</File>
+  <File>eca-ee-errors.asn</File>
+  <File>ee-ma.asn</File>
+  <File>ee-ra.asn</File>
+  <File>la-ma.asn</File>
+  <File>la-ma-errors.asn</File>
+  <File>la-pca.asn</File>
+  <File>la-pca-errors.asn</File>
+  <File>la-ra.asn</File>
+  <File>la-ra-errors.asn</File>
+  <File>ma-pca.asn</File>
+  <File>ma-pca-errors.asn</File>
+  <File>ma-ra.asn</File>
+  <File>ma-ra-errors.asn</File>
+  <File>pca-ra.asn</File>
+  <File>pca-ra-errors.asn</File>
+  <File>scms-base-types.asn</File>
+  <File>scms-common-errors.asn</File>
+  <File>scms-error.asn</File>
+  <File>scms-policy.asn</File>
+  <File>scms-protocol.asn</File>
+  <File>cert-profile.asn</File>
+  <File>1609dot2-asn/crl-ssp.asn</File>
+  <File>cert-chain-files.asn</File>
+  <File>ra-pg-errors.asn</File>
+  <File>ra-pg.asn</File>
+ </Asn1Files>
+ <CompilerSettings/>
+ <EncodingFiles>
+  <File pduName="Ieee1609Dot2Data" encRule="ASN.1 Value Notation">signed-bsm-digest-d12pre1.txt</File>
+  <File pduName="Ieee1609Dot2Data" encRule="ASN.1 Value Notation">signed-bsm-cert-d12pre1.txt</File>
+ </EncodingFiles>
+ <Settings>
+  <Setting name="-coer"/>
+  <Setting name="-noRelaxedMode" present="false"/>
+  <Setting name="-oer"/>
+  <Setting name="-root"/>
+  <Setting name="AUTOMATIC_ENCDEC"/>
+  <Setting name="Additional Options">-noRelaxedMode -warningMessages</Setting>
+  <Setting name="DEBUGPDU"/>
+  <Setting name="OSS_AUTO_ENCODE_WITHOUT_CHECKING_CONSTRAINT"/>
+  <Setting name="OSS_HEXBYTES"/>
+  <Setting name="OSS_PRINT_COMMENTS"/>
+  <Setting name="OSS_PRINT_OFFSET"/>
+  <Setting name="OSS_PRINT_TYPE_INFO"/>
+ </Settings>
+</OssGuiProject>

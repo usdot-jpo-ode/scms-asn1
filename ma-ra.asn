@@ -1,0 +1,370 @@
+-- 
+--  Copyright 2017 Crash Avoidance Metrics Partner, VSC5 Consortium
+-- 
+--  Licensed under the Apache License, Version 2.0 (the "License");
+--  you may not use this file except in compliance with the License.
+--  You may obtain a copy of the License at
+-- 
+--     http://www.apache.org/licenses/LICENSE-2.0
+-- 
+--  Unless required by applicable law or agreed to in writing, software
+--  distributed under the License is distributed on an "AS IS" BASIS,
+--  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+--  See the License for the specific language governing permissions and
+--  limitations under the License.
+-- 
+
+-- @namespace Ieee1609Dot2MaRaInterface
+Ieee1609Dot2MaRaInterface
+{iso(1) identified-organization(3) ieee(111) 
+standards-association-numbered-series-standards(2) wave-stds(1609) dot2(2)
+scms(4) interfaces(1) ma-ra(14) major-version-2(2)}
+
+DEFINITIONS AUTOMATIC TAGS ::= BEGIN 
+
+EXPORTS ALL;
+ 
+IMPORTS 
+  HashedId8,
+  HashedId10,
+  Hostname,
+  Opaque, 
+  Uint8,
+  Uint32
+FROM IEEE1609dot2BaseTypes {iso(1) identified-organization(3) ieee(111) 
+    standards-association-numbered-series-standards(2) wave-stds(1609) dot2(2)
+    base(1) base-types(2) major-version-2(2)}
+
+  Countersignature,
+  SignerIdentifier
+FROM IEEE1609dot2 {iso(1) identified-organization(3) ieee(111) 
+    standards-association-numbered-series-standards(2) wave-stds(1609) dot2(2)
+    base(1) schema(1) major-version-2(2)}
+
+  HPCR,
+  HPCRAndHostInfo,
+  LCIAndHostInfo,
+  RaHostnameId,
+  MaHostnameId,
+  RIF
+FROM Ieee1609dot2ScmsBaseTypes {iso(1) identified-organization(3) ieee(111)
+    standards-association-numbered-series-standards(2) wave-stds(1609) dot2(2)
+    scms(4) interfaces(1) base-types(2) major-version-2(2)}
+
+  ScopedMaRaBlacklistError,
+  ScopedMaRaLCIError
+FROM Ieee1609dot2ScmsError {iso(1) identified-organization(3) ieee(111)
+    standards-association-numbered-series-standards(2) wave-stds(1609) dot2(2)
+    scms(4) errors(2) complete(1) major-version-2(2)}
+;
+
+---
+-- @brief The MaRaInterfacePDU is the parent message type for messages sent
+--        between Misbehavior Authority (MA) and Registration Authority (RA).
+-- @class MaRaInterfacePDU 
+-- @param maRaBlacklistRequest          contains request from MA to obtain
+--                                      internal blacklist of RA for pseudonym
+--                                      certificate.
+-- @param raMaBlacklistResponse         contains response from RA to
+--                                      MaRaBlacklistRequestMsg from MA. 
+-- @param maRaLCIRequest                contains request from MA to obtain
+--                                      linkage chain ID from RA. 
+-- @param raMaLCIResponse               contains response from RA to
+--                                      MaRaLCIRequestMsg from MA. 
+-- @param maRaRseObeIdBlacklistRequest  contains request from MA to obtain
+--                                      internal blacklist of RA for all
+--                                      certificates expect pseudonym
+--                                      certificate.
+-- @param raMaRseObeIdBlacklistResponse contains response from RA to
+--                                      MaRaRseObeIdBlacklistRequest from MA.
+-- @param maRaCDVRequest                contains request from MA to obtain
+--                                      certificate digest values (CDV) from RA.
+-- @param raMaCDVResponse               contains response from RA to
+--                                      MaRaCDVRequest from MA.
+MaRaInterfacePDU ::= CHOICE {
+    maRaBlacklistRequest   MaRaBlacklistRequestMsg,
+    raMaBlacklistResponse  RaMaBlacklistResponseMsg,
+    maRaLCIRequest         MaRaLCIRequestMsg,
+    raMaLCIResponse        RaMaLCIResponseMsg,
+    maRaRseObeIdBlacklistRequest    MaRaRseObeIdBlacklistRequestMsg,
+    raMaRseObeIdBlacklistResponse   RaMaRseObeIdBlacklistResponseMsg,
+    maRaCDVRequest          MaRaCDVRequestMsg,
+    raMaCDVResponse         RaMaCDVResponseMsg,
+    ...
+}
+
+---
+-- @brief This data type is used by MA to request internal blacklist of RA.
+--        Note that this is actually signed by the MA at the scms-protocol
+--        level.
+-- @class MaRaBlacklistRequestMsg 
+-- @param version    contains the current version of the data type. The version 
+--                   specified in this document is version 1, represented by 
+--                   the integer 1.
+-- @param tbs        contains information of MA and requested HPCR. MA signs
+--                   this at scms-protocol level.
+-- @param signatures is the list of counter signatures that the MA has to
+--                   obtain from Auditors before sending this request. Size 0
+--                   is used when no countersignatures are necessary
+-- @see Uint8, Countersignature
+MaRaBlacklistRequestMsg ::= SEQUENCE {
+    version    Uint8(1),
+    tbs        ToBeSignedBlacklistingInstructionMsg,
+    signatures SEQUENCE SIZE (0..MAX) OF Countersignature
+}
+
+---
+-- @brief This data type is used by MA to enclose its information and the
+--        HPCRs for which it wants to request the blacklist.
+-- @class ToBeSignedBlacklistingInstructionMsg 
+-- @param maId is the 256 bit system-wide unique MA hostname ID.
+-- @param hpcr is the list of HPCRs for which the MA requests internal
+--             blacklist of RA.
+-- @see MaHostnameId, HPCR
+ToBeSignedBlacklistingInstructionMsg ::= SEQUENCE {
+    maId       MaHostnameId,
+    hpcr	     SEQUENCE OF HPCR,
+    ...
+}
+
+---
+-- @brief RA uses this data type to respond to MaRaBlacklistRequestMsg from MA.
+-- @class RaMaBlacklistResponseMsg 
+-- @param version     contains the current version of the data type. The 
+--                    version specified in this document is version 1, 
+--                    represented by the integer 1.
+-- @param requestHash is the hash of the original request.
+-- @param raId        is the 256 bit unique hostname ID of RA.
+-- @param status      is the list that tells status of each requested HPCRs.
+-- @see Uint8, HashedId8, RaHostnameId
+RaMaBlacklistResponseMsg ::= SEQUENCE {
+    version          Uint8(1),
+    requestHash      HashedId8,
+    raId             RaHostnameId,
+    status           SEQUENCE OF BlacklistingStatus,
+    ...
+}
+
+---
+-- @brief RA uses this data type to enclose the blacklisting status of HPCRs.
+-- @class BlacklistingStatus 
+-- @param hpcr  is the hash of pseudonym certificate (HPCR).
+-- @param reply contains nothing in the case when request of MA is correct.
+--              Otherwise includes an appropriate error code.
+-- @see HPCR, ScopedMaRaBlacklistError
+BlacklistingStatus ::= SEQUENCE {
+  	hpcr	  HPCR,
+    reply   CHOICE {
+      success  NULL,
+      failure  ScopedMaRaBlacklistError
+    }
+}
+	
+---
+-- @brief MA uses this data type to request linkage chain identifiers from RA.
+--        Note that this is actually signed by the MA at the scms-protocol
+--        level.
+-- @class MaRaLCIRequestMsg 
+-- @param version    contains the current version of the data type. The version
+--                   specified in this document is version 1, represented by
+--                   the integer 1.
+-- @param tbs        contains information of MA and requested LCI. MA signs
+--                   this at scms-protocol level.
+-- @param signatures is the list of signatures that the MA has to obtain from
+--                   auditors before sending this message. Size 0 is used when
+--                   no countersignatures are necessary.
+-- @see Uint8, Countersignature
+MaRaLCIRequestMsg ::= SEQUENCE {
+    version    Uint8(1),
+    tbs        ToBeSignedLCIRequestMsg,
+    signatures SEQUENCE SIZE (0..MAX) OF Countersignature
+}
+
+---
+-- @brief This data type is used by MA to enclose its information and the LCIs
+--        for which it wants to request the blacklist.
+-- @class ToBeSignedLCIRequestMsg
+-- @param maId is the 256 bit system-wide unique MA hostname ID.
+-- @param hpcr is the list of HPCRs for which the MA requests LCIs.
+-- @see MaHostnameId, HPCR
+ToBeSignedLCIRequestMsg ::= SEQUENCE {
+    maId       MaHostnameId,
+    hpcr       SEQUENCE OF HPCR,
+    ...
+}
+
+---
+-- @brief RA uses this data type to respond to MaRaLCIRequestMsg from MA.
+-- @class RaMaLCIResponseMsg 
+-- @param version     contains the current version of the data type. The 
+--                    version specified in this document is version 1, 
+--                    represented by the integer 1.
+-- @param requestHash is the hash of the original request.
+-- @param raId        is the 256 bit unique hostname ID of RA.
+-- @param lciInfo     is the list of mapping between HPCR and their LCIs.
+-- @see Uint8, HashedId8, RaHostnameId
+RaMaLCIResponseMsg ::= SEQUENCE {
+    version          Uint8(1),
+    requestHash      HashedId8,
+    raId             RaHostnameId,
+    lciInfo          SEQUENCE OF HPCR2LCI,
+    ...
+}
+
+---
+-- @brief RA uses this data type to map HPCR with their LCIs.
+-- @class HPCR2LCI 
+-- @param hpcr  is the hash of pseudonym certificate (HPCR).
+-- @param reply contains the LCI and group identifier information in case of
+--              no errors in request from MA. Otherwise, an appropriate error
+--              code is included.
+-- @see HPCR, LCIAndHostInfo, ScopedMaRaLCIError
+HPCR2LCI ::= SEQUENCE {
+  	hpcr		HPCR,
+    reply   CHOICE {
+      success   SEQUENCE {
+        groupIdentifier OCTET STRING (SIZE(4)),
+        info            LCIAndHostInfo
+      },
+      failure   ScopedMaRaLCIError
+    }
+}
+
+---
+-- @brief MA uses this data type to request blacklist of RA for components
+--        with certificates other than pseudonym certificates. Revocation is
+--        done using a Revocation Identifier (RIF). MA signs this at scms
+--        protocol level.
+-- @class MaRaRseObeIdBlacklistRequestMsg 
+-- @param version    contains the current version of the data type. The 
+--                   version specified in this document is version 1, 
+--                   represented by the integer 1.
+-- @param tbs        contains information of MA and requested RIFs. MA signs
+--                   this at scms-protocol level.
+-- @param signatures is the list of signatures that the MA has to obtain from
+--                   auditors before sending this message. Size 0 is used when
+--                   no countersignatures are necessary.
+-- @see Uint8, Countersignature
+MaRaRseObeIdBlacklistRequestMsg ::= SEQUENCE {
+    version    Uint8(1),
+    tbs        ToBeSignedRseObeIdBlacklistingInstructionMsg,
+    signatures SEQUENCE SIZE (0..MAX) OF Countersignature
+}
+
+---
+-- @brief This data type is used by MA to enclose its information and the RIFs
+--        for which it wants to request the blacklist.
+-- @class ToBeSignedRseObeIdBlacklistingInstructionMsg 
+-- @param maId is the 256 bit system-wide unique ID of MA.
+-- @param rif  is an 8-byte revocation identifier array in scms-base-types.asn.
+-- @see MaHostnameId, RIF
+ToBeSignedRseObeIdBlacklistingInstructionMsg ::= SEQUENCE {
+    maId        MaHostnameId,
+    rif	        SEQUENCE OF RIF,
+    ...
+}
+
+---
+-- @brief RA uses this data type to respond to MaRaRseObeIdBlacklistRequestMsg
+--        from MA.
+-- @class RaMaRseObeIdBlacklistResponseMsg 
+-- @param version     contains the current version of the data type. The 
+--                    version specified in this document is version 1, 
+--                    represented by the integer 1.
+-- @param requestHash is the hash of the original request.
+-- @param raId        is the 256 bit unique hostname ID of RA.
+-- @param status      is the list that tells blacklisting status of each
+--                    requested RIFs.
+-- @see Uint8, HashedId8, RaHostnameId
+RaMaRseObeIdBlacklistResponseMsg ::= SEQUENCE {
+    version          Uint8(1),
+    requestHash      HashedId8,  -- hash of the original request
+    raId             RaHostnameId,
+    status           SEQUENCE OF RseObeIdBlacklistingStatus,
+    ...
+}
+
+---
+-- @brief RA uses this data type to enclose the blacklisting status of RIFs.
+-- @class RseObeIdBlacklistingStatus 
+-- @param rif  is an 8-byte revocation identifier array in scms-base-types.asn.
+-- @param reply contains nothing in the case when request of MA is correct.
+--              Otherwise includes an appropriate error code.
+-- @see RIF, ScopedMaRaBlacklistError
+RseObeIdBlacklistingStatus ::= SEQUENCE {
+    rif     RIF,
+    reply   CHOICE {
+      success  NULL,
+      failure  ScopedMaRaBlacklistError
+    }
+}
+
+---
+-- @brief MA uses this data type to request certificate digest values (CDV) 
+--        from RA MA signs this at scms-protocol level.
+-- @class MaRaCDVRequestMsg 
+-- @param version    contains the current version of the data type. The 
+--                   version specified in this document is version 1, 
+--                   represented by the integer 1.
+-- @param tbs        contains information of MA and requested CDVs. MA signs
+--                   this at scms-protocol level.
+-- @param signatures is the list of signatures that the MA has to obtain from
+--                   auditors before sending this message. Size 0 is used when
+--                   no countersignatures are necessary.
+-- @see Uint8, Countersignature
+MaRaCDVRequestMsg ::= SEQUENCE {
+    version    Uint8(1),
+    tbs        ToBeSignedCDVRequestMsg,
+    signatures SEQUENCE SIZE (0..MAX) OF Countersignature
+}
+
+---
+-- @brief This data type is used by MA to enclose its information and the RIFs
+--        for which it wants to request the blacklist.
+-- @class ToBeSignedCDVRequestMsg 
+-- @param maId      is the 256 bit system-wide unique ID of MA.
+-- @param rifValues is an 8-byte revocation identifier array in scms-base-types.asn.
+-- @see MaHostnameId, RIF
+ToBeSignedCDVRequestMsg ::= SEQUENCE {
+    maId       MaHostnameId,
+    rifValues  SEQUENCE OF RIF,
+    ...
+}
+
+---
+-- @brief RA uses this data type to respond to MaRaCDVRequestMsg from MA.
+-- @class RaMaCDVResponseMsg 
+-- @param version     contains the current version of the data type. The 
+--                    version specified in this document is version 1, 
+--                    represented by the integer 1.
+-- @param requestHash is the hash of the original request.
+-- @param raId        is the 256 bit unique hostname ID of RA.
+-- @param cdvInfo     is the list of mapping between RIFs and their CDVs.
+--                    requested RIFs.
+-- @see Uint8, HashedId8, RaHostnameId
+RaMaCDVResponseMsg ::= SEQUENCE {
+    version         Uint8(1),
+    requestHash     HashedId8,
+    raId            RaHostnameId,
+    cdvInfo         SEQUENCE OF CdvInfo
+}
+
+---
+-- @brief RA uses this data type to map RIFs with their CDVs.
+-- @class CdvInfo 
+-- @param rif  is an 8-byte revocation identifier array in scms-base-types.asn.
+-- @param reply contains the CDV for each input in case of no errors in request
+--              from MA. Otherwise, an appropriate error code is included.
+-- @see RIF, HashedId8, ScopedMaRaBlacklistError
+CdvInfo ::= SEQUENCE {  
+	rif        RIF,
+	reply CHOICE {			
+        -- for each input rif, a list of certificate digests (HashedId8) is returned
+        success  SEQUENCE OF HashedId10,
+        failure  ScopedMaRaBlacklistError
+	}
+}
+
+
+END
+

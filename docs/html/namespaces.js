@@ -1,0 +1,28 @@
+var namespaces =
+[
+    [ "IEEE1609dot2certchains", "namespace_i_e_e_e1609dot2certchains.html", null ],
+    [ "Ieee1609Dot2EcaEndEntityError", "namespace_ieee1609_dot2_eca_end_entity_error.html", null ],
+    [ "Ieee1609Dot2EcaEndEntityInterface", "namespace_ieee1609_dot2_eca_end_entity_interface.html", null ],
+    [ "Ieee1609Dot2EndEntityMaInterface", "namespace_ieee1609_dot2_end_entity_ma_interface.html", null ],
+    [ "Ieee1609Dot2EndEntityRaInterface", "namespace_ieee1609_dot2_end_entity_ra_interface.html", null ],
+    [ "Ieee1609Dot2LaMaError", "namespace_ieee1609_dot2_la_ma_error.html", null ],
+    [ "Ieee1609Dot2LaMaInterface", "namespace_ieee1609_dot2_la_ma_interface.html", null ],
+    [ "Ieee1609Dot2LaPcaError", "namespace_ieee1609_dot2_la_pca_error.html", null ],
+    [ "Ieee1609Dot2LaPcaInterface", "namespace_ieee1609_dot2_la_pca_interface.html", null ],
+    [ "Ieee1609Dot2LaRaError", "namespace_ieee1609_dot2_la_ra_error.html", null ],
+    [ "Ieee1609Dot2LaRaInterface", "namespace_ieee1609_dot2_la_ra_interface.html", null ],
+    [ "Ieee1609Dot2MaPcaError", "namespace_ieee1609_dot2_ma_pca_error.html", null ],
+    [ "Ieee1609Dot2MaPcaInterface", "namespace_ieee1609_dot2_ma_pca_interface.html", null ],
+    [ "Ieee1609Dot2MaRaError", "namespace_ieee1609_dot2_ma_ra_error.html", null ],
+    [ "Ieee1609Dot2MaRaInterface", "namespace_ieee1609_dot2_ma_ra_interface.html", null ],
+    [ "Ieee1609Dot2PcaRaError", "namespace_ieee1609_dot2_pca_ra_error.html", null ],
+    [ "Ieee1609Dot2PcaRaInterface", "namespace_ieee1609_dot2_pca_ra_interface.html", null ],
+    [ "IEEE1609dot2profiles", "namespace_i_e_e_e1609dot2profiles.html", null ],
+    [ "Ieee1609Dot2RaPgError", "namespace_ieee1609_dot2_ra_pg_error.html", null ],
+    [ "Ieee1609Dot2RaPgInterface", "namespace_ieee1609_dot2_ra_pg_interface.html", null ],
+    [ "Ieee1609dot2ScmsBaseTypes", "namespace_ieee1609dot2_scms_base_types.html", null ],
+    [ "Ieee1609dot2ScmsCommonError", "namespace_ieee1609dot2_scms_common_error.html", null ],
+    [ "Ieee1609Dot2ScmsComponentCertificateManagementError", "namespace_ieee1609_dot2_scms_component_certificate_management_error.html", null ],
+    [ "Ieee1609dot2ScmsError", "namespace_ieee1609dot2_scms_error.html", null ],
+    [ "Ieee1609dot2ScmsPolicyTypes", "namespace_ieee1609dot2_scms_policy_types.html", null ]
+];

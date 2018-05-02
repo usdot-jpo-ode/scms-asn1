@@ -1,0 +1,35 @@
+03 81 00 40 03 80 0F 54 68 69 73 20 69 73 20 61
+20 42 53 4D 0D 0A 40 01 20 00 00 0A 35 23 77 2A
+85 00 80 00 00 00 00 00 00 00 00 80 82 00 11 22
+33 44 55 66 77 88 99 AA BB CC DD EE FF 10 11 12
+13 14 15 16 17 18 19 1A 1B 1C 1D 1E 1F FF 11 22
+33 44 55 66 77 88 99 AA BB CC DD EE FF 10 11 12
+13 14 15 16 17 18 19 1A 1B 1C 1D 1E 1F
+
+
+value1 TestIeee1609Dot2Data ::= {
+  protocolVersion 3,
+  content signedData : {
+    hashId sha256,
+    tbsData {
+      payload {
+        data {
+          protocolVersion 3,
+          content unsecuredData : '5468697320697320612042534D0D0A'H
+        }
+      },
+      headerInfo {
+        psid 32,
+        generationTime {
+          time 11223344556677,
+          logStdDev 0
+        }
+      }
+    },
+    signer digest : '0000000000000000'H,
+    signature ecdsa256Signature : {
+      r compressed-y-0 : '00112233445566778899AABBCCDDEEFF101112131415161718191A1B1C1D1E1F'H,
+      s 'FF112233445566778899AABBCCDDEEFF101112131415161718191A1B1C1D1E1F'H
+    }
+  }
+}
