@@ -1,3 +1,8 @@
+# ⚠️ DEPRECATION NOTICE
+This repository is no longer needed, as the SCMS files are now included directly in the [asn1_codec](https://www.github.com/usdot-jpo-ode/asn1_codec) project. It is considered deprecated and may be archived or removed soon.
+
+---
+
 # scms-asn1
 
 This repository contains the ASN.1 definitions for data containers and protocols
